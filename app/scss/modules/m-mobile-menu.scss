@@ -1,0 +1,127 @@
+
+.mobile-nav {
+  display: none;
+  @media screen and(max-width: 1024px) {
+    display: block;
+  }
+  .hamburger-container {
+    width: 155px;
+    height: 50px;
+    position: fixed;
+    right: -15px;
+    background-color: $grey-color;
+    transform: skewX(25deg);
+    z-index: 1000;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 50px;
+      background-color: $yellow-color;
+    }
+    .hamburger {
+      width: 50px;
+      height: 35px;
+      position: absolute;
+      top: 8px;
+      right: 60px;
+      transform: rotate(0deg);
+      transform: skewX(-25deg);
+      transition: .5s ease-in-out;
+      cursor: pointer;
+      .line {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 50%;
+        background: $yellow-color;
+        opacity: 1;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+        &:nth-child(even) {
+          left: 50%;
+        }
+        &:nth-child(odd) {
+          left:0px;
+        }
+        &:nth-child(1), &:nth-child(2){
+          top: 0;
+        }
+        &:nth-child(3), &:nth-child(4){
+          top: 15px;
+        }
+        &:nth-child(5), &:nth-child(6){
+          top: 30px;
+        }
+      }
+    }
+    .open {
+      .line {
+        &:nth-child(1), &:nth-child(6) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2), &:nth-child(5) {
+          transform: rotate(-45deg);
+        }
+        &:nth-child(1) {
+          left: 5px;
+          top: 7px;
+        }
+        &:nth-child(2) {
+          left: calc(50% - 5px);
+          top: 7px;
+        }
+        &:nth-child(3) {
+          left: -50%;
+          opacity: 0;
+        }
+        &:nth-child(4) {
+          left: 100%;
+          opacity: 0;
+        }
+        &:nth-child(5) {
+          left: 5px;
+          top: 22px;
+        }
+        &:nth-child(6) {
+          left: calc(50% - 5px);
+          top: 22px;
+        }
+      }
+    }
+  }
+  &__items {
+    width: 100%;
+    max-width: 480px;
+    height: 100%;
+    background-color: $grey-color;
+    top: 0;
+    right: -480px;
+    position: fixed;
+    //z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    ul {
+      li {
+        height: 45px;
+        a {
+          font-size: 20px;
+        }
+      }
+    }
+    &:after{
+      content: '';
+      bottom: 0;
+      position: absolute;
+      border-bottom: 50px solid $yellow-color;
+      border-right: min(480px) solid transparent;
+    }
+  }
+  .mobile-ul-active {
+    right: 0;
+    opacity: 1;
+  }
+}

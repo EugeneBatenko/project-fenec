@@ -1,0 +1,54 @@
+@import "../utilities/variables.scss";
+
+* {
+  backface-visibility: hidden; //fix for hover animation
+  //But work only chrome in this happen
+}
+.container-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; //questionable fix, anyway it's crutch
+}
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  width: 150px;
+  height: 50px;
+  list-style: none;
+  background-color: $grey-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: $regular-roboto;
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-family: $regular-roboto;
+}
+.link {
+  font-size: 18px;
+  transition: all 0.5s;
+  &:hover {
+    color: $yellow-color;
+    transition: all 0.5s;
+  }
+}
+h1 {
+  color: white;
+  font-family: $header-font;
+}

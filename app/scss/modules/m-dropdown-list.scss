@@ -1,0 +1,37 @@
+
+nav {
+  ul {
+    .m-dropdown-list {
+      position: relative;
+      span {
+        cursor: pointer;
+        transform: skewX(-25deg);
+      }
+      .ul-dropdown {
+        position: absolute;
+        top: 50px;
+        display: flex;
+        flex-direction: column;
+        transform: skewX(0deg);
+        height: 0;
+        transition: all 0.5s;
+        li {
+          a {
+            opacity: 0;
+          }
+        }
+      }
+      &:hover {
+        transition: all 0.5s;
+        .ul-dropdown {
+          height: 100px;
+          a {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+
