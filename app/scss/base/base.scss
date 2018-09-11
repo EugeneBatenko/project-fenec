@@ -32,11 +32,11 @@ li {
 span {
   margin: 0;
   padding: 0;
-  color: white;
+  color: $white-color;
   font-family: $regular-roboto;
 }
 a {
-  color: white;
+  color: $white-color;
   text-decoration: none;
   font-family: $regular-roboto;
 }
@@ -49,6 +49,17 @@ a {
   }
 }
 h1 {
-  color: white;
+  color: $white-color;
   font-family: $header-font;
+}
+h2 {
+  font-size: 56px;
+  color: $white-color;
+  font-family: $header-font;
+}
+p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: $regular-roboto;
 }

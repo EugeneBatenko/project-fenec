@@ -1,0 +1,25 @@
+
+.l-header-banner {
+  position: relative;
+  .header-slider {
+    bottom: 150px;
+    width: 60vw;
+    margin: 0 20vw;
+    text-align: center;
+    top: 30vh;
+    position: absolute;
+    @media screen and(max-width: 768px) {
+      margin: 0;
+      padding: 0 10px;
+      width: 100%;
+    }
+    &__slide {
+      h2 {
+        font-size: 5vmax;
+        @media screen and(max-width: 768px) {
+          font-size: 8vmax;
+        }
+      }
+    }
+  }
+}
