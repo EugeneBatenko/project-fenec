@@ -4,7 +4,9 @@
   .header-slider {
     bottom: 150px;
     width: 60vw;
-    margin: 0 20vw;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     text-align: center;
     top: 30vh;
     position: absolute;
@@ -19,6 +21,10 @@
         @media screen and(max-width: 768px) {
           font-size: 8vmax;
         }
+      }
+      p {
+        letter-spacing: 1.5px;
+        font-size: 17px;
       }
     }
   }

@@ -17,6 +17,9 @@ nav {
         transition: all 0.5s;
         li {
           a {
+            //For Firefox
+            height: 0;
+            //
             opacity: 0;
           }
         }
@@ -26,6 +29,9 @@ nav {
         .ul-dropdown {
           height: 100px;
           a {
+            //For firefox
+            height: 23px;
+            //
             opacity: 1;
           }
         }
