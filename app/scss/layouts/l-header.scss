@@ -51,6 +51,7 @@ header {
       transform: skewX(25deg);
       li {
         position: relative;
+        background-color: $grey-color;
         &::before {
           position: absolute;
           left: 0;

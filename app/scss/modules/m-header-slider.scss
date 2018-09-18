@@ -18,6 +18,7 @@
     &__slide {
       h2 {
         font-size: 5vmax;
+        color: $white-color;
         @media screen and(max-width: 768px) {
           font-size: 8vmax;
         }

@@ -1,0 +1,68 @@
+
+@mixin hexagon {
+  width: 90px;
+  height: 150px;
+  background: $grey-color;
+  position: absolute;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -45px;
+    width: 0;
+    height: 0;
+    border-top: 75px solid transparent;
+    border-bottom: 75px solid transparent;
+    border-right: 45px solid $grey-color;
+    transition: all 0.5s ease-in-out;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -45px;
+    width: 0;
+    height: 0;
+    border-top: 75px solid transparent;
+    border-bottom: 75px solid transparent;
+    border-left: 45px solid $grey-color;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+@mixin hexagon-mob {
+  width: 60px;
+  height: 100px;
+  background: $grey-color;
+  position: absolute;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 30px solid $grey-color;
+    transition: all 0.5s ease-in-out;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid $grey-color;
+    transition: all 0.5s ease-in-out;
+  }
+}

@@ -1,14 +1,17 @@
-@import "../utilities/variables.scss";
+
 
 * {
   backface-visibility: hidden; //fix for hover animation
   //But work only chrome in this happen
 }
+html {
+  scroll-behavior: smooth;
+}
 .container-wrapper {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; //questionable fix, anyway it's crutch
+  overflow-x: hidden; //questionable fix, anyway it's crutch
 }
 body {
   width: 100%;
@@ -24,7 +27,6 @@ li {
   width: 150px;
   height: 50px;
   list-style: none;
-  background-color: $grey-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,13 +51,22 @@ a {
   }
 }
 h1 {
+  margin: 0;
+  padding: 0;
   color: $white-color;
   font-family: $header-font;
 }
 h2 {
+  margin: 0;
   font-size: 56px;
-  color: $white-color;
+  color: $color-font;
   font-family: $header-font;
+}
+h3 {
+  margin: 0;
+  font-size: 28px;
+  color: $color-font;
+  font-family: $h3-font;
 }
 p {
   margin: 0;
