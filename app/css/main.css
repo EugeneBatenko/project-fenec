@@ -738,6 +738,9 @@ nav ul .m-dropdown-list {
           margin: 0;
           font-size: 16px;
           text-align: center; }
+          @media screen and (max-width: 800px) {
+            .l-about .geometry-blocks .hexagon .back-hexagon span {
+              font-size: 11px; } }
       .l-about .geometry-blocks .hexagon .second-hex {
         right: 0; }
       .l-about .geometry-blocks .hexagon .sixth-hex {
