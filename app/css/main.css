@@ -258,7 +258,7 @@ header {
     max-width: 480px;
     height: 0;
     background-color: #262626;
-    top: 0;
+    top: -100vh;
     right: 0px;
     position: fixed;
     display: -webkit-box;
@@ -301,7 +301,8 @@ header {
           border-right: 800px solid transparent; } }
   .mobile-nav .mobile-ul-active {
     height: 100vh;
-    opacity: 1; }
+    opacity: 1;
+    top: 0; }
 
 nav ul .m-dropdown-list {
   position: relative; }
@@ -524,60 +525,60 @@ nav ul .m-dropdown-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     position: relative;
     width: 500px;
     height: 150px;
     margin: 0 auto; }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 480px) {
       .l-about .geometry-blocks {
-        width: 320px; } }
+        width: 100%;
+        max-width: 320px; } }
     .l-about .geometry-blocks .hexagon {
+      width: 90px;
+      height: 150px;
+      background: #262626;
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
       z-index: 10; }
-      @media screen and (min-width: 801px) {
-        .l-about .geometry-blocks .hexagon {
-          width: 90px;
-          height: 150px;
-          background: #262626;
-          position: absolute;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -ms-flex-line-pack: center;
-          align-content: center;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center;
-          -webkit-transition: all 0.5s ease-in-out;
-          -o-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
-          .l-about .geometry-blocks .hexagon::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -45px;
-            width: 0;
-            height: 0;
-            border-top: 75px solid transparent;
-            border-bottom: 75px solid transparent;
-            border-right: 45px solid #262626;
-            -webkit-transition: all 0.5s ease-in-out;
-            -o-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
-          .l-about .geometry-blocks .hexagon::after {
-            content: "";
-            position: absolute;
-            right: -45px;
-            width: 0;
-            height: 0;
-            border-top: 75px solid transparent;
-            border-bottom: 75px solid transparent;
-            border-left: 45px solid #262626;
-            -webkit-transition: all 0.5s ease-in-out;
-            -o-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
-      @media screen and (max-width: 800px) {
+      .l-about .geometry-blocks .hexagon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -45px;
+        width: 0;
+        height: 0;
+        border-top: 75px solid transparent;
+        border-bottom: 75px solid transparent;
+        border-right: 45px solid #262626;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out; }
+      .l-about .geometry-blocks .hexagon::after {
+        content: "";
+        position: absolute;
+        right: -45px;
+        width: 0;
+        height: 0;
+        border-top: 75px solid transparent;
+        border-bottom: 75px solid transparent;
+        border-left: 45px solid #262626;
+        -webkit-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out; }
+      @media screen and (max-width: 480px) {
         .l-about .geometry-blocks .hexagon {
           width: 60px;
           height: 100px;
@@ -623,12 +624,12 @@ nav ul .m-dropdown-list {
         margin: auto;
         padding-top: 5px;
         font-size: 21px; }
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 480px) {
           .l-about .geometry-blocks .hexagon span {
             font-size: 14px; } }
       .l-about .geometry-blocks .hexagon .last-span {
         font-size: 15px; }
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 480px) {
           .l-about .geometry-blocks .hexagon .last-span {
             font-size: 10px; } }
       .l-about .geometry-blocks .hexagon .back-hexagon {
@@ -649,50 +650,44 @@ nav ul .m-dropdown-list {
         transition: all 0.5s ease-in-out;
         opacity: 0;
         top: 0;
-        z-index: 1; }
-        @media screen and (min-width: 801px) {
-          .l-about .geometry-blocks .hexagon .back-hexagon {
-            width: 90px;
-            height: 150px;
-            background: #262626;
-            position: absolute;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-line-pack: center;
-            align-content: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-transition: all 0.5s ease-in-out;
-            -o-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
-            .l-about .geometry-blocks .hexagon .back-hexagon::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: -45px;
-              width: 0;
-              height: 0;
-              border-top: 75px solid transparent;
-              border-bottom: 75px solid transparent;
-              border-right: 45px solid #262626;
-              -webkit-transition: all 0.5s ease-in-out;
-              -o-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
-            .l-about .geometry-blocks .hexagon .back-hexagon::after {
-              content: "";
-              position: absolute;
-              right: -45px;
-              width: 0;
-              height: 0;
-              border-top: 75px solid transparent;
-              border-bottom: 75px solid transparent;
-              border-left: 45px solid #262626;
-              -webkit-transition: all 0.5s ease-in-out;
-              -o-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; } }
-        @media screen and (max-width: 800px) {
+        z-index: 1;
+        width: 90px;
+        height: 150px;
+        background: #262626;
+        position: absolute;
+        display: flex;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        transition: all 0.5s ease-in-out; }
+        .l-about .geometry-blocks .hexagon .back-hexagon::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -45px;
+          width: 0;
+          height: 0;
+          border-top: 75px solid transparent;
+          border-bottom: 75px solid transparent;
+          border-right: 45px solid #262626;
+          -webkit-transition: all 0.5s ease-in-out;
+          -o-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+        .l-about .geometry-blocks .hexagon .back-hexagon::after {
+          content: "";
+          position: absolute;
+          right: -45px;
+          width: 0;
+          height: 0;
+          border-top: 75px solid transparent;
+          border-bottom: 75px solid transparent;
+          border-left: 45px solid #262626;
+          -webkit-transition: all 0.5s ease-in-out;
+          -o-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+        @media screen and (max-width: 480px) {
           .l-about .geometry-blocks .hexagon .back-hexagon {
             width: 60px;
             height: 100px;
@@ -738,7 +733,7 @@ nav ul .m-dropdown-list {
           margin: 0;
           font-size: 16px;
           text-align: center; }
-          @media screen and (max-width: 800px) {
+          @media screen and (max-width: 480px) {
             .l-about .geometry-blocks .hexagon .back-hexagon span {
               font-size: 11px; } }
       .l-about .geometry-blocks .hexagon .second-hex {
@@ -747,9 +742,9 @@ nav ul .m-dropdown-list {
         left: 0; }
     .l-about .geometry-blocks .left-hexagon {
       right: 350px; }
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 480px) {
         .l-about .geometry-blocks .left-hexagon {
-          right: 220px; } }
+          right: 245px; } }
       .l-about .geometry-blocks .left-hexagon:hover {
         background: #ff9932;
         -webkit-transition: all 0.5s ease-in-out;
@@ -757,12 +752,12 @@ nav ul .m-dropdown-list {
         transition: all 0.5s ease-in-out; }
         .l-about .geometry-blocks .left-hexagon:hover::after {
           border-left: 45px solid #ff9932; }
-          @media screen and (max-width: 800px) {
+          @media screen and (max-width: 480px) {
             .l-about .geometry-blocks .left-hexagon:hover::after {
               border-left: 30px solid #ff9932; } }
         .l-about .geometry-blocks .left-hexagon:hover::before {
           border-right: 45px solid #ff9932; }
-          @media screen and (max-width: 800px) {
+          @media screen and (max-width: 480px) {
             .l-about .geometry-blocks .left-hexagon:hover::before {
               border-right: 30px solid #ff9932; } }
         .l-about .geometry-blocks .left-hexagon:hover .first-hex {
@@ -771,9 +766,9 @@ nav ul .m-dropdown-list {
           -webkit-transition: all 0.5s ease-in-out;
           -o-transition: all 0.5s ease-in-out;
           transition: all 0.5s ease-in-out; }
-          @media screen and (max-width: 800px) {
+          @media screen and (max-width: 480px) {
             .l-about .geometry-blocks .left-hexagon:hover .first-hex {
-              top: 100px; } }
+              top: 105px; } }
         .l-about .geometry-blocks .left-hexagon:hover .second-hex {
           opacity: 1;
           top: 80px;
@@ -783,13 +778,14 @@ nav ul .m-dropdown-list {
           transition: all 0.5s ease-in-out; }
           @media screen and (max-width: 800px) {
             .l-about .geometry-blocks .left-hexagon:hover .second-hex {
-              top: -100px;
+              top: -160px;
+              right: 0px; } }
+          @media screen and (max-width: 480px) {
+            .l-about .geometry-blocks .left-hexagon:hover .second-hex {
+              top: -105px;
               right: 0px; } }
     .l-about .geometry-blocks .center-hexagon {
       bottom: 80px; }
-      @media screen and (max-width: 800px) {
-        .l-about .geometry-blocks .center-hexagon {
-          bottom: 100px; } }
       .l-about .geometry-blocks .center-hexagon:hover {
         background: #ff3333;
         -webkit-transition: all 0.5s ease-in-out;
@@ -797,12 +793,12 @@ nav ul .m-dropdown-list {
         transition: all 0.5s ease-in-out; }
         .l-about .geometry-blocks .center-hexagon:hover::after {
           border-left: 45px solid #ff3333; }
-          @media screen and (max-width: 800px) {
+          @media screen and (max-width: 480px) {
             .l-about .geometry-blocks .center-hexagon:hover::after {
               border-left: 30px solid #ff3333; } }
         .l-about .geometry-blocks .center-hexagon:hover::before {
           border-right: 45px solid #ff3333; }
-          @media screen and (max-width: 800px) {
+          @media screen and (max-width: 480px) {
             .l-about .geometry-blocks .center-hexagon:hover::before {
               border-right: 30px solid #ff3333; } }
         .l-about .geometry-blocks .center-hexagon:hover .third-hex {
@@ -811,23 +807,17 @@ nav ul .m-dropdown-list {
           -webkit-transition: all 0.5s ease-in-out;
           -o-transition: all 0.5s ease-in-out;
           transition: all 0.5s ease-in-out; }
-          @media screen and (max-width: 800px) {
-            .l-about .geometry-blocks .center-hexagon:hover .third-hex {
-              top: 100px; } }
         .l-about .geometry-blocks .center-hexagon:hover .fourth-hex {
           opacity: 1;
           top: -160px;
           -webkit-transition: all 0.5s ease-in-out;
           -o-transition: all 0.5s ease-in-out;
           transition: all 0.5s ease-in-out; }
-          @media screen and (max-width: 800px) {
-            .l-about .geometry-blocks .center-hexagon:hover .fourth-hex {
-              top: -100px; } }
     .l-about .geometry-blocks .right-hexagon {
       left: 350px; }
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 480px) {
         .l-about .geometry-blocks .right-hexagon {
-          left: 220px; } }
+          left: 245px; } }
       .l-about .geometry-blocks .right-hexagon:hover {
         background: #2e5cb8;
         -webkit-transition: all 0.5s ease-in-out;
@@ -835,12 +825,12 @@ nav ul .m-dropdown-list {
         transition: all 0.5s ease-in-out; }
         .l-about .geometry-blocks .right-hexagon:hover::after {
           border-left: 45px solid #2e5cb8; }
-          @media screen and (max-width: 800px) {
+          @media screen and (max-width: 480px) {
             .l-about .geometry-blocks .right-hexagon:hover::after {
               border-left: 30px solid #2e5cb8; } }
         .l-about .geometry-blocks .right-hexagon:hover::before {
           border-right: 45px solid #2e5cb8; }
-          @media screen and (max-width: 800px) {
+          @media screen and (max-width: 480px) {
             .l-about .geometry-blocks .right-hexagon:hover::before {
               border-right: 30px solid #2e5cb8; } }
         .l-about .geometry-blocks .right-hexagon:hover .fifth-hex {
@@ -851,7 +841,7 @@ nav ul .m-dropdown-list {
           transition: all 0.5s ease-in-out; }
           @media screen and (max-width: 800px) {
             .l-about .geometry-blocks .right-hexagon:hover .fifth-hex {
-              top: -100px; } }
+              top: -160px; } }
         .l-about .geometry-blocks .right-hexagon:hover .sixth-hex {
           opacity: 1;
           top: 80px;
@@ -861,5 +851,5 @@ nav ul .m-dropdown-list {
           transition: all 0.5s ease-in-out; }
           @media screen and (max-width: 800px) {
             .l-about .geometry-blocks .right-hexagon:hover .sixth-hex {
-              top: 100px;
+              top: 160px;
               left: 0; } }

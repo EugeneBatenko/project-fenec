@@ -96,7 +96,7 @@
     max-width: 480px;
     height: 0;
     background-color: $grey-color;
-    top: 0;
+    top: -100vh;
     right: 0px;
     position: fixed;
     //z-index: 1000;
@@ -140,5 +140,6 @@
   .mobile-ul-active {
     height: 100vh;
     opacity: 1;
+    top: 0;
   }
 }
