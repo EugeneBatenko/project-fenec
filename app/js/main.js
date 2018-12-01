@@ -25,6 +25,6 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 1400,
+        speed: 2000,
     });
 });
