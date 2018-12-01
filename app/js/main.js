@@ -9,7 +9,7 @@ function hamburger(x) {
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
     if (currentScrollPos != 0) {
-        document.getElementById("header").style.background = "rgba(38,38,38,0.8)";
+        document.getElementById("header").style.background = "#262626";
     } else {
         document.getElementById("header").style.background = "rgba(0,0,0,.0)";
     }
@@ -21,9 +21,10 @@ $(document).ready(function () {
         dots: false,
         infinite: true,
         arrows: false,
+        fade: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 1200,
+        speed: 1400,
     });
 });

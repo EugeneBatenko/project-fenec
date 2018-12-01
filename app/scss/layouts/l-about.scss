@@ -4,15 +4,52 @@
   color: $grey-bg-color;
   position: relative;
   padding-top: 80px;
+  background: url('/img/rock-cloud.jpeg');
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 100vh solid $grey-bg-color;
+    border-left: 43vw solid transparent;
+    height: 0;
+    margin: 0 auto;
+    width: 1vh;
+    @media screen and (max-width: 690px){
+      display: none;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 100vh solid $grey-bg-color;
+    border-right: 43vw solid transparent;
+    height: 0;
+    width: 1vh;
+    @media screen and (max-width: 690px){
+      display: none;
+    }
+  }
+
   .section-headers {
+    z-index: 100;
     h2 {
+      color: $grey-bg-color;
       text-align: center;
       font-size: 40px;
       backface-visibility: hidden;
+      background-color: rgba(0,0,0, 0.5);
     }
+
     h3 {
+      color: $grey-bg-color;
       text-align: center;
+      background-color: rgba(0,0,0, 0.5);
     }
+
     &::after {
       display: block;
       content: "";
@@ -34,12 +71,15 @@
       width: 100%;
       max-width: 320px;
     }
+
     .hexagon {
-        @include hexagon;
+      @include hexagon;
+      opacity: 0.8;
       @media screen and(max-width: 480px) {
         @include hexagon-mob;
       }
       z-index: 10;
+
       span {
         margin: auto;
         padding-top: 5px;
@@ -48,12 +88,14 @@
           font-size: 14px;
         }
       }
+
       .last-span {
         font-size: 15px;
         @media screen and(max-width: 480px) {
           font-size: 10px;
         }
       }
+
       .back-hexagon {
         display: flex;
         align-items: center;
@@ -67,6 +109,7 @@
         @media screen and(max-width: 480px) {
           @include hexagon-mob;
         }
+
         span {
           margin: 0;
           font-size: 16px;
@@ -76,12 +119,18 @@
           }
         }
       }
+
       .second-hex {
         right: 0;
       }
+
       .sixth-hex {
         left: 0;
       }
+      .fourth-hex-right {
+        left: 0;
+      }
+
     }
 
     .left-hexagon {
@@ -89,21 +138,25 @@
       @media screen and(max-width: 480px) {
         right: 245px;
       }
+
       &:hover {
         background: #ff9932;
         transition: all 0.5s ease-in-out;
+
         &::after {
           border-left: 45px solid #ff9932;
           @media screen and(max-width: 480px) {
             border-left: 30px solid #ff9932;
           }
         }
+
         &::before {
           border-right: 45px solid #ff9932;
           @media screen and(max-width: 480px) {
             border-right: 30px solid #ff9932;
           }
         }
+
         .first-hex {
           opacity: 1;
           top: 160px;
@@ -112,6 +165,7 @@
             top: 105px;
           }
         }
+
         .second-hex {
           opacity: 1;
           top: 80px;
@@ -131,29 +185,40 @@
 
     .center-hexagon {
       bottom: 80px;
+
       &:hover {
         background: #ff3333;
         transition: all 0.5s ease-in-out;
+
         &::after {
           border-left: 45px solid #ff3333;
           @media screen and(max-width: 480px) {
             border-left: 30px solid #ff3333;
           }
         }
+
         &::before {
           border-right: 45px solid #ff3333;
           @media screen and(max-width: 480px) {
             border-right: 30px solid #ff3333;
           }
         }
+
         .third-hex {
           opacity: 1;
           top: 160px;
           transition: all 0.5s ease-in-out;
         }
+
         .fourth-hex {
           opacity: 1;
           top: -160px;
+          transition: all 0.5s ease-in-out;
+        }
+        .fourth-hex-right {
+          opacity: 1;
+          top: -80px;
+          left: 145px;
           transition: all 0.5s ease-in-out;
         }
       }
@@ -164,21 +229,25 @@
       @media screen and(max-width: 480px) {
         left: 245px;
       }
+
       &:hover {
         background: #2e5cb8;
         transition: all 0.5s ease-in-out;
+
         &::after {
           border-left: 45px solid #2e5cb8;
           @media screen and(max-width: 480px) {
             border-left: 30px solid #2e5cb8;
           }
         }
+
         &::before {
           border-right: 45px solid #2e5cb8;
           @media screen and(max-width: 480px) {
             border-right: 30px solid #2e5cb8;
           }
         }
+
         .fifth-hex {
           opacity: 1;
           top: 160px;
@@ -187,6 +256,7 @@
             top: -160px;
           }
         }
+
         .sixth-hex {
           opacity: 1;
           top: 80px;
