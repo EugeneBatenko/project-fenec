@@ -527,7 +527,7 @@ nav ul .m-dropdown-list {
   color: #f0f0f0;
   position: relative;
   padding-top: 80px;
-  background: url("/img/rock-cloud.jpeg"); }
+  background: url("../img/rock-cloud.jpeg"); }
   .l-about::after {
     content: '';
     position: absolute;
