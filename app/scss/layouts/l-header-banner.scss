@@ -40,6 +40,9 @@
     border-bottom: 15vh solid #262626;
     position: absolute;
     bottom: -20px;
+    @media screen and (max-width: 690px){
+
+    }
   }
 
   .mouse {

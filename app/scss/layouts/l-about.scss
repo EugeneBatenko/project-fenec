@@ -35,7 +35,9 @@
   }
 
   .section-headers {
-    z-index: 100;
+      width: 100vw;
+      position: absolute;
+      z-index: 10;
     h2 {
       color: $grey-bg-color;
       text-align: center;
@@ -66,7 +68,7 @@
     position: relative;
     width: 500px;
     height: 150px;
-    margin: 0 auto;
+    margin: 250px auto 0 auto;
     @media screen and(max-width: 480px) {
       width: 100%;
       max-width: 320px;
@@ -136,7 +138,7 @@
     .left-hexagon {
       right: 350px;
       @media screen and(max-width: 480px) {
-        right: 245px;
+        right: 225px;
       }
 
       &:hover {
@@ -185,6 +187,9 @@
 
     .center-hexagon {
       bottom: 80px;
+      @media screen and(max-width: 480px) {
+        bottom: 103px;
+      }
 
       &:hover {
         background: #ff3333;
@@ -208,18 +213,28 @@
           opacity: 1;
           top: 160px;
           transition: all 0.5s ease-in-out;
+          @media screen and(max-width: 480px) {
+            top: 105px;
+          }
         }
 
         .fourth-hex {
           opacity: 1;
           top: -160px;
           transition: all 0.5s ease-in-out;
+          @media screen and(max-width: 480px) {
+            top: -105px;
+          }
         }
         .fourth-hex-right {
           opacity: 1;
           top: -80px;
           left: 145px;
           transition: all 0.5s ease-in-out;
+          @media screen and(max-width: 480px) {
+            top: -53px;
+            left: 95px;
+          }
         }
       }
     }
@@ -227,7 +242,7 @@
     .right-hexagon {
       left: 350px;
       @media screen and(max-width: 480px) {
-        left: 245px;
+        left: 225px;
       }
 
       &:hover {
@@ -255,6 +270,9 @@
           @media screen and(max-width: 800px) {
             top: -160px;
           }
+          @media screen and(max-width: 480px) {
+            top: -105px;
+          }
         }
 
         .sixth-hex {
@@ -265,6 +283,9 @@
           @media screen and(max-width: 800px) {
             top: 160px;
             left: 0;
+          }
+          @media screen and(max-width: 480px) {
+            top: 105px;
           }
         }
       }

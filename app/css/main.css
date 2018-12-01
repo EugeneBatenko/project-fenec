@@ -101,7 +101,7 @@ header {
   header .logo {
     position: absolute;
     left: -12px;
-    width: 150px;
+    width: 160px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -554,7 +554,9 @@ nav ul .m-dropdown-list {
       .l-about::before {
         display: none; } }
   .l-about .section-headers {
-    z-index: 100; }
+    width: 100vw;
+    position: absolute;
+    z-index: 10; }
     .l-about .section-headers h2 {
       color: #f0f0f0;
       text-align: center;
@@ -583,7 +585,7 @@ nav ul .m-dropdown-list {
     position: relative;
     width: 500px;
     height: 150px;
-    margin: 0 auto; }
+    margin: 250px auto 0 auto; }
     @media screen and (max-width: 480px) {
       .l-about .geometry-blocks {
         width: 100%;
@@ -799,7 +801,7 @@ nav ul .m-dropdown-list {
       right: 350px; }
       @media screen and (max-width: 480px) {
         .l-about .geometry-blocks .left-hexagon {
-          right: 245px; } }
+          right: 225px; } }
       .l-about .geometry-blocks .left-hexagon:hover {
         background: #ff9932;
         -webkit-transition: all 0.5s ease-in-out;
@@ -841,6 +843,9 @@ nav ul .m-dropdown-list {
               right: 0px; } }
     .l-about .geometry-blocks .center-hexagon {
       bottom: 80px; }
+      @media screen and (max-width: 480px) {
+        .l-about .geometry-blocks .center-hexagon {
+          bottom: 103px; } }
       .l-about .geometry-blocks .center-hexagon:hover {
         background: #ff3333;
         -webkit-transition: all 0.5s ease-in-out;
@@ -862,12 +867,18 @@ nav ul .m-dropdown-list {
           -webkit-transition: all 0.5s ease-in-out;
           -o-transition: all 0.5s ease-in-out;
           transition: all 0.5s ease-in-out; }
+          @media screen and (max-width: 480px) {
+            .l-about .geometry-blocks .center-hexagon:hover .third-hex {
+              top: 105px; } }
         .l-about .geometry-blocks .center-hexagon:hover .fourth-hex {
           opacity: 1;
           top: -160px;
           -webkit-transition: all 0.5s ease-in-out;
           -o-transition: all 0.5s ease-in-out;
           transition: all 0.5s ease-in-out; }
+          @media screen and (max-width: 480px) {
+            .l-about .geometry-blocks .center-hexagon:hover .fourth-hex {
+              top: -105px; } }
         .l-about .geometry-blocks .center-hexagon:hover .fourth-hex-right {
           opacity: 1;
           top: -80px;
@@ -875,11 +886,15 @@ nav ul .m-dropdown-list {
           -webkit-transition: all 0.5s ease-in-out;
           -o-transition: all 0.5s ease-in-out;
           transition: all 0.5s ease-in-out; }
+          @media screen and (max-width: 480px) {
+            .l-about .geometry-blocks .center-hexagon:hover .fourth-hex-right {
+              top: -53px;
+              left: 95px; } }
     .l-about .geometry-blocks .right-hexagon {
       left: 350px; }
       @media screen and (max-width: 480px) {
         .l-about .geometry-blocks .right-hexagon {
-          left: 245px; } }
+          left: 225px; } }
       .l-about .geometry-blocks .right-hexagon:hover {
         background: #2e5cb8;
         -webkit-transition: all 0.5s ease-in-out;
@@ -904,6 +919,9 @@ nav ul .m-dropdown-list {
           @media screen and (max-width: 800px) {
             .l-about .geometry-blocks .right-hexagon:hover .fifth-hex {
               top: -160px; } }
+          @media screen and (max-width: 480px) {
+            .l-about .geometry-blocks .right-hexagon:hover .fifth-hex {
+              top: -105px; } }
         .l-about .geometry-blocks .right-hexagon:hover .sixth-hex {
           opacity: 1;
           top: 80px;
@@ -915,3 +933,6 @@ nav ul .m-dropdown-list {
             .l-about .geometry-blocks .right-hexagon:hover .sixth-hex {
               top: 160px;
               left: 0; } }
+          @media screen and (max-width: 480px) {
+            .l-about .geometry-blocks .right-hexagon:hover .sixth-hex {
+              top: 105px; } }
