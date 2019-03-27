@@ -52,11 +52,11 @@
 
     img {
       width: 100%;
+      transition: all 0.35s ease;
     }
 
     * {
       box-sizing: border-box;
-      transition: all 0.35s ease;
     }
 
     figcaption {
@@ -79,6 +79,7 @@
       transform: translateX(40px);
       opacity: 0;
       list-style: none;
+      transition: all 0.35s ease;
       @media screen and (max-width: 440px){
         height: 30px;
       }
@@ -89,6 +90,7 @@
       display: block;
       color: #ffffff;
       text-decoration: none;
+      transition: all 0.35s ease;
       &:hover {
         color: $orange-color;
       }
@@ -104,6 +106,7 @@
   .card-img.hover img {
     zoom: 1;
     opacity: 0.5;
+    transition: all 0.35s ease;
   }
   .card-img:hover li,
   .card-img.hover li {

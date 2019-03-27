@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-// import {Link} from "react-router-dom";
 //Images
 import beetroot from '../../img/beetroot.jpg';
 import mogo from '../../img/mogo.jpg';
 import appstarter from '../../img/appstarter.jpg';
-
+//Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink, faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 class Projects extends Component {
     render() {
@@ -24,9 +26,9 @@ class Projects extends Component {
                             <h4>Exam project</h4>
                             <p>Front-end semester exam task</p>
                             <ul className="links">
-                                <li><a href="https://github.com/EugeneBatenko/beetroot-exam.github.io">Repository</a></li>
-                                <li><a href="https://eugenebatenko.github.io/beetroot-exam.github.io/app/">Demo</a></li>
-                                <li><a href="https://drive.google.com/file/d/1uiNhR_D7pPvHmZ5KmFodDmc-Qf5MdKmk/view">Certificate</a></li>
+                                <li><a href="https://github.com/EugeneBatenko/beetroot-exam.github.io"><FontAwesomeIcon icon={faGithub}/> Repository</a></li>
+                                <li><a href="https://eugenebatenko.github.io/beetroot-exam.github.io/app/"><FontAwesomeIcon icon={faLink}/> Demo</a></li>
+                                <li><a href="https://drive.google.com/file/d/1uiNhR_D7pPvHmZ5KmFodDmc-Qf5MdKmk/view"><FontAwesomeIcon icon={faCertificate}/> Certificate</a></li>
                             </ul>
                         </figcaption>
                     </figure>
@@ -38,8 +40,8 @@ class Projects extends Component {
                             <h4>Mogo</h4>
                             <p>Summer 2018 practise project</p>
                             <ul className="links">
-                                <li><a href="https://github.com/EugeneBatenko/ukietech-practice.github.io">Repository</a></li>
-                                <li><a href="https://eugenebatenko.github.io/ukietech-practice.github.io/app/">Demo</a></li>
+                                <li><a href="https://github.com/EugeneBatenko/ukietech-practice.github.io"><FontAwesomeIcon icon={faGithub}/> Repository</a></li>
+                                <li><a href="https://eugenebatenko.github.io/ukietech-practice.github.io/app/"><FontAwesomeIcon icon={faLink}/> Demo</a></li>
                             </ul>
                         </figcaption>
                     </figure>
@@ -50,8 +52,8 @@ class Projects extends Component {
                             <h4>AppStarter</h4>
                             <p>Test-task. Bootstrap 4</p>
                             <ul className="links">
-                                <li><a href="https://github.com/EugeneBatenko/test-task-tonti-laguna.github.io">Repository</a></li>
-                                <li><a href="https://eugenebatenko.github.io/test-task-tonti-laguna.github.io/app/">Demo</a></li>
+                                <li><a href="https://github.com/EugeneBatenko/test-task-tonti-laguna.github.io"><FontAwesomeIcon icon={faGithub}/> Repository</a></li>
+                                <li><a href="https://eugenebatenko.github.io/test-task-tonti-laguna.github.io/app/"><FontAwesomeIcon icon={faLink}/> Demo</a></li>
                             </ul>
                         </figcaption>
                     </figure>

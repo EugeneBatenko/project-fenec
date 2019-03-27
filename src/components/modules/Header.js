@@ -70,8 +70,8 @@ class Header extends Component {
                     <div className={this.state.showMenu ? "mobile-nav__items" : "mobile-nav__items mobile-ul-active"}>
                         <ul>
                             <li><Link to="#">News</Link></li>
-                            <li><Link to="#">Content</Link></li>
-                            <li><Link to="#">About</Link></li>
+                            <li><Link to="#">Files</Link></li>
+                            <li><Link to="#">Other stuff</Link></li>
                             <li><Link to="#">Blog</Link></li>
                             <li><Link to="#">CV</Link></li>
                             <li><Link to="#">Contacts</Link></li>

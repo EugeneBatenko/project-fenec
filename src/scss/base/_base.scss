@@ -24,7 +24,8 @@ body {
 
 main {
   position: relative;
-  z-index: 100;
+  margin-bottom: 100vh;
+  z-index: 10;
 }
 
 footer {
@@ -94,6 +95,12 @@ h4 {
   font-size: 20px;
   font-family: $h3-font;
   margin: 0 0 5px 0;
+}
+h5 {
+  font-size: 20px;
+  color: white;
+  font-family: $h3-font;
+  margin: 10px 0 10px 0;
 }
 
 p {
