@@ -1,0 +1,13 @@
+.m-section-header {
+  color: white;
+  z-index: 100;
+  @media screen and (max-width: 575px){
+    h2 {
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+  }
+
+}

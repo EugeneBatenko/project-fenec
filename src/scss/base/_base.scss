@@ -1,0 +1,109 @@
+
+
+* {
+  backface-visibility: hidden; //fix for hover animation
+  //But work only chrome in this happen
+}
+html {
+  scroll-behavior: smooth;
+}
+.container-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; //questionable fix, anyway it's crutch
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: $grey-bg-color;
+}
+
+main {
+  position: relative;
+  z-index: 100;
+}
+
+footer {
+  bottom: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  width: 150px;
+  height: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  margin: 0;
+  padding: 0;
+  color: $white-color;
+  font-family: $regular-roboto;
+}
+a {
+  color: $white-color;
+  text-decoration: none;
+  font-family: $regular-roboto;
+}
+
+.link {
+  font-size: 18px;
+  transition: all 0.5s;
+  &:hover {
+    color: $yellow-color;
+    transition: all 0.5s;
+  }
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  color: $white-color;
+  font-family: $header-font;
+}
+
+h2 {
+  margin: 0;
+  font-size: 48px;
+  //color: $color-font;
+  font-family: $header-font;
+}
+
+h3 {
+  margin: 0;
+  font-size: 24px;
+  //color: $color-font;
+  font-family: $h3-font;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: $h3-font;
+  margin: 0 0 5px 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: $regular-roboto;
+}
+
+blockquote {
+  color: white;
+  font-family: $regular-roboto;
+}

@@ -1,0 +1,129 @@
+.l-projects {
+  background-color: #141414;
+  position: relative;
+  margin-bottom: 500px;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -25vh;
+    width: 0;
+    border-top: 25vh solid #141414;
+    border-right: 100vw solid transparent;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  p {
+    //text-align: left;
+    font-size: 11px;
+    margin-bottom: 5px;
+    text-align: right;
+  }
+
+  .card-img {
+    position: relative;
+    overflow: hidden;
+    width: 351px;
+    height: 200px;
+    color: #ffffff;
+    //text-align: left;
+    font-size: 16px;
+    background-color: #000000;
+    @media screen and (max-width: 440px){
+      width: 308px;
+      height:137px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -30%;
+      right: 70%;
+      content: '';
+      background-color: rgba(0, 0, 0, 0.7);
+      transform: skew(20deg) translateX(-75%);
+      transition: all 0.35s ease;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: all 0.35s ease;
+    }
+
+    figcaption {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .links {
+      font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .links li {
+      height: 35px;
+      transform: translateX(40px);
+      opacity: 0;
+      list-style: none;
+      @media screen and (max-width: 440px){
+        height: 30px;
+      }
+
+    }
+
+    a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      &:hover {
+        color: $orange-color;
+      }
+    }
+
+  }
+
+  .card-img:hover:after,
+  .card-img.hover:after {
+    transform: skew(20deg) translateX(0%);
+  }
+  .card-img:hover img,
+  .card-img.hover img {
+    zoom: 1;
+    opacity: 0.5;
+  }
+  .card-img:hover li,
+  .card-img.hover li {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  .card-img:hover li:first-child,
+  .card-img.hover li:first-child {
+    transition-delay: 0.1s;
+  }
+  .card-img:hover li:nth-child(2),
+  .card-img.hover li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .card-img:hover li:nth-child(3),
+  .card-img.hover li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .card-img:hover li:nth-child(4),
+  .card-img.hover li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+}

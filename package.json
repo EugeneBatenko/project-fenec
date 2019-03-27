@@ -1,29 +1,33 @@
 {
-  "name": "project-fenec",
-  "version": "1.0.0",
-  "description": "Website for personal use",
-  "main": "gulpfile.js",
+  "name": "deserta",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-slick": "^0.23.2"
+  },
   "scripts": {
-    "test": "echo"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EugeneBatenko/project-fenec.github.io.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [
-    "sass",
-    "scss"
-  ],
-  "author": "Eugene Batenko",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/EugeneBatenko/project-fenec.github.io/issues"
-  },
-  "homepage": "https://github.com/EugeneBatenko/project-fenec.github.io#readme",
-  "devDependencies": {
-    "browser-sync": "^2.24.7",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-sass": "^4.0.1"
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -1,0 +1,56 @@
+.button-learn-more {
+  background-color: $grey-color;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  padding: 16px 60px 16px;
+  position: relative;
+  transform: skewX(-25deg);
+  p {
+    font-family: $regular-roboto;
+    font-size: 20px;
+    text-transform: uppercase;
+    transform: skewX(25deg)
+  }
+
+}
+
+.button-learn-more:before,
+.button-learn-more:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+
+.button-learn-more:before {
+  border-color: $orange-color;
+  border-top-width: 2px;
+  left: 0px;
+  top: -5px;
+}
+
+.button-learn-more:after {
+  border-bottom-width: 2px;
+  border-color: $orange-color;
+  bottom: -5px;
+  right: 0px;
+}
+
+.button-learn-more:hover,
+.button-learn-more.hover {
+  background-color: $grey-color;
+}
+
+.button-learn-more:hover:before,
+.button-learn-more.hover:before,
+.button-learn-more:hover:after,
+.button-learn-more.hover:after {
+  height: 100%;
+  width: 100%;
+}
