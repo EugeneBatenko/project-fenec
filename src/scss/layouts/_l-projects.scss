@@ -10,6 +10,11 @@
     width: 0;
     border-top: 25vh solid #141414;
     border-right: 100vw solid transparent;
+    @media screen and (max-width: 575px){
+      bottom: -20vh;
+      border-top: 20vh solid #141414;
+      border-right: 200vw solid transparent;
+    }
   }
 
   h4 {

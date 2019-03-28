@@ -34,7 +34,7 @@ class Header extends Component {
         return (
             <header id="header">
                 <div className="logo">
-                    <Link to="#"><h1>Eugene</h1></Link>
+                    <Link to="/"><h1>Eugene</h1></Link>
                 </div>
                 <nav className="desktop-nav">
                     <ul>
@@ -48,7 +48,7 @@ class Header extends Component {
                         <li className="m-dropdown-list"><span className="link">About</span>
                             <ul className="ul-dropdown">
                                 <li><Link to="#" className="link">Blog</Link></li>
-                                <li><Link to="#" className="link">CV</Link></li>
+                                <li><Link to="/CV" className="link">CV</Link></li>
                             </ul>
                         </li>
                         <li><Link to="#" className="link">Contacts</Link></li>

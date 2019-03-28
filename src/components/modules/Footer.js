@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 //Icons
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPhone, faMapMarked, faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import {faLinkedin, faTelegram, faGithub} from '@fortawesome/free-brands-svg-icons';
+import {faLinkedin, faTelegram, faGithub, faSkype, faPinterest} from '@fortawesome/free-brands-svg-icons';
 
 class Footer extends Component {
     render() {
@@ -30,6 +30,8 @@ class Footer extends Component {
                                 icon={faTelegram}/></a>
                             <a href="https://github.com/EugeneBatenko" className="social-link"><FontAwesomeIcon
                                 icon={faGithub}/></a>
+                            <a href="https://join.skype.com/invite/bGz0uELm14qc" className="social-link skype"><FontAwesomeIcon icon={faSkype}/></a>
+                            <a href="https://www.pinterest.com/batenkoev/" className="social-link pinterest"><FontAwesomeIcon icon={faPinterest}/></a>
                         </div>
                     </article>
 
@@ -38,6 +40,7 @@ class Footer extends Component {
                         <p><FontAwesomeIcon icon={faPhone}/> +380 95 14 99 279</p>
                         <p><FontAwesomeIcon icon={faMapMarked}/> Ukraine</p>
                         <p><FontAwesomeIcon icon={faEnvelope}/> batenko.e.v@gmail.com</p>
+                        {/*<p><FontAwesomeIcon icon={faSkype}/> <a href="https://join.skype.com/invite/bGz0uELm14qc">Tap to invite</a></p>*/}
                     </article>
 
                 </div>

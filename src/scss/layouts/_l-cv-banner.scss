@@ -1,0 +1,37 @@
+.l-cv-banner {
+  width: 100vw;
+  height: 35vh;
+  background-image: url("../img/cv-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    right: 0;
+    border-bottom: 15vh solid $grey-bg-color;
+    border-left: 75vw solid transparent;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 10vh solid $grey-color;
+    border-right: 30vw solid transparent;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid $yellow-color;
+    position: absolute;
+    left: 200px;
+    top: calc(30vh - 50px);
+    z-index: 10;
+  }
+}

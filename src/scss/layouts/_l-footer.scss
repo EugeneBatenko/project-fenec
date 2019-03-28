@@ -10,43 +10,46 @@
   background-position: center;
 
 
-
   article {
     width: 100%;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 15px;
     margin-bottom: 50px;
     @media screen and (max-width: 768px) {
-      margin: 0 0 15px 0!important;
+      margin: 0 0 5px 0 !important;
     }
   }
+
   article:nth-child(2) {
     text-align: center;
     margin: 0 30px 50px 30px;
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       width: 45%;
     }
-    @media screen and (max-width: 575px){
+    @media screen and (max-width: 575px) {
       max-width: 100%;
       width: 100%;
     }
   }
+
   article:nth-child(3) {
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       width: 40%;
     }
-    @media screen and (max-width: 575px){
+    @media screen and (max-width: 575px) {
       max-width: 100%;
       width: 100%;
     }
+
     h5 {
-      @media screen and (min-width: 768px){
+      @media screen and (min-width: 768px) {
         text-align: right;
       }
     }
+
     p {
       margin-bottom: 10px;
-      @media screen and (max-width: 1024px){
+      @media screen and (max-width: 1024px) {
         font-size: 13px;
       }
     }
@@ -54,10 +57,10 @@
 
   .footer-blocks {
     width: 100%;
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       flex-wrap: wrap;
     }
-    @media screen and (max-width: 575px){
+    @media screen and (max-width: 575px) {
       width: auto;
     }
   }
@@ -67,6 +70,7 @@
       width: 100%;
       height: 45px;
       justify-content: flex-start;
+
       .link {
         font-size: 16px;
       }
@@ -75,7 +79,7 @@
 
   .site-map {
     ul {
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: 768px) {
         display: flex;
       }
     }
@@ -95,10 +99,12 @@
       background: $yellow-color;
       position: relative;
       transition: all 0.35s ease-in-out;
+
       &:hover {
         color: white;
         background: $grey-color-op;
         transition: all 0.35s ease-in-out;
+
         &::before, &::after {
           transition: all 0.35s ease-in-out;
           border-bottom-color: $grey-color-op;
@@ -107,12 +113,26 @@
       }
     }
 
+    .social-link:nth-child(2n-1) {
+      margin-top: 52px;
+    }
+
+    .social-link:nth-child(2n) {
+      margin-left: -34px;
+      margin-right: -34px;
+    }
+
     .linkedin:hover {
       color: #0077b5;
-
     }
     .telegram:hover {
       color: #0088cc;
+    }
+    .skype:hover {
+      color: #00aff0;
+    }
+    .pinterest:hover {
+      color: #bd081c;
     }
 
 
@@ -147,7 +167,8 @@
   .footer-panel {
     width: 100vw;
     height: 50px;
-    background-color: rgba(0,0,0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+
     .container {
       width: 100%;
       margin: 0 auto;

@@ -58,6 +58,10 @@ a {
   color: $white-color;
   text-decoration: none;
   font-family: $regular-roboto;
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    color: $yellow-color;
+  }
 }
 
 .link {
@@ -108,6 +112,9 @@ p {
   padding: 0;
   color: white;
   font-family: $regular-roboto;
+  &::selection {
+    background-color: $yellow-color;
+  }
 }
 
 blockquote {
