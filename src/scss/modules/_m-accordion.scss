@@ -1,0 +1,143 @@
+.m-accordion {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Acordeon styles */
+.tab {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  overflow: hidden;
+  background-color: $grey-color;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  label {
+    color: white;
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: $yellow-color;
+      transition: all 0.5s ease-in-out;
+
+      .icon {
+        color: $yellow-color;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .icon {
+    color: white;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.tab-content {
+  background-color: $grey-bg-color;
+  height: 0;
+  overflow: hidden;
+  //overflow-y: scroll;
+  transition: all 0.5s ease-in-out;
+
+  p {
+    margin: 1em;
+    color: $grey-color;
+  }
+
+  h4 {
+    text-align: center;
+    margin: 10px;
+  }
+
+  @import "m-progress-bar";
+}
+
+/* :checked */
+input:checked ~ .tab-content {
+  transition: all 0.5s ease-in-out;
+}
+
+#tab-1:checked ~ .tab-content {
+  height: 140px;
+  @media screen and (max-width: 1200px) {
+    height: 160px;
+  }
+  @media screen and (max-width: 992px) {
+    height: 240px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 240px;
+  }
+  @media screen and (max-width: 480px) {
+    height: 330px;
+  }
+}
+
+#tab-2:checked ~ .tab-content {
+  height: 450px;
+  @media screen and (max-width: 1200px) {
+    height: 465px;
+  }
+  @media screen and (max-width: 992px) {
+    height: 600px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 600px;
+  }
+  @media screen and (max-width: 480px) {
+    height: 750px;
+  }
+}
+
+#tab-3:checked ~ .tab-content {
+  height: 160px;
+  @media screen and (max-width: 1200px) {
+    height: 180px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 180px;
+  }
+  @media screen and (max-width: 480px) {
+    height: 210px;
+  }
+}
+
+#tab-4:checked ~ .tab-content {
+  height: 130px;
+  @media screen and (max-width: 1200px) {
+    height: 235px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 235px;
+  }
+}
+
+#tab-5:checked ~ .tab-content {
+  height: 350px;
+}
+
+
+input:checked ~ label .icon {
+  transform: rotate(180deg);
+  transition: all 0.5s ease-in-out;
+}
+
+input:checked ~ .tab-content .progress-container .m-progress-bar {
+  width: 100%;
+  transition: all 1.5s ease-in-out;
+}
+

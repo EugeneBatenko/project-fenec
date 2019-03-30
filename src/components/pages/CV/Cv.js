@@ -3,22 +3,23 @@ import React, {Component} from 'react';
 import Header from '../../modules/Header';
 import Footer from '../../modules/Footer';
 //img
-import profilePhoto from './img/joke.jpg';
+import profilePhoto from './img/ava.png';
 //Icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPhone, faEnvelope, faMapMarkerAlt, faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {faTelegramPlane, faLinkedinIn, faGithub} from '@fortawesome/free-brands-svg-icons';
+//
+import ScrollToTop from "../../modules/ScrollToTop";
 
 class Cv extends Component {
     render() {
         return (
             <div className="container-wrapper">
+                <ScrollToTop/>
                 <Header/>
                 <main>
                     <section className="l-cv-banner">
-                        <picture>
-                            <img className="profile-photo" src={profilePhoto} alt="profile"/>
-                        </picture>
+                        <img className="profile-photo" src={profilePhoto} alt="profile"/>
                     </section>
 
                     <section className="l-cv-main">
@@ -28,15 +29,291 @@ class Cv extends Component {
                             <p className="name">Yevhen Batenko</p>
                             <p>Junior Front-end developer</p>
                             <p className="mb-2">21 years</p>
+
                             <p><FontAwesomeIcon icon={faMapMarkerAlt}/> Ukraine, Ivano-Frankivsk</p>
                             <p><FontAwesomeIcon icon={faPhone}/> +380 95 14 99 279</p>
                             <p><FontAwesomeIcon icon={faEnvelope}/> batenko.e.v@gmail.com</p>
                             <p><FontAwesomeIcon icon={faTelegramPlane}/> @West_Lion</p>
-                            <p><FontAwesomeIcon icon={faLinkedinIn}/> <a href="https://www.linkedin.com/in/eugene-batenko-west-lion/">Link to profile</a></p>
-                            <p><FontAwesomeIcon icon={faGithub}/> <a href="https://github.com/EugeneBatenko">Link to profile</a></p>
+                            <p><FontAwesomeIcon icon={faLinkedinIn}/> <a
+                                href="https://www.linkedin.com/in/eugene-batenko-west-lion/">Link to profile</a></p>
+                            <p><FontAwesomeIcon icon={faGithub}/> <a href="https://github.com/EugeneBatenko">Link to
+                                profile</a></p>
+
+                            <h5>Languages</h5>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Ukrainian</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb empty-romb"></div>
+                            </div>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">English</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                            </div>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Russian</p>
+                                <p>"zrada" level</p>
+                            </div>
+
+                            <h5>Soft skills</h5>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Flexibility</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                            </div>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Adaptability</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                            </div>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Responsibility</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb empty-romb"></div>
+                            </div>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Punctuality</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                            </div>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Listening</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                            </div>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Time management</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                                <div className="romb empty-romb"></div>
+                            </div>
+
+                            <div className="d-flex center-vertical">
+                                <p className="language-paragraph">Stress resistance</p>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                                <div className="romb"></div>
+                            </div>
+
+
                         </article>
 
                         <article className="main-part">
+                            <h2 className="text-center mb-2">Resume</h2>
+
+                            <div className="m-accordion">
+
+                                <div className="tab">
+
+                                    <input id="tab-1" type="radio" name="tabs"/>
+                                    <label htmlFor="tab-1">Summary <FontAwesomeIcon className="icon"
+                                                                                    icon={faChevronDown}/></label>
+
+                                    <div className="tab-content">
+                                        <p>A motivated student of university, unfortunately I have a small commercial
+                                            experience. I have all basic front-end skills and experience in creating a
+                                            responsibility websites (see GitHub repositories). I would like to learn how
+                                            to work in a professional team and create interesting projects. If I do not
+                                            know something, I'm ready to learn new technologies and tools in a short
+                                            time. Maybe I do not have enough experience, but I am fast learning and with
+                                            every new project I work faster. </p>
+                                    </div>
+                                </div>
+
+                                <div className="tab">
+
+                                    <input id="tab-2" type="radio" name="tabs"/>
+                                    <label htmlFor="tab-2">Experience <FontAwesomeIcon className="icon"
+                                                                                       icon={faChevronDown}/></label>
+
+                                    <div className="tab-content">
+                                        <p><strong>Non commercial:</strong></p>
+
+                                        <p>- Self-learning. Since Dec 2017. (And some university jobs too)</p>
+                                        <p>- Beetroot Academy ONPU Course. Front-end semester March 2018 – June 2018
+                                            (see professional skills => Certificate). During these courses I got the
+                                            basic skills for Front-end development(Markup dev.). </p>
+                                        <p>- Practice in Ukietech company July 2018 – August 2018. During this practice,
+                                            I consolidated my previous skills and learned to create projects with
+                                            architecture SMACSS.</p>
+
+                                        <p><strong>Commercial:</strong></p>
+                                        <p>- Front-end developer at Apollonia</p>
+                                        <p>Location: Ukraine, Odesa</p>
+                                        <p>Period: from October 2018 to December 2018</p>
+                                        <p>Short describe:
+                                            Apollonia Healthcare, (Apollonia is a medical ecosystem, which includes
+                                            electronic health records, telemedicine, medical tourism, medicine
+                                            e-commerce, insurance policies and development of open markets for medical
+                                            data trading. Patients, doctors and clinics, insurance and pharm)
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <div className="tab">
+                                    <input id="tab-3" type="radio" name="tabs"/>
+                                    <label htmlFor="tab-3">Education <FontAwesomeIcon className="icon"
+                                                                                      icon={faChevronDown}/></label>
+
+                                    <div className="tab-content">
+                                        <p>Odesa National Polytechnic University</p>
+                                        <p>Odesa, Odesa Oblast</p>
+                                        <p>Graduating June 2019(now 4th year), Bachelor degree
+                                            At the university I got basic skills in programming and searching for the
+                                            necessary information.
+                                        </p>
+                                    </div>
+
+
+                                </div>
+
+                                <div className="tab">
+                                    <input id="tab-4" type="radio" name="tabs"/>
+                                    <label htmlFor="tab-4">Hobbies & Interests <FontAwesomeIcon className="icon"
+                                                                                                icon={faChevronDown}/></label>
+
+                                    <div className="tab-content">
+                                        <p>I like the visual part in product development. That's why I sometimes like to
+                                            draw and work with graphics. In the past, I created a simple 2d game with a
+                                            scirra construct program, and painted sprites with Paint.NET. Due to this I
+                                            became interested in programming. Also, in the free time of study, I develop
+                                            a website portfolio for myself.
+                                        </p>
+                                        <p>My main hobbies are numismatics, history and comics. And I just love Sci-fi.</p>
+                                    </div>
+
+
+                                </div>
+
+                                <div className="tab">
+                                    <input id="tab-5" type="radio" name="tabs"/>
+                                    <label htmlFor="tab-5">Professional skills <FontAwesomeIcon className="icon"
+                                                                                    icon={faChevronDown}/></label>
+
+                                    <div className="tab-content">
+
+                                        <div className="progress-container mt-4">
+                                            <p className="bar-header">HTML</p>
+                                            <div className="m-progress-bar html-bar"><p>91%</p></div>
+                                        </div>
+
+                                        <div className="progress-container">
+                                            <p className="bar-header">CSS</p>
+                                            <div className="m-progress-bar css-bar"><p>96%</p></div>
+                                        </div>
+
+                                        <div className="progress-container">
+                                            <p className="bar-header">JS</p>
+                                            <div className="m-progress-bar js-bar"><p>60%</p></div>
+                                        </div>
+
+                                        <div className="progress-container">
+                                            <p className="bar-header">JQuery</p>
+                                            <div className="m-progress-bar jquery-bar"><p>50%</p></div>
+                                        </div>
+
+                                        <div className="progress-container">
+                                            <p className="bar-header">SASS/SCSS</p>
+                                            <div className="m-progress-bar sass-bar"><p>91%</p></div>
+                                        </div>
+
+                                        <div className="progress-container">
+                                            <p className="bar-header">Bootstrap 4</p>
+                                            <div className="m-progress-bar bootstrap-bar"><p>88%</p></div>
+                                        </div>
+
+                                        <div className="progress-container">
+                                            <p className="bar-header">React</p>
+                                            <div className="m-progress-bar react-bar"><p>32%</p></div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
 
                         </article>
 

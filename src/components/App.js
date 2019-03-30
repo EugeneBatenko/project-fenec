@@ -6,6 +6,7 @@ import '../scss/main.scss';
 import MainPage from "./pages/MainPage/MainPage";
 import Cv from "./pages/CV/Cv";
 
+
 class App extends Component {
   render() {
     return (
