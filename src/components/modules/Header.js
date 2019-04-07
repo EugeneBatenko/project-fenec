@@ -73,7 +73,7 @@ class Header extends Component {
                             <li><Link to="#">Files</Link></li>
                             <li><Link to="#">Other stuff</Link></li>
                             <li><Link to="#">Blog</Link></li>
-                            <li><Link to="#">CV</Link></li>
+                            <li><Link to="/CV">CV</Link></li>
                             <li><Link to="#">Contacts</Link></li>
                         </ul>
                     </div>
