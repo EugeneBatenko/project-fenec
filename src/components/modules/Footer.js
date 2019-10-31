@@ -3,10 +3,11 @@ import {Link} from "react-router-dom";
 //Icons
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPhone, faMapMarked, faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import {faLinkedin, faTelegram, faGithub, faSkype, faPinterest} from '@fortawesome/free-brands-svg-icons';
+import {faLinkedin, faTelegram, faGithub, faSkype, faPinterest, faReact} from '@fortawesome/free-brands-svg-icons';
 
 class Footer extends Component {
     render() {
+    	const year = new Date().getFullYear();
         return (
             <footer className="l-footer">
                 <div className="container footer-blocks d-flex between">
@@ -46,8 +47,9 @@ class Footer extends Component {
                 </div>
                 <div className="footer-panel d-flex center-vertical">
                     <div className="container d-flex between">
-                        <p>2019. All right reserved. Eugene Batenko</p>
-                        <p>Built on React 16.8.5</p>
+                        <p>{year}. All right reserved. Eugene Batenko<br/>
+                        Pictures taken from <a href="www.pexels.com">www.pexels.com</a></p>
+                        <p>Built on React <FontAwesomeIcon icon={faReact}/></p>
                     </div>
                 </div>
             </footer>

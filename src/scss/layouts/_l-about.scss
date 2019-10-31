@@ -7,7 +7,7 @@
   background: linear-gradient(to top,
           rgba(240, 240, 240, 1) 0%,
           rgba(0, 0, 0, 0) 50%),
-  url('../img/rock-cloud.jpeg');
+  url('../../img/rock-cloud.jpeg');
   background-size: cover;
   padding-bottom: 150px;
 
@@ -96,9 +96,15 @@
     .php-icon {
       color: #4F5B93;
     }
-
-    .python-icon {
-      color: #FFD242;
+    .gulp-icon {
+      color: $gulp-color;
+    }
+    .yarn-icon {
+      color: #2C8EBB;
+    }
+    .npm-icon {
+      color: $npm-color;
+      padding-right: 5px;
     }
 
     .icon-container {

@@ -63,7 +63,6 @@
     margin: 10px;
   }
 
-  @import "m-progress-bar";
 }
 
 /* :checked */
@@ -130,7 +129,7 @@ input:checked ~ .tab-content {
 }
 
 #tab-5:checked ~ .tab-content {
-  height: 350px;
+  height: 500px;
 }
 
 

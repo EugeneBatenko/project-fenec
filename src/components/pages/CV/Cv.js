@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Polar} from 'react-chartjs-2';
 //Modules
 import Header from '../../modules/Header';
 import Footer from '../../modules/Footer';
@@ -10,6 +11,50 @@ import {faPhone, faEnvelope, faMapMarkerAlt, faChevronDown} from '@fortawesome/f
 import {faTelegramPlane, faLinkedinIn, faGithub} from '@fortawesome/free-brands-svg-icons';
 //
 import ScrollToTop from "../../modules/ScrollToTop";
+
+const data = {
+    datasets: [{
+        data: [
+            89,
+            96,
+            60,
+            50,
+            91,
+            88,
+            34,
+        ],
+        backgroundColor: [
+            'rgba(229,76,33,0.8)',
+            'rgb(0,112,183,0.8)',
+            'rgb(247,224,24,0.8)',
+            'rgb(8,104,171,0.8)',
+            'rgb(206,103,154,0.8)',
+            'rgb(109,67,161,0.8)',
+            'rgb(97,218,251,0.8)',
+            '#F05133',
+            '#D34A47',
+            '#80C7FF',
+            '#CC3534',
+            '#3498DB',
+            '#92C5E0'
+        ],
+        label: 'My dataset' // for legend
+    }],
+    labels: [
+        'HTML',
+        'CSS',
+        'JS',
+        'JQuery',
+        'SASS/SCSS',
+        'Bootstrap 4',
+        'React'
+    ],
+
+};
+
+const options = {
+    maintainAspectRatio: false	// Don't maintain w/h ratio
+}
 
 class Cv extends Component {
     render() {
@@ -209,8 +254,8 @@ class Cv extends Component {
                                         <p><strong>Non commercial:</strong></p>
 
                                         <p>- Self-learning. Since Dec 2017. (And some university jobs too)</p>
-                                        <p>- Beetroot Academy ONPU Course. Front-end semester March 2018 – June 2018
-                                            (see professional skills => Certificate). During these courses I got the
+                                        <p>- Beetroot Academy ONPU Course. Front-end semester March 2018 – June 2018.
+                                            During these courses I got the
                                             basic skills for Front-end development(Markup dev.). </p>
                                         <p>- Practice in Ukietech company July 2018 – August 2018. During this practice,
                                             I consolidated my previous skills and learned to create projects with
@@ -236,9 +281,9 @@ class Cv extends Component {
                                                                                       icon={faChevronDown}/></label>
 
                                     <div className="tab-content">
-                                        <p>Odesa National Polytechnic University</p>
-                                        <p>Odesa, Odesa Oblast</p>
-                                        <p>Graduating June 2019(now 4th year), Bachelor degree
+                                        <p>Odessa National Polytechnic University</p>
+                                        <p>Odessa, Odessa Oblast</p>
+                                        <p>September 2015 - June 2019, Bachelor degree, <br/>
                                             At the university I got basic skills in programming and searching for the
                                             necessary information.
                                         </p>
@@ -259,7 +304,8 @@ class Cv extends Component {
                                             became interested in programming. Also, in the free time of study, I develop
                                             a website portfolio for myself.
                                         </p>
-                                        <p>My main hobbies are numismatics, history and comics. And I just love Sci-fi.</p>
+                                        <p>My main hobbies are numismatics, history and comics. And I just love
+                                            Sci-fi.</p>
                                     </div>
 
 
@@ -267,46 +313,10 @@ class Cv extends Component {
 
                                 <div className="tab">
                                     <input id="tab-5" type="radio" name="tabs"/>
-                                    <label htmlFor="tab-5">Professional skills <FontAwesomeIcon className="icon"
-                                                                                    icon={faChevronDown}/></label>
+                                    <label htmlFor="tab-5">Professional skills <FontAwesomeIcon className="icon" icon={faChevronDown}/></label>
 
                                     <div className="tab-content">
-
-                                        <div className="progress-container mt-4">
-                                            <p className="bar-header">HTML</p>
-                                            <div className="m-progress-bar html-bar"><p>91%</p></div>
-                                        </div>
-
-                                        <div className="progress-container">
-                                            <p className="bar-header">CSS</p>
-                                            <div className="m-progress-bar css-bar"><p>96%</p></div>
-                                        </div>
-
-                                        <div className="progress-container">
-                                            <p className="bar-header">JS</p>
-                                            <div className="m-progress-bar js-bar"><p>60%</p></div>
-                                        </div>
-
-                                        <div className="progress-container">
-                                            <p className="bar-header">JQuery</p>
-                                            <div className="m-progress-bar jquery-bar"><p>50%</p></div>
-                                        </div>
-
-                                        <div className="progress-container">
-                                            <p className="bar-header">SASS/SCSS</p>
-                                            <div className="m-progress-bar sass-bar"><p>91%</p></div>
-                                        </div>
-
-                                        <div className="progress-container">
-                                            <p className="bar-header">Bootstrap 4</p>
-                                            <div className="m-progress-bar bootstrap-bar"><p>88%</p></div>
-                                        </div>
-
-                                        <div className="progress-container">
-                                            <p className="bar-header">React</p>
-                                            <div className="m-progress-bar react-bar"><p>32%</p></div>
-                                        </div>
-
+                                        <Polar data={data} options={options}/>
                                     </div>
 
 

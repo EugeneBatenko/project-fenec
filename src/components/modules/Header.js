@@ -42,7 +42,7 @@ class Header extends Component {
                         <li className="m-dropdown-list"><span className="link">Content</span>
                             <ul className="ul-dropdown">
                                 <li><Link to="#" className="link">Files</Link></li>
-                                <li><Link to="#" className="link">Other stuff</Link></li>
+                                <li><Link to="#" className="link">Projects</Link></li>
                             </ul>
                         </li>
                         <li className="m-dropdown-list"><span className="link">About</span>
@@ -71,7 +71,7 @@ class Header extends Component {
                         <ul>
                             <li><Link to="#">News</Link></li>
                             <li><Link to="#">Files</Link></li>
-                            <li><Link to="#">Other stuff</Link></li>
+                            <li><Link to="#">Projects</Link></li>
                             <li><Link to="#">Blog</Link></li>
                             <li><Link to="/CV">CV</Link></li>
                             <li><Link to="#">Contacts</Link></li>

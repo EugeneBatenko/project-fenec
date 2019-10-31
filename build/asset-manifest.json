@@ -1,18 +1,20 @@
 {
-  "main.css": "/static/css/main.c8c01762.chunk.css",
-  "main.js": "/static/js/main.3a7c22d1.chunk.js",
-  "main.js.map": "/static/js/main.3a7c22d1.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.c5541365.js",
-  "runtime~main.js.map": "/static/js/runtime~main.c5541365.js.map",
-  "static/js/2.72a133f3.chunk.js": "/static/js/2.72a133f3.chunk.js",
-  "static/js/2.72a133f3.chunk.js.map": "/static/js/2.72a133f3.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.5e6ddbaa131f149cf59026344d2e0818.js": "/precache-manifest.5e6ddbaa131f149cf59026344d2e0818.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.c8c01762.chunk.css.map": "/static/css/main.c8c01762.chunk.css.map",
-  "static/media/main.scss": "/static/media/rock-cloud.84c16922.jpeg",
-  "static/media/appstarter.jpg": "/static/media/appstarter.383aeb5c.jpg",
-  "static/media/ava.png": "/static/media/ava.bd178cdc.png",
-  "static/media/beetroot.jpg": "/static/media/beetroot.875f177a.jpg",
-  "static/media/mogo.jpg": "/static/media/mogo.23c848d8.jpg"
+  "files": {
+    "main.css": "/static/css/main.db0d21ce.chunk.css",
+    "main.js": "/static/js/main.bb879a6c.chunk.js",
+    "main.js.map": "/static/js/main.bb879a6c.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.46657c2b.chunk.js": "/static/js/2.46657c2b.chunk.js",
+    "static/js/2.46657c2b.chunk.js.map": "/static/js/2.46657c2b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d666e9ca4965889b58901609f3d4967e.js": "/precache-manifest.d666e9ca4965889b58901609f3d4967e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.db0d21ce.chunk.css.map": "/static/css/main.db0d21ce.chunk.css.map",
+    "static/media/main.scss": "/static/media/rock-cloud.84c16922.jpeg",
+    "static/media/appstarter.jpg": "/static/media/appstarter.383aeb5c.jpg",
+    "static/media/ava.png": "/static/media/ava.bd178cdc.png",
+    "static/media/beetroot.jpg": "/static/media/beetroot.875f177a.jpg",
+    "static/media/mogo.jpg": "/static/media/mogo.23c848d8.jpg"
+  }
 }
