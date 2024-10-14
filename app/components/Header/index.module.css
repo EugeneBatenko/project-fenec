@@ -1,69 +1,69 @@
 .header {
-    /*width: 600px;*/
-    margin-top: 20px;
-    height: 50px;
+  /*width: 600px;*/
+  margin-top: 20px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+
+  .navBar {
+    display: flex;
+    height: 100%;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 0;
+      left: -25px;
+      border-top: 50px solid var(--primary-bg-dark);
+      border-left: 25px solid transparent;
+    }
+  }
+
+  .text {
+    z-index: 2;
+    transition:
+      transform 0.5s ease-in-out,
+      color 0.5s ease-in-out;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    /*margin: 0 20px;*/
+    padding: 0 30px;
+    background-color: var(--primary-bg-dark);
+    height: 100%;
+    position: relative;
+  }
+
+  .marker {
     position: absolute;
-    right: 0;
-    z-index: 10;
+    top: 7px;
+    left: 0;
+    width: 76px;
+    height: 50px;
+    background-color: #fce38a;
+    z-index: 1;
+    transform: skew(26deg);
+    transition: all 0.5s ease-in-out;
+  }
 
-    .navBar {
-        display: flex;
-        height: 100%;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 0;
-            height: 0;
-            left: -25px;
-            border-top: 50px solid var(--primary-bg-dark);
-            border-left: 25px solid transparent;
-        }
-    }
-
+  .active {
+    transition: all 0.5s ease-in-out;
     .text {
-        z-index: 2;
-        transition: transform .5s ease-in-out, color .5s ease-in-out;
+      color: var(--primary-bg-dark);
+      fill: var(--primary-bg-dark);
+      transform: translateY(7px);
+      transition: all 0.6s ease-in-out;
     }
+  }
 
-    .link {
-        display: flex;
-        align-items: center;
-        color: var(--text-color);
-        /*margin: 0 20px;*/
-        padding: 0 30px;
-        background-color: var(--primary-bg-dark);
-        height: 100%;
-        position: relative;
-    }
-
-    .marker {
-        position: absolute;
-        top: 7px;
-        left: 0;
-        width: 76px;
-        height: 50px;
-        background-color: #fce38a;
-        z-index: 1;
-        transform: skew(26deg);
-        transition: all .5s ease-in-out;
-    }
-
-    .active {
-        transition: all .5s ease-in-out;
-        .text {
-            color: var(--primary-bg-dark);
-            fill: var(--primary-bg-dark);
-            transform: translateY(7px);
-            transition: all .6s ease-in-out;
-        }
-    }
-
-    .home {
-        /*margin: 0 30px;*/
-        position: relative;
-
-    }
+  .home {
+    /*margin: 0 30px;*/
+    position: relative;
+  }
 }
-

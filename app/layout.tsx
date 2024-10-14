@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import 'bootstrap/dist/css/bootstrap-grid.css';
-import 'bootstrap/dist/css/bootstrap-utilities.css'
-import 'bootstrap/dist/css/bootstrap-reboot.css';
+import "bootstrap/dist/css/bootstrap-grid.css";
+import "bootstrap/dist/css/bootstrap-utilities.css";
+import "bootstrap/dist/css/bootstrap-reboot.css";
 import "./globals.css";
-import {roboto, montserrat, logoFont} from "@/app/fonts";
-import {Header} from "@/app/components/Header/Header";
+import { roboto, montserrat, logoFont } from "@/app/fonts";
+import { Header } from "@/app/components/Header/Header";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,11 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable}`}>
-        <Header/>
-        <main>
-          {children}
-        </main>
+      <body
+        className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable}`}
+      >
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );

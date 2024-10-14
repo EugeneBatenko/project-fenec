@@ -1,15 +1,16 @@
 :root {
-
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: #fce38a;
-    --primary-color-light: #FDF0D5;
+    --primary-color-light: #fdf0d5;
 
-    --primary-bg-dark: #262626;
+    --primary-bg-dark: #1a1a1a;
+    --primary-dark: #262626;
     --text-color: #fff;
-
+    --white-color: #fff;
+    --text-color-reverse: #000;
   }
 }
 
@@ -27,6 +28,7 @@ body {
 }
 
 body {
+  background-color: var(--primary-bg-dark);
   /*color: rgb(var(--foreground-rgb));*/
   /*background: linear-gradient(*/
   /*    to bottom,*/
@@ -50,9 +52,27 @@ li {
   list-style: none;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
   font-family: var(--title-font);
   margin: 0;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.text-color-primary {
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--text-color);
 }
 
 h1.logo {
@@ -61,6 +81,22 @@ h1.logo {
   &:first-letter {
     color: var(--primary-color);
   }
+}
+
+button {
+  border: none;
+}
+
+.text-card {
+  background-color: var(--primary-dark);
+  padding: 2rem 1rem;
+  border-bottom: 2px solid transparent;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #fdf0d5, #fce38a);
+}
+
+.bg-section {
+  background-color: var(--primary-dark);
 }
 
 /*@media (prefers-color-scheme: dark) {*/
