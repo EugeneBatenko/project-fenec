@@ -1,59 +1,89 @@
-import { FaNodeJs } from "react-icons/fa6";
+import {FaNodeJs, FaReact} from "react-icons/fa6";
+import { RiNextjsLine } from "react-icons/ri";
+import { SiRubyonrails } from "react-icons/si";
 import styles from './index.module.css';
+
+import Image from "next/image";
+import LibraryImg from '@/public/projects/library.webp';
+import FennecImg from '@/public/projects/fennec.webp';
+import GameImg from '@/public/projects/gaming.webp';
+import {LinkButton} from "@/ui/buttons/LinkButton";
 
 
 export const Projects = () => {
     return (
         <section className="mb-5 bg-section py-5">
             <div className="container">
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col-12">
-                        <h2 className="h2 text-center mb-5">Projects</h2>
+                        <h2 className="h2 text-center mb-5 header-line">Projects</h2>
                     </div>
+
                     <div className="col-4">
-                        <div className={styles.card}>
-                            {/*https://littlesnippets.net/snip1364*/}
-                            <figure className={styles.figure}>
-                                <img className={styles.img} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample58.jpg"
-                                     alt="sample58"/>
-                                <figcaption className={styles.figcaption}>
-                                    <h3 className={styles.title}>Will Barrow</h3>
-                                    <p className={styles.text}>Which is worse, that everyone has his price, or that the price is always so
-                                        low.</p>
-                                </figcaption>
-                                <FaNodeJs size={50} className={styles.icon}/>
-                            </figure>
-                        </div>
+                        {/*https://littlesnippets.net/snip1364*/}
+                        <figure className={styles.figure}>
+                            <Image
+                                src={LibraryImg}
+                                className={styles.img}
+                                alt="library"
+                                quality={100}
+                                style={{
+                                    objectFit: "cover",
+                                }}
+                            />
+                            <figcaption className={styles.figcaption}>
+                                <h3 className={styles.title}>NDA</h3>
+                                <p className={styles.text}>SaaS platform for library with barcode scanner. Based on Ruby-on-Rails</p>
+                            </figcaption>
+                            <SiRubyonrails size={50} className={styles.icon}/>
+                        </figure>
                     </div>
+
                     <div className="col-4">
-                        <div className={styles.card}>
-                            {/*https://littlesnippets.net/snip1288*/}
-                            <figure className={styles.figure}>
-                                <img className={styles.img} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample67.jpg"
-                                     alt="sample67"/>
-                                <figcaption className={styles.figcaption}>
-                                    <h3 className={styles.title}>Eleanor Fant</h3>
-                                    <p className={styles.text}>Which is worse, that everyone has his price, or that the price is always so
-                                        low.</p>
-                                </figcaption>
-                                <FaNodeJs size={50} className={styles.icon}/>
-                            </figure>
-                        </div>
+                        {/*https://littlesnippets.net/snip1288*/}
+                        <figure className={`${styles.figure} ${styles.central}`}>
+                            <Image
+                                src={FennecImg}
+                                className={styles.img}
+                                alt="library"
+                                quality={100}
+                                style={{
+                                    objectFit: "cover",
+                                }}
+                            />
+                            <figcaption className={styles.figcaption}>
+                                <h3 className={styles.title}>This Website</h3>
+                                <p className={styles.text}>Yeah! Why not :)</p>
+                            </figcaption>
+                            <FaReact size={50} className={styles.icon}/>
+                            <RiNextjsLine size={50} className={styles.icon}/>
+                        </figure>
                     </div>
+
                     <div className="col-4">
-                        <div className={styles.card}>
-                            {/*https://littlesnippets.net/snip1401*/}
-                            <figure className={styles.figure}>
-                                <img className={styles.img} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg"
-                                     alt="sample87"/>
-                                <figcaption className={styles.figcaption}>
-                                    <h3 className={styles.title}>Will Barrow</h3>
-                                    <p className={styles.text}>The only skills I have the patience to learn are those that have no real
-                                        application in life. </p>
-                                </figcaption>
-                                <FaNodeJs size={50} className={styles.icon}/>
-                            </figure>
-                        </div>
+                        {/*https://littlesnippets.net/snip1401*/}
+                        <figure className={`${styles.figure} ${styles.reversed}`}>
+                            <Image
+                                src={GameImg}
+                                className={styles.img}
+                                alt="library"
+                                quality={100}
+                                style={{
+                                    objectFit: "cover",
+                                }}
+                            />
+                            <figcaption className={styles.figcaption}>
+                                <h3 className={styles.title}>NDA</h3>
+                                <p className={styles.text}>CS:GO matchmaking system based on AWS infrastructure (EC2,
+                                    Lambdas)</p>
+                            </figcaption>
+                            <FaNodeJs size={50} className={styles.icon}/>
+                        </figure>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col d-flex justify-content-center">
+                        <LinkButton href="/projects" name="Learn More"/>
                     </div>
                 </div>
             </div>

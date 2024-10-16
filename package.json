@@ -23,11 +23,13 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.15",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "typescript": "^5"
   },
   "engines": {
-    "node": "20.x"
+    "node": ">=20.x"
   }
 }

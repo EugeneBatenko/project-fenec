@@ -28,7 +28,7 @@
         border: 1px solid;
         border-image-slice: 1;
         z-index: 1;
-        border-image-source: linear-gradient(to left, #fdf0d5, #fce38a);
+        border-image-source: linear-gradient(to left, var(--primary-color-light), var(--primary-color));
     }
 
     .text {

@@ -2,101 +2,109 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #fce38a;
-    --primary-color-light: #fdf0d5;
+    :root {
+        --primary-color: #fce38a;
+        --primary-color-light: #fdf0d5;
 
-    --primary-bg-dark: #1a1a1a;
-    --primary-dark: #262626;
-    --text-color: #fff;
-    --white-color: #fff;
-    --text-color-reverse: #000;
-  }
+        --primary-bg-dark: #1a1a1a;
+        --primary-dark: #262626;
+        --text-color: #fff;
+        --white-color: #fff;
+        --text-color-reverse: #000;
+    }
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  font-family: var(--main-font);
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: var(--main-font);
 }
 
 body {
-  background-color: var(--primary-bg-dark);
-  /*color: rgb(var(--foreground-rgb));*/
-  /*background: linear-gradient(*/
-  /*    to bottom,*/
-  /*    transparent,*/
-  /*    rgb(var(--background-end-rgb))*/
-  /*  )*/
-  /*  rgb(var(--background-start-rgb));*/
+    background-color: var(--primary-bg-dark);
+    /*color: rgb(var(--foreground-rgb));*/
+    /*background: linear-gradient(*/
+    /*    to bottom,*/
+    /*    transparent,*/
+    /*    rgb(var(--background-end-rgb))*/
+    /*  )*/
+    /*  rgb(var(--background-start-rgb));*/
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--text-color);
-  font-family: var(--title-font);
-  margin: 0;
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    font-family: var(--title-font);
+    margin: 0;
 }
 
 h2 {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 .text-color-primary {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 p {
-  color: var(--text-color);
+    color: var(--text-color);
 }
 
 h1.logo {
-  font-family: var(--logo-font);
-  font-weight: 900;
-  &:first-letter {
-    color: var(--primary-color);
-  }
+    font-family: var(--logo-font);
+    font-weight: 900;
+
+    &:first-letter {
+        color: var(--primary-color);
+    }
 }
 
 button {
-  border: none;
+    border: none;
 }
 
 .text-card {
-  background-color: var(--primary-dark);
-  padding: 2rem 1rem;
-  border-bottom: 2px solid transparent;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to left, #fdf0d5, #fce38a);
+    background-color: var(--primary-dark);
+    padding: 2rem 1rem;
+    border-bottom: 2px solid transparent;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, var(--primary-color-light), var(--primary-color));
 }
 
 .bg-section {
-  background-color: var(--primary-dark);
+    background-color: var(--primary-dark);
+}
+
+.header-line {
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        width: 3rem;
+        height: 3px;
+        margin: 1rem auto;
+        background-color: var(--primary-color);
+    }
 }
 
 /*@media (prefers-color-scheme: dark) {*/

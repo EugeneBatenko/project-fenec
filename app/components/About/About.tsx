@@ -3,6 +3,7 @@ import {Tab, Tabs} from "@/ui/tabs/Tabs";
 import SkillsPipe from "@/ui/skills/SkillsPipe";
 
 import {FaReact} from "react-icons/fa6";
+import {SectionHeader} from "@/ui/headers/SectionHeader";
 
 
 export const About = () => {
@@ -23,9 +24,8 @@ export const About = () => {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-6">
-                        <h2 className={styles.sectionHeader}>
-                            <span className={styles.text}>About me</span>
-                        </h2>
+                        <SectionHeader title="About me"/>
+
                         <p className="text-card my-4">
                             Hi, I am Eugene. As a passionate Full-Stack Developer, I
                             specialize in building dynamic, high-performance web applications.
@@ -52,9 +52,7 @@ export const About = () => {
 
                 <div className="row mb-5">
                     <div className="col">
-                        <h2 className={`${styles.sectionHeader} reversed mb-5`}>
-                            <span className={styles.text}>Skills</span>
-                        </h2>
+                        <SectionHeader title="Skills" reversed={true} addClassName="mb-5"/>
 
                         <Tabs classNames={tabsClasses}>
                             <Tab label="FrontEnd" classNameTab={styles.tab}>

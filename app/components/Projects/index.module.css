@@ -1,19 +1,12 @@
-.card {
-
-}
-
 .figure {
     position: relative;
     overflow: hidden;
-    margin: 10px;
-    min-width: 230px;
-    max-width: 315px;
-    max-height: 220px;
+    max-height: 250px;
     width: 100%;
     color: #000000;
     text-align: left;
-    font-size: 16px;
     background-color: #000000;
+
     & * {
         box-sizing: border-box;
         transition: all 0.35s ease;
@@ -27,11 +20,15 @@
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 120px 120px 0 120px;
-        border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent;
+        border-width: 140px 140px 0 140px;
+        border-color: rgba(252, 227, 138, 0.5) transparent transparent transparent;
         transform: translateY(-50%);
-        -webkit-transition: all 0.35s ease;
         transition: all 0.35s ease;
+    }
+
+    .img {
+        opacity: 1;
+        transform: translateZ(0); /* To prevent blurs during hover */
     }
 
     &:hover {
@@ -39,11 +36,48 @@
             transform: translateX(0);
             opacity: 1;
         }
+
         .img {
             zoom: 1;
-            filter: alpha(opacity=50);
             opacity: 0.5;
         }
+    }
+}
+
+.img {
+    width: 100%;
+    height: 250px;
+}
+
+.reversed {
+    text-align: right;
+    &::after {
+        left: unset;
+        top: unset;
+        bottom: 50%;
+        right: 40%;
+    }
+
+    .figcaption {
+        right: 0;
+        left: unset;
+        transform: translateX(150%);
+        &::before {
+            transform: translateY(-50%);
+            right: 100%;
+            left: unset;
+            border-width: 140px 140px 140px 0;
+            border-color: transparent var(--primary-color) transparent transparent;
+        }
+    }
+
+    .title, .text {
+        transform: translateX(-30px);
+    }
+
+    .icon {
+        left: 0;
+        right: unset;
     }
 }
 
@@ -66,7 +100,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    color: #ffffff;
+    color: var(--primary-color);
     opacity: 0;
     margin: 1rem;
 }
@@ -76,7 +110,6 @@
 }
 
 .img {
-    max-width: 100%;
     backface-visibility: hidden;
 }
 
@@ -88,9 +121,10 @@
     z-index: 1;
     opacity: 1;
     padding: 30px 10px 30px 0;
-    background-color: #ffffff;
-    width: 40%;
+    background-color: var(--primary-color);
+    width: 50%;
     transform: translateX(-150%);
+
     &::before {
         position: absolute;
         top: 50%;
@@ -100,7 +134,82 @@
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 120px 0 120px 120px;
-        border-color: transparent transparent transparent #ffffff;
+        border-width: 140px 0 140px 140px;
+        border-color: transparent transparent transparent var(--primary-color);
+    }
+}
+
+.central {
+    text-align: center;
+    &::before {
+        position: absolute;
+        bottom: 0;
+        top: 100%;
+        right: 0;
+        left: 0;
+        content: '';
+        background-color: var(--primary-color);
+        z-index: 1;
+        opacity: 0.5;
+        transition: all 0.35s 0.3s ease-in;
+    }
+    &::after {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-style: solid;
+        border-width: 200px 200px 0 200px;
+        border-color: var(--primary-color) transparent transparent transparent;
+        opacity: 0.9;
+        transition: all 0.35s 0s ease-out;
+    }
+    .figcaption {
+        bottom: unset;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        transform: unset;
+        background-color: unset;
+    }
+    .title {
+        margin-top: 2rem;
+    }
+    .text {
+        margin-top: 1rem;
+    }
+    .title, .text {
+        width: 100%;
+        transform: unset;
+        opacity: 0;
+        padding: 0 2rem;
+    }
+    .icon {
+        left: 0;
+        right: 0;
+        margin: 0 auto 1rem auto;
+        color: var(--primary-bg-dark);
+        z-index: 1;
+        &:last-of-type {
+            left: 50px;
+        }
+        &:first-of-type {
+            right: 50px;
+        }
+    }
+
+    &:hover {
+        .title, .text {
+            opacity: 1;
+            transform: translate(0, -50%);
+        }
+        &::before {
+            top: 0;
+            transition: all 0.35s 0s ease-out;
+        }
+        &::after {
+            bottom: 25%;
+            transform: translateX(-50%);
+            transition: all 0.35s 0.2s ease-in;
+        }
     }
 }
