@@ -1,6 +1,5 @@
 import {SectionHeader} from "@/ui/headers/SectionHeader";
 import { MdAlternateEmail } from "react-icons/md";
-import { FaLinkedinIn } from "react-icons/fa6";
 import { ImLocation2 } from "react-icons/im";
 import { FaHeartBroken } from "react-icons/fa";
 
@@ -18,11 +17,11 @@ export const GetInTouch = () => {
                 <div className="row">
                     <div className="col">
                         <p className="text-card">
-                            I'm always open to discussing new projects, creative ideas, or opportunities to be part of
+                            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of
                             your vision. Whether you have a specific project in mind or just want to connect, feel free
-                            to reach out. Let's collaborate and bring your ideas to life! <br/><br/>
+                            to reach out. Let&apos;s collaborate and bring your ideas to life! <br/><br/>
 
-                            You can contact me via email or connect with me on social media. I'll get back to you as
+                            You can contact me via email or connect with me on social media. I&apos;ll get back to you as
                             soon as possible. Looking forward to hearing from you!
                         </p>
                     </div>

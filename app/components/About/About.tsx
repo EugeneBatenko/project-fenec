@@ -2,7 +2,6 @@ import styles from "./index.module.css";
 import {Tab, Tabs} from "@/ui/tabs/Tabs";
 import SkillsPipe from "@/ui/skills/SkillsPipe";
 
-import {FaReact} from "react-icons/fa6";
 import {SectionHeader} from "@/ui/headers/SectionHeader";
 
 
@@ -102,7 +101,7 @@ export const About = () => {
                                     small applications in these languages, which has expanded my understanding of
                                     different programming paradigms and enhanced my adaptability when working with
                                     diverse codebases.<br/>
-                                    Also I have some experience in IoT with Raspberry PI, AI API's like OpenAI API and
+                                    Also I have some experience in IoT with Raspberry PI, AI API&apos;s like OpenAI API and
                                     different tools like Postman, Mongo Compass, MySQL Workbench etc.
                                 </p>
                                 <SkillsPipe skillSet="other"/>

@@ -7,7 +7,8 @@ type ContextType = {
 
 export const ThemeContext = createContext<ContextType | undefined>(undefined);
 
-export const ThemeProvider = ({ children }: PropsWithChildren<{}>) => {
+
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState<ContextType["theme"]>("");
 
   return (
