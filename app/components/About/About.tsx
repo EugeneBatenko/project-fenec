@@ -3,6 +3,7 @@ import {Tab, Tabs} from "@/ui/tabs/Tabs";
 import SkillsPipe from "@/ui/skills/SkillsPipe";
 
 import {SectionHeader} from "@/ui/headers/SectionHeader";
+import {getYears} from "@/app/components/utils/dateHooks";
 
 
 export const About = () => {
@@ -11,12 +12,6 @@ export const About = () => {
         panel: styles.panel,
         content: styles.content,
     }
-
-    const getYears = (birthDate: string): number => {
-        const currentDate = new Date();
-        const setData = new Date(birthDate).getTime();
-        return Math.floor((currentDate.getTime() - setData) / 3.15576e+10);
-    };
 
     return (
         <section className="mb-5">

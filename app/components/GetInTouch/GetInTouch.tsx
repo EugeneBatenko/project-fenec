@@ -1,7 +1,8 @@
-import {SectionHeader} from "@/ui/headers/SectionHeader";
+import { SectionHeader } from "@/ui/headers/SectionHeader";
 import { MdAlternateEmail } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
-import { FaHeartBroken } from "react-icons/fa";
+import { FaHeartBroken, FaGithub, FaCodepen, FaLinkedinIn } from "react-icons/fa";
+import styles from './index.module.css';
 
 import Link from "next/link";
 
@@ -29,9 +30,26 @@ export const GetInTouch = () => {
                     <div className="col">
                         <h3 className="mb-3">Contact info</h3>
                         <p className="d-flex align-items-center"><MdAlternateEmail className="me-2" size={30} /><Link href="mailto:batenko.e.v@gmail.com">batenko.e.v@gmail.com</Link></p>
-                        <p className="d-flex align-items-center"><ImLocation2 className="me-2" size={30} /> Ukraine <FaHeartBroken className="mx-1"/></p>
+                        <p className="d-flex align-items-center mb-5"><ImLocation2 className="me-2" size={30} /> Ukraine <FaHeartBroken className="mx-1"/></p>
 
-
+                        {/*https://codepen.io/Stockin/pen/bzdNOq*/}
+                        <ul className={`${styles.list} m-auto mb-0`}>
+                            <li className={styles.item}>
+                                <Link className={styles.link} href="https://github.com/EugeneBatenko" target="_blank">
+                                    <FaGithub className={styles.icon}/>
+                                </Link>
+                            </li>
+                            <li className={styles.item}>
+                                <Link className={styles.link} href="https://www.linkedin.com/in/eugene-batenko-west-lion/" target="_blank">
+                                    <FaLinkedinIn className={styles.icon}/>
+                                </Link>
+                            </li>
+                            <li className={styles.item}>
+                                <Link className={styles.link} href="https://codepen.io/EugeneBatenko" target="_blank">
+                                    <FaCodepen className={styles.icon}/>
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

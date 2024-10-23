@@ -9,8 +9,10 @@ import React, { useEffect, useState } from "react";
 export const Header = () => {
   const pathname = usePathname();
   const [markerStyle, setMarkerStyle] = useState({ left: 0, width: 0 });
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
     const updateMarkerPosition = () => {
       const activeElement = document.querySelector(`.${styles.active}`);
       if (activeElement) {
@@ -27,6 +29,7 @@ export const Header = () => {
     // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("resize", updateMarkerPosition);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [pathname]);
 
@@ -39,8 +42,17 @@ export const Header = () => {
     setMarkerStyle({ left, width });
   };
 
+  // Sticky scroll
+  const handleScroll = () => {
+    if (window.scrollY >= 300) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
   return (
-    <header className={`${styles.header} d-flex align-items-center`}>
+    <header className={`${styles.header} d-flex align-items-center ${isSticky ? styles.sticky : ''}`}>
       <nav className={styles.navBar}>
         <ul className={`d-flex`}>
           <div
