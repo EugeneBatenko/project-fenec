@@ -1,6 +1,3 @@
-:root {
-}
-
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: #fce38a;
@@ -29,6 +26,7 @@ body {
 
 body {
     background-color: var(--primary-bg-dark);
+    /*position: relative;*/
     /*color: rgb(var(--foreground-rgb));*/
     /*background: linear-gradient(*/
     /*    to bottom,*/

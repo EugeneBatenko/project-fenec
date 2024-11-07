@@ -7,17 +7,26 @@ import { roboto, montserrat, logoFont } from "@/app/fonts";
 import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
 import React from "react";
+import type { Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: "Fennec Fox",
   description: "Personal portfolio",
 };
 
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    minimumScale: 1,
+    userScalable: false,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body

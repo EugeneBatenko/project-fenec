@@ -1,0 +1,227 @@
+.navBar {
+    display: flex;
+    height: 100%;
+    width: 250px;
+    position: absolute;
+    right: 0;
+    background-color: var(--primary-bg-dark);
+    margin: 0 0 0 auto;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        left: -25px;
+        border-top: 50px solid var(--primary-bg-dark);
+        border-left: 25px solid transparent;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        right: 15px;
+        width: 76px;
+        height: 50px;
+        background-color: #fce38a;
+        z-index: 1;
+        transform: skew(26deg);
+        transition: all 0.4s ease-in-out;
+    }
+}
+
+.hamburger {
+    width: 42px;
+    height: 42px;
+    /*display: block;*/
+    position: relative;
+    margin: 0 50px 0 auto;
+    background-color: transparent;
+}
+
+.menuTrigger, .closeTrigger {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    z-index: 10;
+}
+
+.menuTrigger {
+    .triggerBar {
+        display: block;
+        height: 4px;
+        background-color: var(--primary-bg-dark);
+        margin-bottom: 3px;
+        transform: rotate(-45deg) translate(0, 0);
+    }
+
+    .triggerBar.top {
+        width: 50%;
+        transition: transform 1s ease-out .2s;
+    }
+
+    .triggerBar.middle {
+        width: 100%;
+        transition: transform 1s ease-out;
+    }
+
+    .triggerBar.bottom {
+        width: 50%;
+        margin-left: 50%;
+        transition: transform 1s ease-in-out .1s;
+    }
+}
+
+.closeTrigger {
+    .closeTriggerBar {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: var(--primary-bg-dark);
+    }
+
+    .closeTriggerBar.left {
+        transform: translateX(100px) translateY(-100px) rotate(-45deg);
+        transition: transform .2s ease-in;
+    }
+    .closeTriggerBar.right {
+        transform: translateX(-100px) translateY(-100px) rotate(45deg);
+        transition: transform .2s ease-in .1s;
+    }
+}
+
+.navBar.open {
+    .triggerBar.top, .triggerBar.middle, .triggerBar.bottom {
+        transform: rotate(-45deg) translate(100px, 0);
+    }
+
+    .triggerBar.top {
+        transition: transform .4s ease-in .1s;
+    }
+
+    .triggerBar.middle {
+        transition: transform .4s ease-in;
+    }
+
+    .triggerBar.bottom {
+        transition: transform .4s ease-in .2s;
+    }
+
+    .closeTriggerBar.left {
+        transform: translateX(0) translateY(8px) rotate(-45deg);
+        transition: transform .8s ease-out;
+    }
+
+    .closeTriggerBar.right {
+        transform: translateX(0) translateY(4px) rotate(45deg);
+        transition: transform .8s ease-out .2s;
+    }
+}
+
+.innerContainer {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+
+    .bgContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        width: 200vw;
+        height: 200vh;
+        position: absolute;
+        transform: rotate(-45deg) translate(0, -30%);
+
+        @media (height >= 768px) {
+            width: 300vw;
+            transform: rotate(-45deg) translate(10%, -15%);
+        }
+
+        @media (height <= 768px) and (width >= 480px) {
+            width: 350vw;
+            height: 300vh;
+            transform: rotate(-45deg) translate(10%, -25%);
+        }
+
+        @media screen and (height <= 768px) {
+            width: 250vw;
+            height: 300vh;
+            transform: rotate(-45deg) translate(5%, -60%);
+        }
+
+        @media (width <= 480px) and (height <= 640px) {
+            width: 250vw;
+            height: 300vh;
+            transform: rotate(-45deg) translate(25%, -60%);
+        }
+
+        @media (height <= 768px) and (width <= 500px) {
+            width: 350vw;
+            height: 300vh;
+            transform: rotate(-45deg) translate(10%, -20%);
+        }
+        @media (height >= 768px) and (width >= 420px) {
+            width: 350vw;
+            height: 300vh;
+            transform: rotate(-45deg) translate(10%, -25%);
+        }
+
+    }
+
+    .menuBg {
+        width: 100%;
+        height: 20%;
+        background-color: var(--primary-bg-dark);
+        transform-origin: right;
+        margin-bottom: -1px; /* Fix small gap */
+    }
+}
+
+.menuContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.menuList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: inherit;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    backface-visibility: hidden;
+    padding: 10rem 0 2rem 0;
+    overflow: auto;
+
+    .menuItemLink {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+    .menuItemMarker {
+
+    }
+    .menuItemText {
+        font-size: 2rem;
+        color: var(--text-color)
+    }
+}
+
+.active {
+    & > svg {
+        fill: var(--primary-color);
+    }
+    .menuItemText {
+        color: var(--primary-color)
+    }
+}
