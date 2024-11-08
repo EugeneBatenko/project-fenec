@@ -15,7 +15,7 @@
         height: 0;
         left: -25px;
         border-top: 50px solid var(--primary-bg-dark);
-        border-left: 25px solid transparent;
+        border-left: 26px solid transparent;
     }
 
     &::after {
@@ -180,7 +180,7 @@
         height: 20%;
         background-color: var(--primary-bg-dark);
         transform-origin: right;
-        margin-bottom: -1px; /* Fix small gap */
+        margin-bottom: -2px; /* Fix small gap */
     }
 }
 

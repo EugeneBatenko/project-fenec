@@ -4,6 +4,9 @@
     position: relative;
     padding: 0 1rem;
     color: var(--text-color-reverse);
+    @media screen and (width <= 576px ) {
+        font-size: 2.2rem;
+    }
 
     &::after,
     &::before {

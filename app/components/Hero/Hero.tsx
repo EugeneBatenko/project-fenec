@@ -18,14 +18,14 @@ export const Hero = () => {
         }}
       />
 
-      <div className="container d-flex align-items-center z-3">
+      <div className="container d-flex align-items-center justify-content-center justify-content-lg-start z-3">
         <div className="row">
-          <div className="col d-flex align-items-center">
+          <div className="col d-flex flex-column flex-lg-row align-items-center">
             <Logo fill={"#fff"} width={200} height={200} className={styles.logoEmblem} />
             <div className={styles.text}>
               <h1 className="logo">eugene</h1>
               <span>
-                Full-stack <br /> developer
+                Full-stack <br className="d-none d-lg-block" /> developer
               </span>
             </div>
           </div>

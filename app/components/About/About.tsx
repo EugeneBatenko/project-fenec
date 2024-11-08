@@ -17,7 +17,7 @@ export const About = () => {
         <section className="mb-5">
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-6">
+                    <div className="col-md-6 col-12">
                         <SectionHeader title="About me"/>
 
                         <p className="text-card my-4">
@@ -29,7 +29,7 @@ export const About = () => {
                         </p>
                     </div>
 
-                    <div className="col-6">
+                    <div className="col-md-6 col-12 mb-5">
                         <div className="d-flex justify-content-around">
                             <div className="d-flex">
                                 <h3 className="text-color-primary fs-1 me-2">{getYears('2019-10-20')}+</h3>

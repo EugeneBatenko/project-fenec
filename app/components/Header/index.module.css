@@ -20,7 +20,7 @@
             height: 0;
             left: -25px;
             border-top: 50px solid var(--primary-bg-dark);
-            border-left: 25px solid transparent;
+            border-left: 26px solid transparent;
         }
 
 
@@ -36,8 +36,8 @@
         display: flex;
         align-items: center;
         color: var(--text-color);
-        /*margin: 0 20px;*/
-        padding: 0 30px;
+        margin: 0 -1px; /* gap fix */
+        padding: 0 31px;
         background-color: var(--primary-bg-dark);
         height: 100%;
         position: relative;
