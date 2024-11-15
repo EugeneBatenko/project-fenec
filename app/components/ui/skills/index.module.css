@@ -22,5 +22,4 @@
     aspect-ratio: 8/5;
     clip-path: polygon(0 0,var(--s) 0,100% 50%,var(--s) 100%,0 100%,calc(100% - var(--s)) 50%);
     background-color: var(--primary-color);
-
 }

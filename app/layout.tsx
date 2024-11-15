@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap-grid.css";
 import "bootstrap/dist/css/bootstrap-utilities.css";
 import "bootstrap/dist/css/bootstrap-reboot.css";
 import "./globals.css";
-import { roboto, montserrat, logoFont } from "@/app/fonts";
+import {roboto, montserrat, logoFont, fontawsome} from "@/app/fonts";
 import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
 import React from "react";
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable}`}
+        className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable} ${fontawsome.variable}`}
       >
         <Header />
         <main>{children}</main>

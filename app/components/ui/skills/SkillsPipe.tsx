@@ -1,4 +1,6 @@
-import {FC} from "react";
+"use client"
+
+import {FC, useEffect, useMemo} from "react";
 
 import {
     DiCode, DiHtml5, DiCss3, DiJavascript1, DiReact, DiSass, DiNpm,
@@ -14,6 +16,7 @@ import {GrMysql} from "react-icons/gr";
 import {IoInfiniteSharp} from "react-icons/io5";
 import styles from "./index.module.css";
 
+import {animated, useTrail} from '@react-spring/web'
 
 type IconItem = {
     component: FC<{ size: number }>;
@@ -75,10 +78,11 @@ const otherIcons: IconItem[] = [
 
 
 interface SkillsPipeProps {
-    skillSet: 'frontend' | 'backend' | 'devops' | 'other';
+    skillSet: 'frontend' | 'backend' | 'devops' | 'other',
+    additionalClassName?: string
 }
 
-const SkillsPipe: FC<SkillsPipeProps> = ({skillSet}) => {
+const SkillsPipe: FC<SkillsPipeProps> = ({skillSet, additionalClassName}) => {
     const icons = (() => {
         switch (skillSet) {
             case 'frontend':
@@ -94,16 +98,34 @@ const SkillsPipe: FC<SkillsPipeProps> = ({skillSet}) => {
         }
     })();
 
+    const [trail, api] = useTrail(icons.length, () => ({
+        transform: "translateX(-20%)",
+        opacity: 0,
+
+    }), []);
+
+    useEffect(() => {
+        api.start({
+            opacity: 1,
+            transform: "translateX(0)",
+            config: { duration: 100 },
+        })
+    }, [skillSet, api])
+
+    const renderIcons = useMemo(
+        () => trail.map(((props, index) => {
+            const IconComponent = icons[index].component;
+            return (
+                <animated.span style={props} key={index + Math.random()} className={styles[icons[index].className]}>
+                    <IconComponent size={icons[index].size}/>
+                </animated.span>
+            );
+        })), [trail, icons]
+    )
+
     return (
-        <div className={styles.skillsPipe}>
-            {icons.map((icon, index) => {
-                const IconComponent = icon.component;
-                return (
-                    <span key={index} className={styles[icon.className]}>
-                        <IconComponent size={icon.size}/>
-                    </span>
-                );
-            })}
+        <div className={`${styles.skillsPipe} ${additionalClassName}`}>
+            {renderIcons}
         </div>
     );
 };

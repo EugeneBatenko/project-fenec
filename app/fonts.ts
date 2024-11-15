@@ -21,3 +21,10 @@ export const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
   variable: "--title-font",
 });
+
+export const fontawsome = localFont({
+  src: "../public/fonts/fa-brands-400.woff2",
+  weight: "400",
+  style: "normal",
+  variable: "--icon-font"
+})
