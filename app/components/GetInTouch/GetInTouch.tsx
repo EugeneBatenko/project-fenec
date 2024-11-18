@@ -16,7 +16,7 @@ export const GetInTouch = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col">
+                    <div className="col-lg-8 col-12">
                         <p className="text-card">
                             I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of
                             your vision. Whether you have a specific project in mind or just want to connect, feel free
@@ -27,7 +27,7 @@ export const GetInTouch = () => {
                         </p>
                     </div>
 
-                    <div className="col">
+                    <div className="col-lg-4 col-12">
                         <h3 className="mb-3">Contact info</h3>
                         <p className="d-flex align-items-center"><MdAlternateEmail className="me-2" size={30} /><Link href="mailto:batenko.e.v@gmail.com">batenko.e.v@gmail.com</Link></p>
                         <p className="d-flex align-items-center mb-5"><ImLocation2 className="me-2" size={30} /> Ukraine <FaHeartBroken className="mx-1"/></p>

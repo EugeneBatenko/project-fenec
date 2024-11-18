@@ -31,7 +31,21 @@
         transform: translateZ(0); /* To prevent blurs during hover */
     }
 
-    &:hover {
+    @media (width > 991px) {
+        &:hover {
+            &::after, .figcaption, .icon {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            .img {
+                zoom: 1;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    @media (width <= 991px) {
         &::after, .figcaption, .icon {
             transform: translateX(0);
             opacity: 1;
@@ -64,7 +78,7 @@
         transform: translateX(150%);
         &::before {
             transform: translateY(-50%);
-            right: 100%;
+            right: calc(100% - 1px); /* Fix gap on scaling */
             left: unset;
             border-width: 140px 140px 140px 0;
             border-color: transparent var(--primary-color) transparent transparent;
@@ -78,6 +92,18 @@
     .icon {
         left: 0;
         right: unset;
+    }
+
+    @media (width <= 991px) {
+        &::after, .figcaption, .icon {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .img {
+            zoom: 1;
+            opacity: 0.5;
+        }
     }
 }
 
@@ -129,7 +155,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        left: 100%;
+        left: calc(100% - 1px); /* Fix gap on scaling */
         content: '';
         width: 0;
         height: 0;
@@ -170,6 +196,9 @@
         padding: 0;
         transform: unset;
         background-color: unset;
+        &::before {
+            content: none;
+        }
     }
     .title {
         margin-top: 2rem;
@@ -196,8 +225,24 @@
             right: 50px;
         }
     }
-
-    &:hover {
+    @media (width > 991px) {
+        &:hover {
+            .title, .text {
+                opacity: 1;
+                transform: translate(0, -50%);
+            }
+            &::before {
+                top: 0;
+                transition: all 0.35s 0s ease-out;
+            }
+            &::after {
+                bottom: 25%;
+                transform: translateX(-50%);
+                transition: all 0.35s 0.2s ease-in;
+            }
+        }
+    }
+    @media (width <= 991px) {
         .title, .text {
             opacity: 1;
             transform: translate(0, -50%);
@@ -212,4 +257,5 @@
             transition: all 0.35s 0.2s ease-in;
         }
     }
+
 }

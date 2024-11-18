@@ -19,7 +19,7 @@ export const Projects = () => {
                         <h2 className="h2 text-center mb-5 header-line">Projects</h2>
                     </div>
 
-                    <div className="col-4">
+                    <div className="col-lg-4 col-md-6 col-12">
                         {/*https://littlesnippets.net/snip1364*/}
                         <figure className={styles.figure}>
                             <Image
@@ -39,7 +39,7 @@ export const Projects = () => {
                         </figure>
                     </div>
 
-                    <div className="col-4">
+                    <div className="col-lg-4 col-12 order-1 order-lg-0">
                         {/*https://littlesnippets.net/snip1288*/}
                         <figure className={`${styles.figure} ${styles.central}`}>
                             <Image
@@ -60,7 +60,7 @@ export const Projects = () => {
                         </figure>
                     </div>
 
-                    <div className="col-4">
+                    <div className="col-lg-4 col-md-6 col-12">
                         {/*https://littlesnippets.net/snip1401*/}
                         <figure className={`${styles.figure} ${styles.reversed}`}>
                             <Image
