@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./index.module.css";
+import styles from "./header.module.css";
 import React, {useEffect, useState} from "react";
 import {throttle} from "@/utils/throttle";
 import {MobileNav} from "@/app/components/Header/MobileNav";
@@ -31,7 +31,7 @@ export const Header = () => {
         <header className={`${styles.header} d-flex align-items-center ${isSticky ? styles.sticky : ''}`}>
             <nav className={`${styles.navBar} d-none d-md-flex`}>
                 <Navigation
-                    classNameUl={"d-flex"}
+                    classNameUl={"d-flex position-relative"}
                     classNameLink={styles.link}
                     classNameLinkActive={styles.active}
                     classNameMarker={styles.marker}

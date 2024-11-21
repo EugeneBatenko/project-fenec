@@ -6,7 +6,7 @@ import React from "react";
 import Navigation from "@/app/components/Header/Navigation";
 
 import {animated, SpringValue, useSpring, useSprings} from '@react-spring/web'
-import useMobileMenu from "@/app/store/mobileMenu";
+import useMobileMenu from "@/store/mobileMenu";
 
 export const MobileNav = () => {
     const { isOpen, toggleMenu } = useMobileMenu();

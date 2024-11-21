@@ -11,6 +11,7 @@
         height: 100%;
         position: relative;
         margin: 0 0 0 auto;
+        border-bottom: 1px solid var(--primary-color);
 
         &::before {
             content: "";
@@ -51,7 +52,7 @@
         height: 50px;
         background-color: #fce38a;
         z-index: 1;
-        transform: skew(26deg);
+        transform: skew(26deg) translateX(0);
         transition: all 0.4s ease-in-out;
     }
 

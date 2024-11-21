@@ -15,18 +15,21 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    backface-visibility: hidden;
 }
 
 html,
 body {
-    max-width: 100vw;
+    width: 100%;
     overflow-x: hidden;
     font-family: var(--main-font);
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: var(--primary-bg-dark);
-    /*position: relative;*/
+    position: relative;
     /*color: rgb(var(--foreground-rgb));*/
     /*background: linear-gradient(*/
     /*    to bottom,*/
@@ -103,6 +106,10 @@ button {
         margin: 1rem auto;
         background-color: var(--primary-color);
     }
+}
+
+.header-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /*@media (prefers-color-scheme: dark) {*/

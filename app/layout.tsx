@@ -6,12 +6,13 @@ import "./globals.css";
 import {roboto, montserrat, logoFont, fontawsome} from "@/app/fonts";
 import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
-import React from "react";
+import { Loading } from "@/ui/loading/Loading";
+import React, {Suspense} from "react";
 import type { Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: "Fennec Fox",
-  description: "Personal portfolio",
+  description: "Personal about",
 };
 
 export const viewport: Viewport = {
@@ -33,7 +34,9 @@ export default function RootLayout({
         className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable} ${fontawsome.variable}`}
       >
         <Header />
-        <main>{children}</main>
+        <Suspense fallback={<Loading/>}>
+            <main>{children}</main>
+        </Suspense>
         <Footer/>
       </body>
     </html>

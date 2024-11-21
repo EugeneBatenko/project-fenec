@@ -14,7 +14,7 @@ import {
 } from "react-icons/si";
 import {GrMysql} from "react-icons/gr";
 import {IoInfiniteSharp} from "react-icons/io5";
-import styles from "./index.module.css";
+import styles from "./skills.module.css";
 
 import {animated, useTrail} from '@react-spring/web'
 

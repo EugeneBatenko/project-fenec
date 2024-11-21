@@ -1,7 +1,7 @@
 import {FaNodeJs, FaReact} from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
 import { SiRubyonrails } from "react-icons/si";
-import styles from './index.module.css';
+import styles from './projects.module.css';
 
 import Image from "next/image";
 import LibraryImg from '@/public/projects/library.webp';

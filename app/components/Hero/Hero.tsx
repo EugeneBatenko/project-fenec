@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import styles from "./hero.module.css";
 import Image from "next/image";
 import HeroImg from "@/public/bg-hero.webp";
 import Logo from "@/public/logo.svg";
@@ -12,6 +12,7 @@ export const Hero = () => {
         src={HeroImg}
         quality={100}
         fill
+        placeholder="blur"
         style={{
           objectFit: "cover",
           objectPosition: "top",

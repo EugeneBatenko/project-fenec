@@ -1,4 +1,4 @@
-import styles from './index.module.css';
+import styles from './headers.module.css';
 
 type HeaderProps = {
     title: string;

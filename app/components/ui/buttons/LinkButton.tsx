@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./index.module.css";
+import styles from "./buttons.module.css";
 
 type LinkProps = {
     href: string;

@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import styles from "./about.module.css";
 import {Tab, Tabs} from "@/ui/tabs/Tabs";
 import SkillsPipe from "@/ui/skills/SkillsPipe";
 
@@ -6,7 +6,7 @@ import {SectionHeader} from "@/ui/headers/SectionHeader";
 import {getYears} from "@/app/components/utils/dateHooks";
 
 
-export const About = () => {
+export const AboutMe = () => {
     const tabsClasses = {
         tabs: styles.tabs,
         panel: styles.panel,

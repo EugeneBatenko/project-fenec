@@ -9,7 +9,7 @@ const useMobileMenu = create<MenuState>((set) => ({
     isOpen: false,
     toggleMenu: () =>
         set((state) => {
-            document.documentElement.style.overflow = !state.isOpen ? "hidden" : "unset";
+            document.documentElement.style.overflow = !state.isOpen ? "hidden" : "";
             return { isOpen: !state.isOpen };
         }),
 }))

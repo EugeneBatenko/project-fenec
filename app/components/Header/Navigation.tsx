@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useLayoutEffect, useState} from "react";
 import Link from "next/link";
 
 import {FaHouse} from "react-icons/fa6";
 import {usePathname} from "next/navigation";
-import {NavItem, NavProps} from "@/app/components/Header/types";
+import {NavItem, NavProps} from "@/types";
 
 const items: NavItem[] = [
     {itemName: "Home", pathname: "/", icon: FaHouse },
-    {itemName: "Portfolio", pathname: "/portfolio"},
+    {itemName: "About", pathname: "/about"},
     {itemName: "Projects", pathname: "/projects"},
-    {itemName: "Cv", pathname: "/cv"},
+    {itemName: "CV", pathname: "/cv"},
     {itemName: "Contacts", pathname: "/contacts"},
 ]
 
@@ -18,9 +18,10 @@ const Navigation = (props: NavProps) => {
 
     const [markerStyle, setMarkerStyle] = useState({left: 0, width: 0});
 
-    useEffect(() => {
+
+    useLayoutEffect(() => {
         const updateMarkerPosition = () => {
-            const activeElement = document.querySelector(`.${props.classNameLinkActive}`);
+        const activeElement = document.querySelector(`.${props.classNameLinkActive}`);
             if (activeElement) {
                 const left = (activeElement as HTMLElement).offsetLeft;
                 const width = (activeElement as HTMLElement).offsetWidth;
@@ -49,13 +50,10 @@ const Navigation = (props: NavProps) => {
 
     return (
         <ul className={props.classNameUl}>
-            {!props.isMobile
-                ? <div
+                <div
                     className={props.classNameMarker}
                     style={{left: markerStyle.left, width: markerStyle.width}}>
                 </div>
-                : ''}
-
                 {
                     items.map((item: NavItem) => (
                         <li key={item.itemName}>

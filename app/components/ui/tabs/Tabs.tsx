@@ -1,23 +1,7 @@
 "use client"
 
-import {ReactNode, FC, useState, Children, isValidElement} from "react";
-
-type TabProps = {
-    label: string;
-    children: ReactNode;
-    classNameTab?: string;
-}
-
-type TabsClassName = {
-    tabs?: string;
-    panel?: string;
-    content?: string;
-}
-
-type TabsProps = {
-    children: ReactNode;
-    classNames?: TabsClassName;
-}
+import {FC, useState, Children, isValidElement} from "react";
+import {TabProps, TabsProps} from "@/types";
 
 export const Tab: FC<TabProps> = ({children}) => {
     return <>{children}</>
