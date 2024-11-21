@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useState} from "react";
+import React, {useLayoutEffect, useState} from "react";
 import Link from "next/link";
 
 import {FaHouse} from "react-icons/fa6";

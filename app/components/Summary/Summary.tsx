@@ -8,7 +8,7 @@ export const Summary = () => {
             <div className="container">
                 <div className="row flex-md-row flex-column-reverse">
                     <div className="col z-2 py-5">
-                        <h3 className="mb-3">Hi, I'm Eugene</h3>
+                        <h3 className="mb-3">Hi, I am Eugene</h3>
                         <p>I am a skilled Full-Stack Developer from Ukraine. I am a dedicated and detail-oriented
                             developer with a strong foundation in designing, building, and optimizing web applications.
                             Skilled in both frontend and backend technologies, I specialize in creating efficient,
