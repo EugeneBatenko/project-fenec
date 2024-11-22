@@ -1,3 +1,4 @@
+import {FC} from "react";
 import { SectionHeader } from "@/ui/headers/SectionHeader";
 import { MdAlternateEmail } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
@@ -6,7 +7,8 @@ import styles from './getInTouch.module.css';
 
 import Link from "next/link";
 
-export const GetInTouch = () => {
+
+export const GetInTouch: FC = () => {
     return (
         <section className="mb-5">
             <div className="container">

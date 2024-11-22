@@ -4,9 +4,10 @@ import SkillsPipe from "@/ui/skills/SkillsPipe";
 
 import {SectionHeader} from "@/ui/headers/SectionHeader";
 import {getYears} from "@/app/components/utils/dateHooks";
+import {FC} from "react";
 
 
-export const AboutMe = () => {
+export const AboutMe: FC = () => {
     const tabsClasses = {
         tabs: styles.tabs,
         panel: styles.panel,

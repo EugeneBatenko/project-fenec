@@ -1,3 +1,4 @@
+import {FC} from "react";
 import {FaNodeJs, FaReact} from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
 import { SiRubyonrails } from "react-icons/si";
@@ -9,8 +10,7 @@ import FennecImg from '@/public/projects/fennec.webp';
 import GameImg from '@/public/projects/gaming.webp';
 import {LinkButton} from "@/ui/buttons/LinkButton";
 
-
-export const Projects = () => {
+export const Projects: FC = () => {
     return (
         <section className="mb-5 bg-section py-5">
             <div className="container">

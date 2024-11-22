@@ -1,8 +1,9 @@
+import {FC} from "react";
 import styles from "./summary.module.css";
 import Image from "next/image";
 import AboutImg from "@/public/bg-about.webp";
 
-export const Summary = () => {
+export const Summary: FC = () => {
     return (
         <section className={`${styles.section} pt-5`}>
             <div className="container">

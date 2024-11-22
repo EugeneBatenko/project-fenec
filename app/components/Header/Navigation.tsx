@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useState} from "react";
+import {FC, useLayoutEffect, useState} from "react";
 import Link from "next/link";
 
 import {FaHouse} from "react-icons/fa6";
@@ -13,7 +13,7 @@ const items: NavItem[] = [
     {itemName: "Contacts", pathname: "/contacts"},
 ]
 
-const Navigation = (props: NavProps) => {
+const Navigation: FC<NavProps> = (NavProps) => {
     const pathname = usePathname();
 
     const [markerStyle, setMarkerStyle] = useState({left: 0, width: 0});
@@ -21,7 +21,7 @@ const Navigation = (props: NavProps) => {
 
     useLayoutEffect(() => {
         const updateMarkerPosition = () => {
-        const activeElement = document.querySelector(`.${props.classNameLinkActive}`);
+        const activeElement = document.querySelector(`.${NavProps.classNameLinkActive}`);
             if (activeElement) {
                 const left = (activeElement as HTMLElement).offsetLeft;
                 const width = (activeElement as HTMLElement).offsetWidth;
@@ -37,7 +37,7 @@ const Navigation = (props: NavProps) => {
         return () => {
             window.removeEventListener("resize", updateMarkerPosition);
         };
-    }, [pathname, props.classNameLinkActive]);
+    }, [pathname, NavProps.classNameLinkActive]);
 
     const handleIndicator = (
         e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -49,21 +49,21 @@ const Navigation = (props: NavProps) => {
     };
 
     return (
-        <ul className={props.classNameUl}>
+        <ul className={NavProps.classNameUl}>
                 <div
-                    className={props.classNameMarker}
+                    className={NavProps.classNameMarker}
                     style={{left: markerStyle.left, width: markerStyle.width}}>
                 </div>
                 {
                     items.map((item: NavItem) => (
                         <li key={item.itemName}>
                             <Link
-                                className={`${props.classNameLink} ${pathname === item.pathname ? props.classNameLinkActive : ""}`}
+                                className={`${NavProps.classNameLink} ${pathname === item.pathname ? NavProps.classNameLinkActive : ""}`}
                                 href={item.pathname}
                                 onClick={(e) => {
-                                    if(!props.isMobile) handleIndicator(e)}}
+                                    if(!NavProps.isMobile) handleIndicator(e)}}
                             >
-                        <span className={props.classNameText}>
+                        <span className={NavProps.classNameText}>
                             {item.icon ? <item.icon/> : item.itemName}
                         </span>
                             </Link>

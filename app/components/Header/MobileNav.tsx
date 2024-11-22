@@ -2,13 +2,13 @@
 
 import styles from './mobile.module.css';
 import { usePathname } from 'next/navigation'
-import {useEffect} from "react";
+import {FC, useEffect} from "react";
 import Navigation from "@/app/components/Header/Navigation";
 
 import {animated, SpringValue, useSpring, useSprings} from '@react-spring/web'
 import useMobileMenu from "@/store/mobileMenu";
 
-export const MobileNav = () => {
+export const MobileNav: FC = () => {
     const { isOpen, toggleMenu } = useMobileMenu();
 
     const delays: number[] = [310, 230, 105, 210, 305];

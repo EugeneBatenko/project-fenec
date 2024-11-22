@@ -1,15 +1,11 @@
 import styles from './headers.module.css';
+import {FC} from "react";
+import {SectionHeaderProps} from "@/types";
 
-type HeaderProps = {
-    title: string;
-    reversed?: boolean;
-    addClassName?: string;
-}
-
-export const SectionHeader = (props: HeaderProps) => {
+export const SectionHeader: FC<SectionHeaderProps> = (header) => {
     return (
-        <h2 className={`${styles.sectionHeader} ${props.reversed ? styles.reversed : ""} ${props.addClassName}`}>
-            <span className={styles.text}>{props.title}</span>
+        <h2 className={`${styles.sectionHeader} ${header.reversed ? styles.reversed : ""} ${header.addClassName}`}>
+            <span className={styles.text}>{header.title}</span>
         </h2>
     )
 }

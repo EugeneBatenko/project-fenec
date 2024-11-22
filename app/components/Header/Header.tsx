@@ -1,12 +1,12 @@
 "use client";
 
 import styles from "./header.module.css";
-import React, {useEffect, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import {throttle} from "@/utils/throttle";
 import {MobileNav} from "@/app/components/Header/MobileNav";
 import Navigation from "@/app/components/Header/Navigation";
 
-export const Header = () => {
+export const Header: FC = () => {
     const [isSticky, setIsSticky] = useState(false);
 
     useEffect(() => {

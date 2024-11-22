@@ -1,9 +1,10 @@
+import {FC} from "react";
 import styles from "./hero.module.css";
 import Image from "next/image";
 import HeroImg from "@/public/bg-hero.webp";
 import Logo from "@/public/logo.svg";
 
-export const Hero = () => {
+export const Hero: FC = () => {
   return (
     <section className={`${styles.section} mb-5`}>
       <span className={styles.overlay}></span>

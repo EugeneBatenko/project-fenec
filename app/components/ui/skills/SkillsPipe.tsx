@@ -17,12 +17,7 @@ import {IoInfiniteSharp} from "react-icons/io5";
 import styles from "./skills.module.css";
 
 import {animated, useTrail} from '@react-spring/web'
-
-type IconItem = {
-    component: FC<{ size: number }>;
-    size: number;
-    className: 'mainSkill' | 'childSkill';
-};
+import {IconItem} from "@/types";
 
 const frontendIcons: IconItem[] = [
     {component: DiCode, size: 40, className: 'mainSkill'},
