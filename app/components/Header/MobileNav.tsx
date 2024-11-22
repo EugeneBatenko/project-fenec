@@ -2,7 +2,7 @@
 
 import styles from './mobile.module.css';
 import { usePathname } from 'next/navigation'
-import React from "react";
+import {useEffect} from "react";
 import Navigation from "@/app/components/Header/Navigation";
 
 import {animated, SpringValue, useSpring, useSprings} from '@react-spring/web'
@@ -38,6 +38,11 @@ export const MobileNav = () => {
     })
 
     const pathname = usePathname()
+
+    useEffect(() => {
+        useMobileMenu.setState({ isOpen: false })
+    }, [pathname]);
+
     return (
         <>
             {/*Hamburger based on https://codepen.io/karlovidek/pen/aNYWKE*/}
