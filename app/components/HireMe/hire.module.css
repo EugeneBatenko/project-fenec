@@ -1,0 +1,43 @@
+.section {
+    position: relative;
+    background-color: var(--primary-dark);
+    overflow: hidden;
+    margin-bottom: 5rem;
+    /*height: 200px;*/
+}
+
+.chevron, .triangle, .square, .parallelogram {
+    display: block;
+    position: absolute;
+    top: 0;
+    /*opacity: .3;*/
+    z-index: 1;
+    @media (width < 768px) {
+        display: none;
+    }
+}
+
+.chevron {
+    right: 75px;
+    --s: 50px;
+    width: 100px;
+    height: 100%;
+    aspect-ratio: 3/5;
+    clip-path: polygon(100% 0,calc(100% - var(--s)) 0,0 50%,calc(100% - var(--s)) 100%,100% 100%,var(--s) 50%);
+    background-color: var(--primary-color);
+}
+.triangle {
+    right: 40px;
+    width: 50px;
+    height: 100%;
+    aspect-ratio: 1/2;
+    clip-path: polygon(100% 0,0 50%,100% 100%);
+    background: var(--primary-color);
+}
+
+.square {
+    right: -60px;
+    width: 100px;
+    height: 100%;
+    background-color: var(--primary-color);
+}

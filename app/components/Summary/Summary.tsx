@@ -5,7 +5,7 @@ import AboutImg from "@/public/bg-about.webp";
 
 export const Summary: FC = () => {
     return (
-        <section className={`${styles.section} pt-5`}>
+        <section className={`${styles.section} pt-5 mb-5`}>
             <div className="container">
                 <div className="row flex-md-row flex-column-reverse">
                     <div className="col z-2 py-5">

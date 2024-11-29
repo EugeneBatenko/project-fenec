@@ -67,7 +67,7 @@ h2 {
     color: var(--primary-color);
 }
 
-p {
+p, span, time {
     color: var(--text-color);
 }
 

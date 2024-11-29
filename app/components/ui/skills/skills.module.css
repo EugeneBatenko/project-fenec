@@ -12,6 +12,9 @@
     aspect-ratio: 1/cos(30deg);
     clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
     background-color: var(--primary-color);
+    & > svg {
+        fill: var(--text-color-reverse);
+    }
 }
 .childSkill {
     display: flex;
@@ -22,4 +25,7 @@
     aspect-ratio: 8/5;
     clip-path: polygon(0 0,var(--s) 0,100% 50%,var(--s) 100%,0 100%,calc(100% - var(--s)) 50%);
     background-color: var(--primary-color);
+    & > svg {
+        fill: var(--text-color-reverse);
+    }
 }

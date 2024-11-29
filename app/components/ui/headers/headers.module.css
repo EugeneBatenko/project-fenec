@@ -37,6 +37,7 @@
     .text {
         z-index: 2;
         position: relative;
+        color: var(--text-color-reverse);
     }
 
     &.reversed {

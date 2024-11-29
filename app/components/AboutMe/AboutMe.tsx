@@ -1,11 +1,10 @@
+import {FC} from "react";
 import styles from "./about.module.css";
 import {Tab, Tabs} from "@/ui/tabs/Tabs";
 import SkillsPipe from "@/ui/skills/SkillsPipe";
 
 import {SectionHeader} from "@/ui/headers/SectionHeader";
 import {getYears} from "@/app/components/utils/dateHooks";
-import {FC} from "react";
-
 
 export const AboutMe: FC = () => {
     const tabsClasses = {
@@ -33,7 +32,7 @@ export const AboutMe: FC = () => {
                     <div className="col-md-6 col-12 mb-5">
                         <div className="d-flex justify-content-around">
                             <div className="d-flex">
-                                <h3 className="text-color-primary fs-1 me-2">{getYears('2019-10-20')}+</h3>
+                                <time dateTime="2019-10-20" className=" h3 text-color-primary fs-1 me-2">{getYears('2019-10-20')}+</time>
                                 <p>Years of <br/>experience</p>
                             </div>
                             <div className="d-flex">

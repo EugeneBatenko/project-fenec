@@ -33,11 +33,11 @@ export default function RootLayout({
       <body
         className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable} ${fontawsome.variable}`}
       >
+      <Suspense fallback={<Loading/>}>
         <Header />
-        <Suspense fallback={<Loading/>}>
             <main>{children}</main>
-        </Suspense>
         <Footer/>
+      </Suspense>
       </body>
     </html>
   );

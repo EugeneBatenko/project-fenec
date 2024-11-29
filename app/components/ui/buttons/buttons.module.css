@@ -14,7 +14,14 @@
     cursor: pointer;
     transition: all 0.7s;
     overflow: hidden;
+    & > span {
+        transition: all 0.7s;
+    }
     &:hover {
+        & > span {
+            color: var(--primary-dark);
+            transition: all 0.7s;
+        }
         color: var(--primary-dark);
     }
     .text {
@@ -87,5 +94,64 @@
             top: 0;
             left: 0;
         }
+    }
+}
+
+.highlighted {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    width: 120px;
+    height: 40px;
+    color: var(--text-color-reverse);
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+    backface-visibility: hidden;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 2px solid var(--primary-color);
+        transition: all .5s;
+        animation: clipPath 3s infinite linear;
+        pointer-events: none;
+    }
+
+    &::after {
+        animation: clipPath 3s infinite -1.5s linear;
+    }
+
+    &:hover {
+        &::before, &::after {
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+        }
+    }
+}
+
+@keyframes clipPath {
+    0%,
+    100% {
+        clip-path: inset(0 0 95% 0);
+    }
+
+    25% {
+        clip-path: inset(0 95% 0 0);
+    }
+    50% {
+        clip-path: inset(95% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 95%);
     }
 }
