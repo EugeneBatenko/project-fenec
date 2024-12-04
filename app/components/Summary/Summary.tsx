@@ -31,7 +31,7 @@ export const Summary: FC = () => {
                             placeholder="blur"
                             style={{
                                 objectFit: "cover",
-                                objectPosition: "top",
+                                objectPosition: "center",
                             }}
                         />
                     </div>
