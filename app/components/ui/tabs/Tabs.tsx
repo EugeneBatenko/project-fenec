@@ -7,6 +7,11 @@ export const Tab: FC<TabProps> = ({children}) => {
     return <>{children}</>
 }
 
+type TabChildProps = {
+    classNameTab: string;
+    label: string;
+};
+
 export const Tabs: FC<TabsProps> = ({children, classNames}) => {
     const [activeTabIndex, setActiveTabIndex] = useState(0);
 
@@ -21,7 +26,7 @@ export const Tabs: FC<TabsProps> = ({children, classNames}) => {
             <div className={tabs}>
                 <div className={panel}>
                     {Children.map(children, (child, index) => {
-                        if (!isValidElement(child)) return null;
+                        if (!isValidElement<TabChildProps>(child)) return null;
                         return (
                             <button
                                 className={`${child.props.classNameTab} ${activeTabIndex === index ? 'active' : ''}`}

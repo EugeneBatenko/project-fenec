@@ -1,0 +1,8 @@
+.modal {
+    position: fixed;
+    z-index: 99;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}

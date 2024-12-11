@@ -6,7 +6,7 @@ import {FC, useEffect} from "react";
 import Navigation from "@/app/components/Header/Navigation";
 
 import {animated, SpringValue, useSpring, useSprings} from '@react-spring/web'
-import useMobileMenu from "@/store/mobileMenu";
+import useMobileMenu from "@/store/useMobileMenu";
 
 export const MobileNav: FC = () => {
     const { isOpen, toggleMenu } = useMobileMenu();

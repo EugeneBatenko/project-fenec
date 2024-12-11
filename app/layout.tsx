@@ -12,7 +12,7 @@ import type { Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: "Fennec Fox",
-  description: "Personal about",
+  description: "Personal website",
 };
 
 export const viewport: Viewport = {

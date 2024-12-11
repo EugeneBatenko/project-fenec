@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface MenuState {
+type MenuState = {
     isOpen: boolean;
     toggleMenu: () => void;
 }
