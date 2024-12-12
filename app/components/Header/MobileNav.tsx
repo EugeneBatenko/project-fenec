@@ -41,6 +41,7 @@ export const MobileNav: FC = () => {
 
     useEffect(() => {
         useMobileMenu.setState({ isOpen: false })
+        document.documentElement.style.overflow = ""; //TODO Temporary fix. Need to change
     }, [pathname]);
 
     return (
