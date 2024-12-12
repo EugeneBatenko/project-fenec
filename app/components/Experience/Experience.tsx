@@ -30,17 +30,18 @@ export const Experience: FC = () => {
 
                             <div className={styles.item} style={{"--hover-color": "#ff503f"} as CSSProperties}>
                                 <div className={styles.title}>
-                                    <h3>Intern</h3>
-                                    <Link href="https://ukietech.com/" target="_blank"><h6
-                                        className="link">Ukietech</h6>
+                                    <h3 className="h3">Intern</h3>
+                                    <Link href="https://ukietech.com/" target="_blank">
+                                        <h6 className="link h6">Ukietech</h6>
                                     </Link>
 
                                     <AccordionToggle id={1} className={styles.button}/>
                                 </div>
 
                                 <span className={styles.emblem}>
-                                <Ukietech fill={"#1a1a1a"}/>
-                            </span>
+                                    <Ukietech fill={"#1a1a1a"}/>
+                                </span>
+
                                 <div className={styles.description}>
                                     <p className="mb-0">2018</p>
                                     <p>Practise in company to achieve new skills and knowledge in HTML/CSS/JS. As a
@@ -49,6 +50,7 @@ export const Experience: FC = () => {
                                                                     href="https://github.com/EugeneBatenko/ukietech-practice.github.io">Result</Link>
                                     </p>
                                 </div>
+
                             </div>
 
                             <AccordionContent id={1} className={styles.article}>
@@ -60,8 +62,9 @@ export const Experience: FC = () => {
                         <Accordion id={2}>
                             <div className={styles.item} style={{"--hover-color": "#fff"} as CSSProperties}>
                                 <div className={styles.title}>
-                                    <h3>Front-End developer</h3>
-                                    <h6>Freelance</h6>
+                                    <h3 className="h3 d-none d-lg-block">Front-End Developer</h3>
+                                    <h3 className="h3 d-lg-none">FE Dev</h3>
+                                    <h6 className="h6">Freelance</h6>
                                     <AccordionToggle id={2} className={styles.button}/>
                                 </div>
 
@@ -87,9 +90,12 @@ export const Experience: FC = () => {
 
                             <div className={styles.item} style={{"--hover-color": "#5d0091"} as CSSProperties}>
                                 <div className={styles.title}>
-                                    <h3>Front-End Developer</h3>
-                                    <Link href="https://codexysoft.com/" target="_blank"><h6 className="link">Codexy
-                                        Software</h6></Link>
+                                    <h3 className="h3 d-none d-lg-block">Front-End Developer</h3>
+                                    <h3 className="h3 d-lg-none">FE Dev</h3>
+                                    <Link href="https://codexysoft.com/" target="_blank">
+                                        <h6 className="link h6 d-none d-lg-block">Codexy Software</h6>
+                                        <h6 className="link h6 d-lg-none">Codexy Soft</h6>
+                                    </Link>
                                     <AccordionToggle id={3} className={styles.button}/>
                                 </div>
 
@@ -115,9 +121,12 @@ export const Experience: FC = () => {
 
                             <div className={styles.item} style={{"--hover-color": "#d06ab5"} as CSSProperties}>
                                 <div className={styles.title}>
-                                    <h3>Full-Stack Developer</h3>
-                                    <Link href="https://soloway.tech/" target="_blank"><h6 className="link">Soloway
-                                        Technologies</h6></Link>
+                                    <h3 className="h3 d-none d-lg-block">Full-Stack Developer</h3>
+                                    <h3 className="h3 d-lg-none">FS Dev</h3>
+                                    <Link href="https://soloway.tech/" target="_blank">
+                                        <h6 className="link h6 d-none d-lg-block">Soloway Technologies</h6>
+                                        <h6 className="link h6 d-lg-none">Soloway Tech</h6>
+                                    </Link>
                                     <AccordionToggle id={4} className={styles.button}/>
                                 </div>
 
@@ -140,8 +149,9 @@ export const Experience: FC = () => {
 
                         <div className={styles.item} style={{"--hover-color": "#fff"} as CSSProperties}>
                             <div className={styles.title}>
-                                <h3>Developer/Manager/Lead</h3>
-                                <h6>Your company might be next</h6>
+                                <h3 className="h3 d-none d-lg-block">Developer/Manager/Lead</h3>
+                                <h3 className="h3 d-lg-none">Dev/Lead</h3>
+                                <h6 className="h6">Your company might be next</h6>
                             </div>
 
                             <span className={styles.emblem}>
