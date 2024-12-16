@@ -6,6 +6,7 @@
     right: 0;
     background-color: var(--primary-bg-dark);
     margin: 0 0 0 auto;
+    border-bottom: 1px solid var(--primary-color);
 
     &::before {
         content: "";

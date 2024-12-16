@@ -32,7 +32,7 @@ export const AboutMe: FC = () => {
                     <div className="col-md-6 col-12 mb-5">
                         <div className="d-flex justify-content-around">
                             <div className="d-flex">
-                                <time dateTime="2019-10-20" className=" h3 text-color-primary fs-1 me-2">{getYears('2019-10-20')}+</time>
+                                <h3 className=" h3 text-color-primary fs-1 me-2">{getYears('2019-10-20')}+</h3>
                                 <p>Years of <br/>experience</p>
                             </div>
                             <div className="d-flex">
