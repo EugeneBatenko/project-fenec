@@ -8,7 +8,7 @@ import {NavItem, NavProps} from "@/types";
 const items: NavItem[] = [
     {itemName: "Home", pathname: "/", icon: FaHouse },
     {itemName: "About", pathname: "/about"},
-    {itemName: "Projects", pathname: "/projects"},
+    {itemName: "Portfolio", pathname: "/portfolio"},
     {itemName: "CV", pathname: "/cv"},
     {itemName: "Contacts", pathname: "/contacts"},
 ]
