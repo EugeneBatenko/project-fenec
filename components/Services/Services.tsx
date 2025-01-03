@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {SectionHeader} from "@/ui/headers/SectionHeader";
+import {SectionHeader} from "@/components/ui/headers/SectionHeader";
 import styles from "./services.module.css";
 
 export const Services: FC = () => {

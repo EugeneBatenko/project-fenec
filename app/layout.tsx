@@ -4,11 +4,12 @@ import "bootstrap/dist/css/bootstrap-utilities.css";
 import "bootstrap/dist/css/bootstrap-reboot.css";
 import "./globals.css";
 import {roboto, montserrat, logoFont, fontawsome} from "@/app/fonts";
-import { Header } from "@/app/components/Header/Header";
-import { Footer } from "@/app/components/Footer/Footer";
+import { Header } from "@/components/Header/Header";
+import { Footer } from "@/components/Footer/Footer";
 import { Loading } from "@/ui/loading/Loading";
 import React, {Suspense} from "react";
 import type { Viewport } from 'next';
+import {QueryProvider} from "@/providers/QueryClientProvider";
 
 export const metadata: Metadata = {
   title: "Fennec Fox",
@@ -28,14 +29,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  return (
+    return (
     <html lang="en">
       <body
         className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable} ${fontawsome.variable}`}
       >
       <Suspense fallback={<Loading/>}>
         <Header />
-            <main>{children}</main>
+            <main>
+                <QueryProvider>
+                    {children}
+                </QueryProvider>
+            </main>
         <Footer/>
       </Suspense>
       </body>

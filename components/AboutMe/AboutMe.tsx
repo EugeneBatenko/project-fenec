@@ -1,10 +1,10 @@
 import {FC} from "react";
 import styles from "./about.module.css";
-import {Tab, Tabs} from "@/ui/tabs/Tabs";
-import SkillsPipe from "@/ui/skills/SkillsPipe";
+import {Tab, Tabs} from "@/components/ui/tabs/Tabs";
+import SkillsPipe from "@/components/ui/skills/SkillsPipe";
 
-import {SectionHeader} from "@/ui/headers/SectionHeader";
-import {getYears} from "@/app/components/utils/dateHooks";
+import {SectionHeader} from "@/components/ui/headers/SectionHeader";
+import {getYears} from "@/components/utils/dateHooks";
 
 export const AboutMe: FC = () => {
     const tabsClasses = {

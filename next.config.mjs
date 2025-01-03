@@ -27,6 +27,17 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: process.env.BLOB_URL,
+        port: '',
+        pathname: '**',
+        search: '',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

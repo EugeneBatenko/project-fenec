@@ -3,7 +3,7 @@
 import styles from './mobile.module.css';
 import { usePathname } from 'next/navigation'
 import {FC, useEffect} from "react";
-import Navigation from "@/app/components/Header/Navigation";
+import Navigation from "@/components/Header/Navigation";
 
 import {animated, SpringValue, useSpring, useSprings} from '@react-spring/web'
 import useMobileMenu from "@/store/useMobileMenu";

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const HeroPortfolio: FC = () => {
     return (
-        <section className={`${styles.section} mb-5`}>
+        <section className={styles.section}>
             <div className="container h-100">
                 <div className="row align-items-center h-100">
                     <div className="col text-center">

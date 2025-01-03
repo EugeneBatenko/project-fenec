@@ -1,0 +1,107 @@
+.body {
+    display: grid;
+
+    grid-template-rows: 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    @media (width > 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.card {
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    position: relative;
+    width: auto;
+    background-color: var(--primary-dark);
+    padding: 1rem;
+}
+
+.types {
+    display: flex;
+}
+
+.type {
+    display: flex;
+    width: fit-content;
+    border: 1px solid var(--color);
+    color: var(--color);
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+.type[data-project-type="commercial"] {
+    --color: var(--bs-teal);
+}
+
+.type[data-project-type="full-time"] {
+    --color: var(--bs-cyan);
+}
+
+.type[data-project-type="frontend"] {
+    --color: var(--bs-orange);
+}
+
+.type[data-project-type="backend"] {
+    --color: var(--bs-purple);
+}
+
+.type[data-project-type="full-stack"] {
+    background-image: linear-gradient(to right, var(--bs-orange), var(--bs-purple));
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, var(--bs-orange), var(--bs-purple)) 1;
+    background-clip: text;
+    color: transparent;
+}
+
+.content {
+    /*padding: 1rem;*/
+}
+
+.button {
+    color: var(--primary-color);
+}
+
+.image {
+    width: 100%;
+    max-height: 200px;
+}
+
+.tags {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    margin: auto 0;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary-color);
+    color: var(--text-color-reverse);
+    padding: 0 1rem;
+    /*margin-right: 0.5rem;*/
+
+    width: fit-content;
+
+    --s: 10px;
+    line-height: 1.8;
+    padding-inline: calc(var(--s) + .3em);
+    clip-path: polygon(0 0,calc(100% - var(--s)) 0,100% 50%,calc(100% - var(--s)) 100%,0 100%,var(--s) 50%);
+
+    &:first-of-type {
+        padding-inline: .3em calc(var(--s) + .3em);
+        clip-path: polygon(0 0,calc(100% - var(--s)) 0,100% 50%,calc(100% - var(--s)) 100%,0 100%);
+    }
+    &:last-of-type {
+        padding-inline: calc(var(--s) + .3em) .3em;
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%,var(--s) 50%);
+    }
+}

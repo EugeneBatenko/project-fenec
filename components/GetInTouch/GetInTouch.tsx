@@ -1,5 +1,5 @@
 import {FC} from "react";
-import { SectionHeader } from "@/ui/headers/SectionHeader";
+import { SectionHeader } from "@/components/ui/headers/SectionHeader";
 import { MdAlternateEmail } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
 import { FaHeartBroken, FaGithub, FaCodepen, FaLinkedinIn } from "react-icons/fa";

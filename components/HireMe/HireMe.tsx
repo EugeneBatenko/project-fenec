@@ -1,6 +1,6 @@
 import {FC} from "react";
 import styles from "./hire.module.css";
-import {HighlightedButton} from "@/ui/buttons/HighlightedButton";
+import {HighlightedButton} from "@/components/ui/buttons/HighlightedButton";
 
 export const HireMe: FC = () => {
     return (

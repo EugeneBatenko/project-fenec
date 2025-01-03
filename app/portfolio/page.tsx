@@ -1,9 +1,11 @@
-import {HeroPortfolio} from "@/app/components/HeroPortfolio/HeroPortfolio";
+import {HeroPortfolio} from "@/components/HeroPortfolio/HeroPortfolio";
+import {PortfolioSection} from "@/components/PortfolioSection/PortfolioSection";
 
 export default function Page() {
-  return (
-      <>
-        <HeroPortfolio/>
-      </>
-  );
+    return (
+        <>
+            <HeroPortfolio/>
+            <PortfolioSection/>
+        </>
+    );
 }

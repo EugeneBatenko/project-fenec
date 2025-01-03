@@ -2,15 +2,15 @@ import {FC} from "react";
 import {FaNodeJs, FaReact} from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
 import { SiRubyonrails } from "react-icons/si";
-import styles from './projects.module.css';
+import styles from './featured-projects.module.css';
 
 import Image from "next/image";
 import LibraryImg from '@/public/projects/library.webp';
 import FennecImg from '@/public/projects/fennec.webp';
 import GameImg from '@/public/projects/gaming.webp';
-import {LinkButton} from "@/ui/buttons/LinkButton";
+import {LinkButton} from "@/components/ui/buttons/LinkButton";
 
-export const Projects: FC = () => {
+export const FeaturedProjects: FC = () => {
     return (
         <section className="mb-5 bg-section py-5">
             <div className="container">

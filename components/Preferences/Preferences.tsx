@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {SectionHeader} from "@/ui/headers/SectionHeader";
+import {SectionHeader} from "@/components/ui/headers/SectionHeader";
 import styles from "./preferences.module.css";
 
 export const Preferences: FC = () => {

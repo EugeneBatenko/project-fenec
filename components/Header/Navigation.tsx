@@ -14,7 +14,7 @@ const items: NavItem[] = [
 ]
 
 const Navigation: FC<NavProps> = (NavProps) => {
-    const pathname = usePathname();
+    const pathname: string = usePathname();
 
     const [markerStyle, setMarkerStyle] = useState({left: 0, width: 0});
 
@@ -26,6 +26,8 @@ const Navigation: FC<NavProps> = (NavProps) => {
                 const left = (activeElement as HTMLElement).offsetLeft;
                 const width = (activeElement as HTMLElement).offsetWidth;
                 setMarkerStyle({left, width});
+            } else {
+                setMarkerStyle({left: 0, width: 0});
             }
         };
 

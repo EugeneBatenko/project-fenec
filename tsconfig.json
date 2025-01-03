@@ -23,10 +23,10 @@
     ],
     "paths": {
       "@/*": [ "./*" ],
-      "@/ui/*": [ "./app/components/ui/*" ],
-      "@/utils/*": [ "./app/components/utils/*" ],
-      "@/types": [ "./app/types/index.ts" ],
-      "@/store/*": [ "./app/store/*" ]
+      "@/ui/*": [ "./components/ui/*" ],
+      "@/utils/*": [ "./components/utils/*" ],
+      "@/types": [ "./types/index.ts" ],
+      "@/store/*": [ "./store/*" ]
     },
     "target": "ES2017"
   },

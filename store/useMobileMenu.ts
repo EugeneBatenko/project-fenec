@@ -31,7 +31,6 @@ const useMobileMenu = create<MenuState>((set) => ({
 
 if (typeof window !== "undefined") {
     const handleResize = debounce(() => {
-        console.log("resizer")
         const width = window.innerWidth;
         if (width > 767) {
             useMobileMenu.getState().setMenuState(false);

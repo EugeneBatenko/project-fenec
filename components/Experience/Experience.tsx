@@ -1,7 +1,7 @@
 "use client"
 
 import {CSSProperties, FC} from "react";
-import {SectionHeader} from "@/ui/headers/SectionHeader";
+import {SectionHeader} from "@/components/ui/headers/SectionHeader";
 import styles from "./experience.module.css";
 
 import Ukietech from "@/public/logo-ukietech.svg";
@@ -11,7 +11,7 @@ import Soloway from "@/public/logo-soloway.svg"
 import Question from "@/public/question.svg";
 import Link from "next/link";
 import articleData from "./experience.data.json"
-import {Accordion, AccordionContent, AccordionToggle} from "@/ui/accordion/Accordion";
+import {Accordion, AccordionContent, AccordionToggle} from "@/components/ui/accordion/Accordion";
 
 export const Experience: FC = () => {
     return (
