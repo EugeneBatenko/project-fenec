@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import {useQuery} from "@tanstack/react-query";
 import Image from "next/image";
+import {ProjectsLoading} from "@/components/Projects/Loading";
 
 type ProjectItem = {
     id: number;
@@ -30,13 +31,13 @@ const fetchUsers = async(): Promise<ProjectItem[]> => {
 
 export const ProjectsList: FC = () => {
 
-    const { data, isLoading, isError } = useQuery<ProjectItem[], Error>({
+    const { data, isLoading, isError, error } = useQuery<ProjectItem[], Error>({
         queryKey: ['projects'],
         queryFn: async () => fetchUsers()
     });
 
-    if(isLoading) return <div>Loading...</div>
-    if(isError) return <div>Error...</div>
+    if(isLoading) return <ProjectsLoading/>
+    if(isError) return <div>Error: {error?.message}</div>
 
     return (
         <article className={styles.body}>
@@ -47,15 +48,17 @@ export const ProjectsList: FC = () => {
                         alt={project.name}
                         className={styles.image}
                         quality={75}
-                        width={0}
-                        height={0}
-                        layout="responsive"
-                        objectFit="cover"
-                        loading = 'lazy'
+                        width={800}
+                        height={200}
+                        loading='lazy'
+                        style={{
+                            objectFit: "cover",
+                            objectPosition: "center"
+                        }}
                         /> :
                         <Placeholder
                             fill="#fff"
-                            className={styles.image}
+                            className={styles.placeholder}
                         />}
                     <div className={styles.content}>
                         <h3 className={`${styles.title} h3 mb-2`}>{project.name}</h3>

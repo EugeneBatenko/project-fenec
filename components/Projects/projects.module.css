@@ -21,6 +21,8 @@
 
 .types {
     display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
 }
 
 .type {
@@ -28,7 +30,7 @@
     width: fit-content;
     border: 1px solid var(--color);
     color: var(--color);
-    padding: 0.2rem 0.4rem;
+    padding: 0 0.4rem;
     margin: 0 0.5rem 0.5rem 0;
 }
 
@@ -64,9 +66,13 @@
     color: var(--primary-color);
 }
 
-.image {
+.image, .placeholder {
     width: 100%;
     max-height: 200px;
+}
+
+.placeholder {
+    padding: 1rem;
 }
 
 .tags {
@@ -86,22 +92,22 @@
 
     background-color: var(--primary-color);
     color: var(--text-color-reverse);
-    padding: 0 1rem;
+    /*padding: 0 0.5rem;*/
     /*margin-right: 0.5rem;*/
 
     width: fit-content;
 
-    --s: 10px;
+    --s: 9px;
     line-height: 1.8;
-    padding-inline: calc(var(--s) + .3em);
+    padding-inline: calc(var(--s) + .2em);
     clip-path: polygon(0 0,calc(100% - var(--s)) 0,100% 50%,calc(100% - var(--s)) 100%,0 100%,var(--s) 50%);
 
     &:first-of-type {
-        padding-inline: .3em calc(var(--s) + .3em);
+        padding-inline: .3em calc(var(--s) + .2em);
         clip-path: polygon(0 0,calc(100% - var(--s)) 0,100% 50%,calc(100% - var(--s)) 100%,0 100%);
     }
     &:last-of-type {
-        padding-inline: calc(var(--s) + .3em) .3em;
+        padding-inline: calc(var(--s) + .2em) .3em;
         clip-path: polygon(0 0,100% 0,100% 100%,0 100%,var(--s) 50%);
     }
 }

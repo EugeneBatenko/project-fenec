@@ -1,0 +1,90 @@
+.body {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    @media (width > 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.card {
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    position: relative;
+    width: auto;
+    background-color: var(--primary-dark);
+    padding: 1rem;
+
+    --background-color: #5d5d5d;
+}
+
+.image {
+    width: 100%;
+    max-height: 200px;
+    padding: 1rem;
+}
+
+.title {
+    width: 50%;
+    height: 2rem;
+}
+
+.period {
+    width: 40%;
+    height: 1.2rem;
+}
+
+.types {
+    display: flex;
+}
+
+.type {
+    display: flex;
+    height: 1.625rem;
+    margin-right: 0.5rem;
+    margin-bottom: .5rem;
+    &:nth-child(1) {
+        width: 85px;
+    }
+    &:nth-child(2) {
+        width: 65px;
+    }
+    &:nth-child(3) {
+        width: 70px;
+    }
+}
+
+.text {
+    width: 100%;
+    height: 1.2rem;
+    margin-bottom: .5rem;
+    &:nth-of-type(1) {
+        width: 100%;
+    }
+    &:nth-of-type(2) {
+        width: 100%;
+    }
+    &:nth-of-type(3) {
+        width: 80%;
+    }
+}
+
+.image, .title, .period, .type, .text {
+    background: linear-gradient(
+            100deg,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, .1) 50%,
+            rgba(255, 255, 255, 0) 60%
+    ) var(--background-color);
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 2s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+    to {
+        background-position-x: -20%;
+    }
+}
