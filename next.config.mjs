@@ -31,13 +31,16 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: process.env.BLOB_URL,
+        hostname: process.env.BLOB_HOST,
         port: '',
         pathname: '**',
         search: '',
       },
     ],
   },
+  env: {
+    BLOB_URL: process.env.BLOB_URL,
+  }
 };
 
 export default nextConfig;

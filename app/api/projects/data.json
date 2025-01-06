@@ -7,18 +7,22 @@
       "image": null,
       "period": "Sep 2018 - Dec 2018",
       "slug": "project1",
+      "role": "Frontend Developer",
+      "responsibilities": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium beatae harum molestiae nobis odit rerum. Delectus illo nam voluptas?",
       "types": ["commercial", "full-time", "frontend"],
-      "tags": ["html", "css", "javascript"]
+      "tags": ["html", "css", "javascript", "gulp", "scss", "bootstrap"]
     },
     {
       "id": 2,
       "name": "Project 2",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium beatae harum molestiae nobis odit rerum. Delectus illo nam voluptas?",
-      "image": "https://akggnmluxwm3bont.public.blob.vercel-storage.com/bg-hero-2-98DtJMFFgaKLgkfzVjSDSFNECjHqjY.webp",
+      "image": "bg-hero-2-98DtJMFFgaKLgkfzVjSDSFNECjHqjY.webp",
       "period": "Oct 2021 - Dec 2020",
       "slug": "project2",
+      "role": "Backend Developer",
+      "responsibilities": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium beatae harum molestiae nobis odit rerum. Delectus illo nam voluptas?",
       "types": ["commercial", "full-time", "backend"],
-      "tags": ["typescript", "nodejs", "express"]
+      "tags": ["typescript", "nodejs", "express", "mongodb"]
     },
     {
       "id": 3,
@@ -27,8 +31,10 @@
       "image": null,
       "period": "Jan 2020 - Mar 2020",
       "slug": "project3",
+      "role": "Full Stack Developer",
+      "responsibilities": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium beatae harum molestiae nobis odit rerum. Delectus illo nam voluptas?",
       "types": ["commercial", "full-time", "full-stack"],
-      "tags": ["mysql", "php", "laravel"]
+      "tags": ["wordpress", "js", "scss"]
     }
   ]
 }

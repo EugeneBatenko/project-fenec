@@ -37,7 +37,7 @@ export const MobileNav: FC = () => {
         delay: isOpen ? 0 : 1350,
     })
 
-    const pathname = usePathname()
+    const pathname: string = usePathname()
 
     useEffect(() => {
         useMobileMenu.setState({ isOpen: false })
@@ -48,7 +48,7 @@ export const MobileNav: FC = () => {
         <>
             {/*Hamburger based on https://codepen.io/karlovidek/pen/aNYWKE*/}
             <nav className={`${styles.navBar} ${isOpen ? styles.open : ''} d-md-none`}>
-                <h4 className="d-flex m-auto ms-3">{pathname === '/' ? 'Home' : pathname.substring(1)}</h4>
+                <h4 className="d-flex m-auto ms-3">{pathname === '/' ? 'Home' : pathname.split("/").pop()}</h4>
                 <button className={styles.hamburger} onClick={toggleMenu}>
                     <span className={styles.menuTrigger}>
                         <i className={`${styles.triggerBar} ${styles.top}`}></i>

@@ -1,5 +1,5 @@
 "use client"
-// https://github.com/radist2s/openapi-qraft-hono-next-app-example/blob/52f64b38641c38248b28efd03c1021d2242e031f/packages/next/src/components/Providers.tsx
+// https://tanstack.com/query/latest/docs/framework/react/guides/advanced-ssr#server-components--nextjs-app-router
 
 import {
     isServer,

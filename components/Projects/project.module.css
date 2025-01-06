@@ -1,0 +1,49 @@
+.imageContainer {
+    position: relative;
+    height: 350px;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 30%, rgba(255, 255, 255, 0) 70%);
+        z-index: 2;
+    }
+}
+
+.title {
+    position: absolute;
+    height: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 4rem;
+    margin: auto 0;
+    z-index: 3;
+    &::after { /* Edit line */
+        margin-left: 5px;
+    }
+}
+
+.sectionTitles {
+    margin-bottom: 1rem;
+}
+
+.tagsContainer {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.techTags {
+    width: fit-content;
+    gap: 0.5rem;
+    border: 1px solid var(--primary-color);
+    padding: .2rem .5rem;
+    color: var(--primary-color);
+}
+
+.placeholder {
+    width: 100%;
+    max-height: 350px;
+    padding: 1rem;
+}

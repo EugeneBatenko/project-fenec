@@ -6,60 +6,44 @@ import Link from "next/link";
 import {useQuery} from "@tanstack/react-query";
 import Image from "next/image";
 import {ProjectsLoading} from "@/components/Projects/Loading";
-
-type ProjectItem = {
-    id: number;
-    name: string;
-    description: string;
-    image: string;
-    period: string;
-    slug: string;
-    types: string[];
-    tags: string[];
-}
-
-const fetchUsers = async(): Promise<ProjectItem[]> => {
-    const res: Response = await fetch('/api/projects', {
-        headers: {
-            'Cache-Control': 'public, max-age=86400, immutable' // 24 hours
-        }
-    });
-    if (!res.ok) throw new Error("Failed to fetch users");
-    const data = await res.json();
-    return data.projects;
-}
+import {ProjectItem} from "@/types";
+import {fetchProjectsAll} from "@/fetch/fetchProjectsAll";
 
 export const ProjectsList: FC = () => {
 
     const { data, isLoading, isError, error } = useQuery<ProjectItem[], Error>({
         queryKey: ['projects'],
-        queryFn: async () => fetchUsers()
+        queryFn: async () => fetchProjectsAll(),
+        refetchOnWindowFocus: false,
+        refetchInterval: false,
     });
 
     if(isLoading) return <ProjectsLoading/>
-    if(isError) return <div>Error: {error?.message}</div>
+    if(isError) return <div className="alert alert-danger" role="alert"><p>Error: {error?.message}</p></div>
 
     return (
         <article className={styles.body}>
             {data?.map((project: ProjectItem) => (
                 <div key={project.id} className={styles.card}>
-                    {project.image ? <Image
-                        src={project.image}
-                        alt={project.name}
-                        className={styles.image}
-                        quality={75}
-                        width={800}
-                        height={200}
-                        loading='lazy'
-                        style={{
-                            objectFit: "cover",
-                            objectPosition: "center"
-                        }}
-                        /> :
-                        <Placeholder
-                            fill="#fff"
-                            className={styles.placeholder}
-                        />}
+                    <div className={styles.imageContainer}>
+                        {project.image ? <Image
+                                src={`${process.env.BLOB_URL}/${project.image}`}
+                                alt={project.name}
+                                className={styles.image}
+                                quality={75}
+                                fill
+                                loading='lazy'
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                style={{
+                                    objectFit: "cover",
+                                    objectPosition: "center"
+                                }}
+                            /> :
+                            <Placeholder
+                                fill="#fff"
+                                className={styles.placeholder}
+                            />}
+                    </div>
                     <div className={styles.content}>
                         <h3 className={`${styles.title} h3 mb-2`}>{project.name}</h3>
                         <h6 className="h6 mb-2">Period: {project.period}</h6>
@@ -72,7 +56,8 @@ export const ProjectsList: FC = () => {
                         <Link href={`/portfolio/${project.slug}`} className={styles.button}>Read More &gt;&gt;</Link>
                     </div>
                     <div className={styles.tags}>
-                        {project.tags.map((tag: string) => (
+                        {/*TODO Remove slice after backand will be added*/}
+                        {project.tags.slice(0, 3).map((tag: string) => (
                             <span key={tag} className={styles.tag}>#{tag}</span>
                         ))}
                     </div>
