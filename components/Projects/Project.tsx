@@ -2,24 +2,17 @@
 
 import {FC} from "react";
 
-import {useQuery} from "@tanstack/react-query";
-import {ProjectPageType} from "@/types";
-import {fetchProjectBySlug} from "@/fetch/fetchProjectsAll";
 import {notFound} from "next/navigation";
-
 import Image from "next/image";
+
 import styles from "./project.module.css";
+
 import Placeholder from "@/public/placeholder-fennec-fox.svg";
 
-export const Project: FC<{ slug: string }> = (props) => {
+import {useProjectBySlug} from "@/hooks/useProjects";
 
-    const {data, isLoading, isError, error} = useQuery<ProjectPageType, Error>({
-        queryKey: ['project', props.slug],
-        queryFn: async () => fetchProjectBySlug(props.slug),
-        retry: false,
-        refetchOnWindowFocus: false,
-        refetchInterval: false,
-    });
+export const Project: FC<{ slug: string }> = (props) => {
+    const {data, isLoading, isError, error} = useProjectBySlug(props.slug);
 
     if (isLoading) return <div>Loading...</div>
     if(!data) return notFound();

@@ -1,0 +1,23 @@
+{
+  "headers": [
+    {
+      "id": 1,
+      "title": "Resume"
+    },
+    {
+      "id": 1741336460060,
+      "title": "Full-stack dev. (React.js/Node.js)"
+    },
+    {
+      "id": 1741336467318,
+      "title": "Yevhen Batenko"
+    }
+  ],
+  "sections": [
+    {
+      "id": 1001,
+      "title": "",
+      "content": ""
+    }
+  ]
+}

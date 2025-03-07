@@ -26,7 +26,10 @@
       "@/ui/*": [ "./components/ui/*" ],
       "@/utils/*": [ "./components/utils/*" ],
       "@/types": [ "./types/index.ts" ],
-      "@/store/*": [ "./store/*" ]
+      "@/store/*": [ "./store/*" ],
+      "@/admin/components/*": [ "./app/(admin)/_components/*" ],
+      "@/models/*": [ "./models/*" ],
+      "@/lib/*": [ "./lib/*" ],
     },
     "target": "ES2017"
   },

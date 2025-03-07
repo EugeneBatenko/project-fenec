@@ -23,6 +23,7 @@ export const PortfolioSection: FC = () => {
         setSelectedOption(option);
     }
 
+    // TODO https://nextjs.org/docs/app/building-your-application/routing/parallel-routes
     const renderContent = () => {
         if (selectedOption === "Projects") return <DynamicProjectsList />;
         if (selectedOption === "Codepen") return <DynamicCodepen />;

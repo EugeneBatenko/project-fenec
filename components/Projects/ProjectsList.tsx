@@ -3,20 +3,13 @@ import Placeholder from "@/public/placeholder-fennec-fox.svg";
 import styles from "./projects.module.css";
 import Link from "next/link";
 
-import {useQuery} from "@tanstack/react-query";
 import Image from "next/image";
 import {ProjectsLoading} from "@/components/Projects/Loading";
 import {ProjectItem} from "@/types";
-import {fetchProjectsAll} from "@/fetch/fetchProjectsAll";
+import {useProjects} from "@/hooks/useProjects";
 
 export const ProjectsList: FC = () => {
-
-    const { data, isLoading, isError, error } = useQuery<ProjectItem[], Error>({
-        queryKey: ['projects'],
-        queryFn: async () => fetchProjectsAll(),
-        refetchOnWindowFocus: false,
-        refetchInterval: false,
-    });
+    const { data, isLoading, isError, error } = useProjects();
 
     if(isLoading) return <ProjectsLoading/>
     if(isError) return <div className="alert alert-danger" role="alert"><p>Error: {error?.message}</p></div>
