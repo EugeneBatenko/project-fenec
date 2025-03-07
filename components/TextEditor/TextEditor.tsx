@@ -42,6 +42,7 @@ export const TipTapEditor: FC = () => {
             try {
                 await new Promise((resolve) => setTimeout(resolve, 3000));
 
+                // @ts-expect-error Entire editor will be deleted soon
                 const response = await mutation.mutateAsync(props.editor.getJSON());
                 console.log("Response:", response);
             } catch (error) {
