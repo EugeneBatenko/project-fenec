@@ -1,0 +1,99 @@
+.alert {
+    display: flex;
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 5rem;
+    width: fit-content;
+    padding: 1rem 2rem 1rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: var(--primary-dark);
+    color: var(--text-color);
+
+    &:global.success {
+        border-color: var(--bs-success);
+        color: var(--bs-success);
+        .circleAnimation {
+            stroke: var(--bs-success);
+        }
+    }
+
+    &:global.danger {
+        border-color: var(--bs-danger);
+        color: var(--bs-danger);
+        .circleAnimation {
+            stroke: var(--bs-danger);
+        }
+    }
+
+    &:global.warning {
+        border-color: var(--bs-warning);
+        color: var(--bs-warning);
+        .circleAnimation {
+            stroke: var(--bs-warning);
+        }
+    }
+
+    &:global.info {
+        border-color: var(--bs-info);
+        color: var(--bs-info);
+        .circleAnimation {
+            stroke: var(--bs-warning);
+        }
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: transparent;
+
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+
+.timerContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+}
+
+
+.circularSvg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+/* Static background circle */
+.circleBg {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 3;
+}
+
+.circleAnimation {
+    fill: none;
+    stroke: #F45C43;
+    stroke-width: 3;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: progressAnimation linear forwards;
+}
+
+/* Animate from 100% offset to 0% offset over DURATION */
+@keyframes progressAnimation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

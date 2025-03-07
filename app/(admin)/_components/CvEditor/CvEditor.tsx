@@ -5,8 +5,8 @@ import { FC, FormEvent, useEffect, useState } from "react";
 import { useCvMutation, useCvQuery } from "@/hooks/useCv";
 import Notice from "@/components/ui/notify/Notify";
 import { CvHeader, CvSection } from "@/types";
-import { HeaderSections } from "./HeaderSections";     // adjust path as needed
-import { MainSections } from "./MainSections";         // adjust path as needed
+import { HeaderSections } from "./HeaderSections";
+import { MainSections } from "./MainSections";
 
 export const CvEditor: FC = () => {
     const mutation = useCvMutation();
@@ -115,40 +115,43 @@ export const CvEditor: FC = () => {
     };
 
     return (
-        <div style={{ padding: "1rem" }}>
-            {noticeMessage && (
-                <Notice
-                    type={noticeType}
-                    message={noticeMessage}
-                    dismissible
-                />
-            )}
-            <h1>Edit Your CV</h1>
+        <section className="container my-5">
+            <div className="row">
+                <div className="col">
+                    {noticeMessage && (
+                        <Notice
+                            type={noticeType}
+                            message={noticeMessage}
+                            dismissible
+                        />
+                    )}
 
-            {isLoading && <div>Loading existing CV items...</div>}
-            {isError && <div>Failed to load CV items.</div>}
+                    {isLoading && <div>Loading existing CV items...</div>}
+                    {isError && <div>Failed to load CV items.</div>}
 
-            <form onSubmit={handleSubmit}>
-                <HeaderSections
-                    headerSections={headerSections}
-                    onAddHeaderSection={handleAddHeaderSection}
-                    onRemoveHeaderSection={handleRemoveHeaderSection}
-                    onTitleChange={handleHeaderTitleChange}
-                />
+                    <form onSubmit={handleSubmit}>
+                        <HeaderSections
+                            headerSections={headerSections}
+                            onAddHeaderSection={handleAddHeaderSection}
+                            onRemoveHeaderSection={handleRemoveHeaderSection}
+                            onTitleChange={handleHeaderTitleChange}
+                        />
 
-                <MainSections
-                    sections={sections}
-                    onAddSection={handleAddSection}
-                    onRemoveSection={handleRemoveSection}
-                    onMoveSectionUp={handleMoveSectionUp}
-                    onMoveSectionDown={handleMoveSectionDown}
-                    onTitleChange={handleSectionTitleChange}
-                    onContentChange={handleSectionContentChange}
-                />
+                        <MainSections
+                            sections={sections}
+                            onAddSection={handleAddSection}
+                            onRemoveSection={handleRemoveSection}
+                            onMoveSectionUp={handleMoveSectionUp}
+                            onMoveSectionDown={handleMoveSectionDown}
+                            onTitleChange={handleSectionTitleChange}
+                            onContentChange={handleSectionContentChange}
+                        />
 
-                <br />
-                <button type="submit">Save CV</button>
-            </form>
-        </div>
+                        <br />
+                        <button type="submit">Save CV</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     );
 };
