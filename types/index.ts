@@ -7,5 +7,6 @@ export * from './id.types';
 export * from './accordion.types';
 export * from './projects.types';
 export * from './cv.types';
+export * from './notice.types';
 
 export * from './enum';

@@ -1,6 +1,9 @@
-// HeaderSections.tsx
 import {FC, ChangeEvent} from "react";
 import {CvHeader} from "@/types";
+
+import styles from "./cv-editor.module.css";
+import { MdClose } from "react-icons/md";
+import { MdAdd } from "react-icons/md";
 
 type HeaderSectionsProps = {
     headerSections: CvHeader[];
@@ -16,12 +19,11 @@ export const HeaderSections: FC<HeaderSectionsProps> = ({
     onTitleChange,
 }) => {
     return (
-        <div>
-            <h2>Header Sections</h2>
+        <article className={styles.headersSection}>
+            <h2 className="text-center mb-3">Header Sections</h2>
             {headerSections.map((header, index) => (
-                <div key={index} style={{marginBottom: "1rem"}}>
+                <div className={styles.line} key={index} style={{marginBottom: "1rem"}}>
                     <label>
-                        Header Input
                         <input
                             type="text"
                             value={header.title}
@@ -30,15 +32,15 @@ export const HeaderSections: FC<HeaderSectionsProps> = ({
                             }
                         />
                     </label>
-                    <button type="button" onClick={() => onRemoveHeaderSection(index)}>
-                        Remove
+                    <button className={styles.removeButton} type="button" onClick={() => onRemoveHeaderSection(index)}>
+                        <MdClose size={32}/>
                     </button>
                 </div>
             ))}
 
-            <button type="button" onClick={onAddHeaderSection}>
-                Add Header Section
+            <button className={styles.addButton} type="button" onClick={onAddHeaderSection}>
+                <MdAdd size={32}/>
             </button>
-        </div>
+        </article>
     );
 };

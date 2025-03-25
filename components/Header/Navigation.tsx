@@ -1,4 +1,4 @@
-import {FC, useLayoutEffect, useState} from "react";
+import {FC, useLayoutEffect, useState, MouseEvent} from "react";
 import Link from "next/link";
 
 import {FaHouse} from "react-icons/fa6";
@@ -42,7 +42,7 @@ const Navigation: FC<NavProps> = (NavProps) => {
     }, [pathname, NavProps.classNameLinkActive]);
 
     const handleIndicator = (
-        e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+        e: MouseEvent<HTMLElement>,
     ) => {
         const left = e.currentTarget.offsetLeft;
         const width = e.currentTarget.offsetWidth;

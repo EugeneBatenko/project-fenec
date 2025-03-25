@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styles from "./buttons.module.css";
 import {FC} from "react";
-import {ButtonProps} from "@/types";
+import {ButtonLinkProps} from "@/types";
 
-export const LinkButton: FC<ButtonProps> = (button) => {
+export const LinkButton: FC<ButtonLinkProps> = (button) => {
     return(
         <Link className={styles.link} href={button.href} style={{width: button.width, height: button.height}}>
             {/*https://codepen.io/atechajay/pen/WNZpLMQ*/}

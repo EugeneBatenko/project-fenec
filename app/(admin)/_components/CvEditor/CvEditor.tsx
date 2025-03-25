@@ -1,13 +1,17 @@
-// CvEditor.tsx
 "use client";
 
 import { FC, FormEvent, useEffect, useState } from "react";
 import { useCvMutation, useCvQuery } from "@/hooks/useCv";
+
 import Notice from "@/components/ui/notify/Notify";
-import { CvHeader, CvSection } from "@/types";
 import { HeaderSections } from "./HeaderSections";
 import { MainSections } from "./MainSections";
 
+import {CvHeader, CvItemType, CvSection} from "@/types";
+
+import { FormButton } from "@/ui/buttons/FormButton";
+
+// TODO Simplify this component later
 export const CvEditor: FC = () => {
     const mutation = useCvMutation();
     const { data: cvItems, isLoading, isError } = useCvQuery();
@@ -16,20 +20,28 @@ export const CvEditor: FC = () => {
     const [noticeType, setNoticeType] = useState("info");
 
     const [headerSections, setHeaderSections] = useState<CvHeader[]>([
-        { title: "" },
+        {
+            title: "",
+            order: 0,
+            type: ""
+        },
     ]);
     const [sections, setSections] = useState<CvSection[]>([
-        { title: "", content: "" },
+        {
+            title: "", content: "",
+            order: 0,
+            type: CvItemType.SECTION
+        },
     ]);
 
     useEffect(() => {
         if (cvItems && Array.isArray(cvItems)) {
             const fetchedHeaders = cvItems
-                .filter((item) => item.type?.toLowerCase() === "header")
+                .filter((item) => item.type?.toLowerCase() === CvItemType.SECTION)
                 .map((item) => ({ ...item }));
 
             const fetchedSections = cvItems
-                .filter((item) => item.type?.toLowerCase() === "section")
+                .filter((item) => item.type?.toLowerCase() === CvItemType.SECTION || item.type?.toLowerCase() === CvItemType.DOUBLE_SECTION)
                 .map((item) => ({ ...item }));
 
             setHeaderSections(fetchedHeaders);
@@ -38,7 +50,10 @@ export const CvEditor: FC = () => {
     }, [cvItems]);
 
     const handleAddHeaderSection = () => {
-        setHeaderSections((prev) => [...prev, { title: "" }]);
+        setHeaderSections((prev) => [
+            ...prev,
+            { title: "", order: prev.length, type: CvItemType.HEADER },
+        ]);
     };
 
     const handleRemoveHeaderSection = (index: number) => {
@@ -52,7 +67,10 @@ export const CvEditor: FC = () => {
     };
 
     const handleAddSection = () => {
-        setSections((prev) => [...prev, { title: "", content: "" }]);
+        setSections((prev) => [
+            ...prev,
+            { title: "", content: "", order: prev.length, type: CvItemType.SECTION }
+        ]);
     };
 
     const handleRemoveSection = (index: number) => {
@@ -89,7 +107,27 @@ export const CvEditor: FC = () => {
         );
     };
 
-    // Submit
+    const handleAddDoubleSection = () => {
+        setSections((prev) => [
+            ...prev,
+            {
+                title: "",
+                content: "",
+                secondaryContent: "",
+                order: prev.length,
+                type: CvItemType.DOUBLE_SECTION,
+            },
+        ]);
+    };
+
+    const handleSecondaryContentChange = (index: number, newContent: string) => {
+        setSections((prev) =>
+            prev.map((section, idx) =>
+                idx === index ? { ...section, secondaryContent: newContent } : section
+            )
+        );
+    };
+
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
@@ -115,7 +153,7 @@ export const CvEditor: FC = () => {
     };
 
     return (
-        <section className="container my-5">
+        <section className="container my-5 py-5">
             <div className="row">
                 <div className="col">
                     {noticeMessage && (
@@ -125,6 +163,8 @@ export const CvEditor: FC = () => {
                             dismissible
                         />
                     )}
+
+                    <h1 className="text-center mb-3">CV Editor</h1>
 
                     {isLoading && <div>Loading existing CV items...</div>}
                     {isError && <div>Failed to load CV items.</div>}
@@ -140,15 +180,22 @@ export const CvEditor: FC = () => {
                         <MainSections
                             sections={sections}
                             onAddSection={handleAddSection}
+                            onAddDoubleSection={handleAddDoubleSection}
                             onRemoveSection={handleRemoveSection}
                             onMoveSectionUp={handleMoveSectionUp}
                             onMoveSectionDown={handleMoveSectionDown}
                             onTitleChange={handleSectionTitleChange}
                             onContentChange={handleSectionContentChange}
+                            onSecondaryContentChange={handleSecondaryContentChange}
                         />
 
                         <br />
-                        <button type="submit">Save CV</button>
+                        <FormButton
+                            name="Submit"
+                            loading={mutation.isPending}
+                            error={mutation.isError}
+                            success={mutation.isSuccess}
+                        />
                     </form>
                 </div>
             </div>

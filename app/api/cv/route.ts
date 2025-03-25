@@ -1,8 +1,8 @@
 // route.ts
-import { NextResponse } from 'next/server';
+import {NextResponse} from 'next/server';
 import connectMongoDB from '@/lib/mongodb';
-import { CvItemModel } from '@/models/cv.model';
-import { CvHeader, CvSection, CvItemType } from '@/types';
+import {CvItemModel} from '@/models/cv.model';
+import {CvHeader, CvItemType, CvSection} from '@/types';
 import mongoose from "mongoose";
 
 interface RequestBody {
@@ -12,7 +12,9 @@ interface RequestBody {
 
 type CvItemFromClient =
     | (CvHeader & { type: CvItemType.HEADER })
-    | (CvSection & { type: CvItemType.SECTION });
+    | (CvSection & { type: CvItemType.SECTION })
+    | (CvSection & { type: CvItemType.DOUBLE_SECTION });
+
 
 export async function GET() {
     try {
@@ -41,7 +43,7 @@ export async function POST(request: Request) {
             })),
             ...sections.map((section) => ({
                 ...section,
-                type: CvItemType.SECTION as const,
+                type: section.type || CvItemType.SECTION as const,
             })),
         ];
 
@@ -50,19 +52,18 @@ export async function POST(request: Request) {
                 ? { _id: item._id }
                 : { title: item.title, type: item.type };
 
-            const content = item.type === CvItemType.SECTION ? (item.content ?? '') : '';
+            // const content = item.type === CvItemType.SECTION ? (item.content ?? '') : '';
 
-            await CvItemModel.findOneAndUpdate(
-                filter,
-                {
-                    $set: {
-                        title: item.title,
-                        content,
-                        order: item.order ?? 0,
-                    },
+            await CvItemModel.findOneAndUpdate(filter, {
+                $set: {
+                    title: item.title,
+                    content: item.type !== CvItemType.HEADER ? item.content ?? '' : '',
+                    secondaryContent: item.type === CvItemType.DOUBLE_SECTION ? item.secondaryContent ?? '' : undefined,
+                    order: item.order ?? 0,
+                    type: item.type, // Explicitly set type as well
                 },
-                { upsert: true, new: true },
-            );
+            }, { upsert: true, new: true });
+
         }
 
         return NextResponse.json({ message: 'CV items processed successfully!' });

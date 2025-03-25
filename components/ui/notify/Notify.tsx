@@ -3,33 +3,28 @@
 import styles from "./notify.module.css";
 import {HiMiniXMark} from "react-icons/hi2";
 import {FC, useEffect, useState} from "react";
+import {NoticeProps} from "@/types";
+import {NOTICE_DURATION} from "@/const";
 
 /**
- * Notice component that displays a message.
+ * Notice component to display alert messages.
  *
- * @param {Object} props
- * @param {string} props.type - The alert type: "success", "danger", "warning", "info" etc.
- * @param {string} props.message - The message content to display in the Notice.
- * @param {boolean} [props.dismissible=false] - Whether to show a dismiss button.
+ * @param [type="info"] - The type of the notice (success, danger, warning, info).
+ * @param message - The message to display in the notice.
+ * @param [dismissible=false] - Whether the notice can be dismissed by the user.
+ *
+ * @returns {JSX.Element | null} The rendered notice component or null if not visible.
  */
-
-interface NoticeProps {
-    type?: string;
-    message: string;
-    dismissible?: boolean;
-}
 
 const Notice: FC<NoticeProps> = ({
     type = "info",
     message,
     dismissible = false,
-}) => {
+}): JSX.Element | null => {
     const [visible, setVisible] = useState(true);
 
-    const DURATION = 3000;
-
     useEffect(() => {
-        const timer = setTimeout(() => setVisible(false), DURATION);
+        const timer = setTimeout(() => setVisible(false), NOTICE_DURATION);
         return () => clearTimeout(timer);
     }, []);
 
@@ -85,7 +80,7 @@ const Notice: FC<NoticeProps> = ({
                             <path
                                 className={styles.circleAnimation}
                                 style={{
-                                    animationDuration: `${DURATION}ms`,
+                                    animationDuration: `${NOTICE_DURATION}ms`,
                                 }}
                                 d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831

@@ -1,3 +1,5 @@
+@import "./forms.css";
+
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: #fce38a;

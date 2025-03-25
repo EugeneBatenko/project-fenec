@@ -4,6 +4,7 @@ import { CvItemType } from '@/types';
 export interface ICvItem extends Document {
     title: string;
     content?: string;
+    secondaryContent?: string,
     order: number;
     type: CvItemType;
 }
@@ -12,10 +13,11 @@ const CvItemSchema = new Schema<ICvItem>(
     {
         title: { type: String, required: true },
         content: { type: String },
+        secondaryContent: { type: String, default: '' },
         order: { type: Number, required: true },
         type: {
             type: String,
-            enum: [CvItemType.HEADER, CvItemType.SECTION],
+            enum: [CvItemType.HEADER, CvItemType.SECTION, CvItemType.DOUBLE_SECTION],
             required: true,
         },
     },
