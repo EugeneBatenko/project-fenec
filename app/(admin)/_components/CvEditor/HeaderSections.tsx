@@ -8,8 +8,8 @@ import { MdAdd } from "react-icons/md";
 type HeaderSectionsProps = {
     headerSections: CvHeader[];
     onAddHeaderSection: () => void;
-    onRemoveHeaderSection: (index: number) => void;
-    onTitleChange: (index: number, newTitle: string) => void;
+    onRemoveHeaderSection: (id: number) => void;
+    onTitleChange: (id: number, newTitle: string) => void;
 }
 
 export const HeaderSections: FC<HeaderSectionsProps> = ({
@@ -18,6 +18,7 @@ export const HeaderSections: FC<HeaderSectionsProps> = ({
     onRemoveHeaderSection,
     onTitleChange,
 }) => {
+
     return (
         <article className={styles.headersSection}>
             <h2 className="text-center mb-3">Header Sections</h2>

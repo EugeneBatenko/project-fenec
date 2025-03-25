@@ -33,7 +33,7 @@ export const MainSections: FC<MainSectionsProps> = ({
         <article className={styles.mainSections}>
             <h2 className="text-center mb-3">Main Sections</h2>
             {sections.map((section, index) => (
-                <div className={styles.line} key={section._id} style={{marginBottom: "1rem"}}>
+                <div className={styles.line} key={index} style={{marginBottom: "1rem"}}>
                     <div className={styles.textareaGroup}>
                         <label className={styles.headerLabel}>
                             <input

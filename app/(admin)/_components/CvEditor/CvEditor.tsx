@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, FormEvent, useEffect, useState } from "react";
-import { useCvMutation, useCvQuery } from "@/hooks/useCv";
+import {useCvDeleteMutation, useCvMutation, useCvQuery} from "@/hooks/useCv";
 
 import Notice from "@/components/ui/notify/Notify";
 import { HeaderSections } from "./HeaderSections";
@@ -14,6 +14,7 @@ import { FormButton } from "@/ui/buttons/FormButton";
 // TODO Simplify this component later
 export const CvEditor: FC = () => {
     const mutation = useCvMutation();
+    const deleteMutation = useCvDeleteMutation();
     const { data: cvItems, isLoading, isError } = useCvQuery();
 
     const [noticeMessage, setNoticeMessage] = useState("");
@@ -23,7 +24,7 @@ export const CvEditor: FC = () => {
         {
             title: "",
             order: 0,
-            type: ""
+            type: CvItemType.HEADER
         },
     ]);
     const [sections, setSections] = useState<CvSection[]>([
@@ -37,7 +38,7 @@ export const CvEditor: FC = () => {
     useEffect(() => {
         if (cvItems && Array.isArray(cvItems)) {
             const fetchedHeaders = cvItems
-                .filter((item) => item.type?.toLowerCase() === CvItemType.SECTION)
+                .filter((item) => item.type?.toLowerCase() === CvItemType.HEADER)
                 .map((item) => ({ ...item }));
 
             const fetchedSections = cvItems
@@ -74,7 +75,30 @@ export const CvEditor: FC = () => {
     };
 
     const handleRemoveSection = (index: number) => {
-        setSections((prev) => prev.filter((_, i) => i !== index));
+        const sectionToDelete = sections[index];
+
+        if(!confirm(`Are you sure to delete ${sectionToDelete.title}?`)) {
+            return;
+        }
+
+        if (sectionToDelete && sectionToDelete._id) {
+            deleteMutation.mutate(sectionToDelete._id, {
+                onSuccess: () => {
+                    setSections((prev) => prev.filter((_, i) => i !== index));
+                    setNoticeMessage("Section deleted successfully.");
+                    setNoticeType("success");
+                },
+                onError: (error) => {
+                    setNoticeMessage("Error deleting section. Please try again.");
+                    setNoticeType("error");
+                    console.error(error);
+                }
+            });
+        } else {
+            setSections((prev) => prev.filter((_, i) => i !== index));
+            setNoticeMessage("Section removed locally.");
+            setNoticeType("info");
+        }
     };
 
     const handleMoveSectionUp = (index: number) => {
