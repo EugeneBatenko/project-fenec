@@ -5,3 +5,10 @@ export type AccordionContentTypes = {
     children: ReactNode;
     className?: string;
 }
+
+export type AccordionToggleProps = {
+    id: number;
+    className?: string;
+    open?: string | ReactNode;
+    close?: string | ReactNode;
+}

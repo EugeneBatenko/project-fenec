@@ -96,6 +96,14 @@ p, span, time {
     color: var(--text-color);
 }
 
+.text-color {
+    color: var(--text-color);
+}
+
+.svg-color {
+    fill: var(--text-color);
+}
+
 h1.logo {
     font-family: var(--logo-font);
     font-weight: 900;

@@ -15,24 +15,11 @@ import Markdown from "markdown-to-jsx";
 
 const markDownOptions = {
     overrides: {
-        a: {
-            component: Link,
-            props: {
-                className: "link",
-            }
-        },
-        ul: {
-            props: {
-                className: "ul"
-            }
-        },
-        li: {
-            props: {
-                className: "li"
-            }
-        }
-    }
-}
+        a: { component: Link, props: { className: "link" } },
+        ul: { props: { className: "ul" } },
+        li: { props: { className: "li" } },
+    },
+};
 
 export default function Page() {
     const { data, isLoading, isError, error } = useCvQuery();

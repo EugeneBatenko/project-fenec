@@ -1,9 +1,11 @@
+"use client"
+
 import {FC} from 'react';
 import useAccordionStore from "@/store/useAccordion";
-import {AccordionContentTypes, NumberId} from "@/types";
+import {AccordionContentTypes, AccordionToggleProps} from "@/types";
 
 
-export const AccordionToggle: FC<NumberId & {className: string}> = ({id, className}) => {
+export const AccordionToggle: FC<AccordionToggleProps> = ({ id, className, open, close }) => {
     const expandedAcc = useAccordionStore(state => state.expanded);
     const toggleAcc = useAccordionStore(state => state.toggle);
 
@@ -11,11 +13,11 @@ export const AccordionToggle: FC<NumberId & {className: string}> = ({id, classNa
 
     return (
         <button onClick={() => toggleAcc(id)}
-                className={isExpanded ? className + " show" : className}>
-            {isExpanded ? "Show less" : "Show more"}
+                className={isExpanded ? `${className} show` : className}>
+            {isExpanded ? (close || "Show less") : (open || "Show more")}
         </button>
-    )
-}
+    );
+};
 
 export const AccordionContent: FC<AccordionContentTypes> = ({id, children, className}) => {
     const expandedAcc = useAccordionStore(state => state.expanded);
@@ -28,6 +30,6 @@ export const AccordionContent: FC<AccordionContentTypes> = ({id, children, class
     )
 }
 
-export const Accordion: FC<AccordionContentTypes> = ({children}) => {
-    return <>{children}</>
+export const Accordion: FC<AccordionContentTypes> = ({children, className}) => {
+    return <div className={className}>{children}</div>
 }
