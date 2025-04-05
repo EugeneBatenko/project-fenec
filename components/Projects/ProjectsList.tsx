@@ -1,3 +1,5 @@
+"use client"
+
 import {FC} from "react";
 import Placeholder from "@/public/placeholder-fennec-fox.svg";
 import styles from "./projects.module.css";
