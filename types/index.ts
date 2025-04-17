@@ -8,5 +8,6 @@ export * from './accordion.types';
 export * from './projects.types';
 export * from './cv.types';
 export * from './notice.types';
+export * from './form.types';
 
 export * from './enum';

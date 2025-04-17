@@ -10,6 +10,7 @@ import { Loading } from "@/ui/loading/Loading";
 import React, {Suspense} from "react";
 import type { Viewport } from 'next';
 import {QueryProvider} from "@/providers/QueryClientProvider";
+// import SessionProviderWrapper from "@/providers/SessionProviderWrapper";
 
 export const metadata: Metadata = {
   title: "Fennec Fox",
@@ -28,22 +29,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
     return (
-    <html lang="en">
-      <body
-        className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable} ${fontawsome.variable}`}
-      >
-      <Suspense fallback={<Loading/>}>
-        <Header />
-            <main>
-                <QueryProvider>
-                    {children}
-                </QueryProvider>
-            </main>
-        <Footer/>
-      </Suspense>
-      </body>
-    </html>
-  );
+        <html lang="en">
+        <body
+            className={`${logoFont.variable} ${montserrat.variable} ${roboto.variable} ${fontawsome.variable}`}
+        >
+        {/*<SessionProviderWrapper>*/}
+            <Suspense fallback={<Loading/>}>
+                <Header/>
+                <main>
+                    <QueryProvider>
+                        {children}
+                    </QueryProvider>
+                </main>
+                <Footer/>
+            </Suspense>
+        {/*</SessionProviderWrapper>*/}
+        </body>
+        </html>
+    );
 }

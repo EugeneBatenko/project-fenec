@@ -6,7 +6,7 @@
     right: 0;
     bottom: 5rem;
     width: fit-content;
-    padding: 1rem 2rem 1rem 1rem;
+    padding: 1rem 2rem;
     border: 1px solid transparent;
     border-radius: 4px;
     background-color: var(--primary-dark);
@@ -47,15 +47,16 @@
 
 .closeButton {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: -10px;
+    right: -10px;
     cursor: pointer;
     color: var(--text-color);
-    background-color: transparent;
+    border-radius: 50%;
+    background-color: var(--primary-dark);
 
-    &:hover {
-        color: var(--primary-color);
-    }
+    /*&:hover {*/
+    /*    color: var(--primary-color);*/
+    /*}*/
 }
 
 
