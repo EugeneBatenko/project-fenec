@@ -2,7 +2,7 @@
 
 import styles from "./notify.module.css";
 import {HiMiniXMark} from "react-icons/hi2";
-import {FC, useEffect, useState} from "react";
+import { FC, useEffect, useState, type JSX } from "react";
 import {NoticeProps} from "@/types";
 import {NOTICE_DURATION} from "@/const";
 
