@@ -100,6 +100,10 @@ p, span, time {
     color: var(--text-color);
 }
 
+.text-color-reverse {
+    color: var(--primary-bg-dark);
+}
+
 .svg-color {
     fill: var(--text-color);
 }
@@ -171,3 +175,32 @@ hr {
 /*    color-scheme: dark;*/
 /*  }*/
 /*}*/
+
+/* https://css-loaders.com/spinner/ */
+.loader {
+    width: 25px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 2px solid #0000;
+    border-radius: 50%;
+    border-right-color: var(--primary-color);
+    animation: loader 1s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 1px;
+    border: inherit;
+    border-radius: 50%;
+    animation: loader 2s infinite;
+}
+
+.loader::after {
+    margin: 4px;
+    animation-duration: 3s;
+}
+@keyframes loader{
+    100%{transform: rotate(1turn)}
+}

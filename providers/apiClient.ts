@@ -15,7 +15,8 @@ class ApiClient {
         endpoint: string,
         method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH",
         body?: unknown,
-        headers: Record<string, string> = {}
+        headers: Record<string, string> = {},
+        isBinary: boolean = false
     ): Promise<T> {
         try {
             const response = await fetch(`${this.baseUrl}${endpoint}`, {
@@ -32,15 +33,16 @@ class ApiClient {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
 
-            return (await response.json()) as T;
+          return isBinary ? ((await response.blob()) as T) : ((await response.json()) as T);
+
         } catch (error) {
             console.error("API Request Error:", error);
             throw error;
         }
     }
 
-    get<T>(endpoint: string, headers?: Record<string, string>) {
-        return this.request<T>(endpoint, "GET", undefined, headers);
+    get<T>(endpoint: string, headers?: Record<string, string>, isBinary: boolean = false) {
+        return this.request<T>(endpoint, "GET", undefined, headers, isBinary);
     }
 
     post<T>(endpoint: string, body: unknown, headers?: Record<string, string>) {

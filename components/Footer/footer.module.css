@@ -1,10 +1,11 @@
 .footer {
-    height: 50px;
+    min-height: 50px;
+    padding: 1rem 0;
     background-color: var(--primary-dark);
     background-image: repeating-linear-gradient(45deg,
     var(--primary-color), var(--primary-color) 10px, transparent 10px,
     transparent 50px);
     background-repeat: no-repeat;
-    background-size: 20% 65px;
+    background-size: 15% 65px;
     background-position: top right;
 }
