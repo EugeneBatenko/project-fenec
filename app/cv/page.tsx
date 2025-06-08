@@ -1,29 +1,40 @@
 "use client";
 import { useState } from "react";
-import apiClient from "@/providers/apiClient";
 import Notice from "@/ui/notify/Notify";
 import styles from "./cv.module.css";
 import { FaFilePdf } from "react-icons/fa6";
 import { Accordion, AccordionContent, AccordionToggle } from "@/ui/accordion/Accordion";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { useCvQuery } from "@/hooks/useCv";
+import { useStatsMutation } from "@/hooks/useStats";
+import { UserAgent } from "@/types";
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<{ type: string; message: string } | null>(null);
+  const { data: blob } = useCvQuery();
+  const { mutateAsync: statsMutation } = useStatsMutation();
 
   const handleDownload = async () => {
-    // const userData = {
-    //   timestamp: new Date().toISOString(),
-    //   userAgent: navigator.userAgent,
-    //   language: navigator.language,
-    //   ...(await fetch("https://ipapi.co/json/")
-    //     .then((res) => res.json())
-    //     .catch(() => ({ ip: "Unknown", location: "Unknown" })))
-    // };
+    const ipData = await fetch("https://ipapi.co/json/")
+      .then((res) => res.json())
+      .catch(() => ({ ip: "Unknown", location: "Unknown" }));
+
+    const userData: UserAgent = {
+      userAgent: navigator.userAgent,
+      language: navigator.language,
+      ip: typeof ipData.ip === "string" ? ipData.ip : "Unknown",
+      location: typeof ipData.city === "string" && typeof ipData.country_name === "string"
+        ? `${ipData.city}, ${ipData.country_name}`
+        : typeof ipData.location === "string"
+          ? ipData.location
+          : "Unknown",
+      extraData: ipData
+    };
 
     setIsLoading(true);
     try {
-      const blob = await apiClient.get<Blob>("/api/cv", {}, true);
+      await statsMutation(userData);
       downloadFile(blob);
 
       setNotification({
@@ -35,22 +46,30 @@ export default function Page() {
 
       setNotification({
         type: "danger",
-        message: "Failed to download the CV. Please try again."
+        message:
+          (error instanceof Error && error.message === "No file available for download.")
+            ? "The CV is not available yet. Please try again later."
+            : "Failed to download the CV. Please try again."
       });
     } finally {
       setIsLoading(false);
     }
   };
 
-  const downloadFile = (blob: Blob) => {
+
+  const downloadFile = (blob: Blob | undefined) => {
+    if (!blob) {
+      throw new Error("No file available for download.");
+    }
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "CV_FullStack_developer_Yevhen_Batenko.pdf";
+    a.download = process.env.CV_FILE_NAME + ".pdf";
     document.body.appendChild(a);
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
+
   };
 
   const resetNotification = () => {

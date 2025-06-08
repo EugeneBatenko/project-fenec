@@ -41,6 +41,7 @@ const nextConfig = {
   env: {
     BLOB_URL: process.env.BLOB_URL,
     MONGO_URI: process.env.MONGO_URI,
+    CV_FILE_NAME: process.env.CV_FILE_NAME,
   },
 };
 

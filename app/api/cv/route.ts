@@ -51,23 +51,3 @@ export async function GET() {
     );
   }
 }
-
-export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-    console.log('User Download Data:', body);
-
-    // Here you can integrate a database logging logic for persisted storage
-    // Example
-    // await saveDownloadInteractionToDB(body);
-
-    return NextResponse.json({ message: 'User data logged successfully' }, { status: 200 });
-  } catch (error) {
-    console.error('Error logging user download:', error);
-    return NextResponse.json(
-        { message: 'Failed to log user data', error: (error as Error).message },
-        { status: 500 },
-    );
-  }
-}
-
