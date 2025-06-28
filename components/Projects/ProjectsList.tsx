@@ -9,6 +9,7 @@ import Image from "next/image";
 import {ProjectsLoading} from "@/components/Projects/Loading";
 import {ProjectItem} from "@/types";
 import {useProjects} from "@/hooks/useProjects";
+import { Tags } from "@/ui/tags/Tags";
 
 export const ProjectsList: FC = () => {
     const { data, isLoading, isError, error } = useProjects();
@@ -42,11 +43,13 @@ export const ProjectsList: FC = () => {
                     <div className={styles.content}>
                         <h3 className={`${styles.title} h3 mb-2`}>{project.name}</h3>
                         <h6 className="h6 mb-2">Period: {project.period}</h6>
-                        <div className={styles.types}>
-                            {project.types.map((type: string) => (
-                                <span key={type} className={styles.type} data-project-type={type}>{type}</span>
-                            ))}
-                        </div>
+                        {/*<div className={styles.types}>*/}
+                        {/*    {project.types.map((type: string) => (*/}
+                        {/*        <span key={type} className={styles.type} data-project-type={type}>{type}</span>*/}
+                        {/*    ))}*/}
+                        {/*</div>*/}
+                        <Tags tags={project.types} className={styles.types}/>
+
                         <p className={styles.text}>{project.description}</p>
                         <Link href={`/portfolio/${project.slug}`} className={styles.button}>Read More &gt;&gt;</Link>
                     </div>

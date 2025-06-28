@@ -10,4 +10,4 @@ const UserDownloadStatsSchema = new mongoose.Schema<UserAgent>({
   extraData: { type: mongoose.Schema.Types.Mixed }
 }, { timestamps: true, collection: "userDownloadStats" });
 
-export default mongoose.model("userDownloadStats", UserDownloadStatsSchema);
+export default mongoose.models.userDownloadStats || mongoose.model("userDownloadStats", UserDownloadStatsSchema);

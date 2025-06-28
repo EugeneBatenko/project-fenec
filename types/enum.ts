@@ -3,3 +3,8 @@ export enum CvItemType {
     SECTION = 'section',
     DOUBLE_SECTION = 'double-section',
 }
+
+export enum TagTypeEnum {
+    COMMON = 'common',
+    TECH = 'tech',
+}

@@ -11,6 +11,11 @@
         --white-color: #fff;
         --text-color-reverse: #000;
     }
+
+    /*WARNING: Chromium support only*/
+    input[type="month"]::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+    }
 }
 
 * {

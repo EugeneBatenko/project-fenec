@@ -16,7 +16,7 @@ input {
     padding: 0.5rem;
     /*margin: 0.5rem 0;*/
     width: 100%;
-    border-radius: unset;
+    border-radius: 0.25rem;
     transition: border-color 0.2s ease-in-out;
     &:focus {
         border-color: var(--primary-color);
@@ -31,7 +31,7 @@ textarea {
     padding: 0.5rem;
     margin: 0.5rem 0;
     width: 100%;
-    border-radius: unset;
+    border-radius: 0.25rem;
     transition: border-color 0.2s ease-in-out;
     height: max-content;
     &:focus {

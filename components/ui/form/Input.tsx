@@ -1,13 +1,12 @@
 import {FC, useId} from "react";
 import {InputProps} from "@/types";
 
-
 export const Input: FC<InputProps> = ({type = "text", label, name, placeholder, onChange, value, className}) => {
     const id = useId();
 
     return (
         <>
-            <label htmlFor={id}>{label}</label>
+            <label htmlFor={id} className="mb-1">{label}</label>
             <input
                 id={id}
                 type={type}
@@ -15,7 +14,7 @@ export const Input: FC<InputProps> = ({type = "text", label, name, placeholder, 
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
-                className={className}
+                className={`${className}`}
             />
         </>
     )

@@ -83,7 +83,7 @@ export const FeaturedProjects: FC = () => {
                 </div>
                 <div className="row">
                     <div className="col d-flex justify-content-center">
-                        <LinkButton href="/projects" name="Learn More"/>
+                        <LinkButton href="/portfolio" name="Learn More"/>
                     </div>
                 </div>
             </div>

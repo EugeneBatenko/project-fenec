@@ -10,5 +10,6 @@ export * from './cv.types';
 export * from './notice.types';
 export * from './form.types';
 export * from './stats.types';
+export * from './tags.types';
 
 export * from './enum';

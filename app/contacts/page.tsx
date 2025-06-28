@@ -14,12 +14,11 @@ export default function Page() {
     });
 
 // For user's system time format
-    const userTimeFormatter = new Intl.DateTimeFormat(undefined, {
-        hour: 'numeric',
-        minute: 'numeric',
-        // second: 'numeric',
-        // hour12: false
-    });
+  const userTimeFormatter = new Intl.DateTimeFormat(navigator?.language || undefined, {
+    hour: "numeric",
+    minute: "numeric",
+    // hour12: true
+  });
 
     const now = new Date();
 

@@ -1,0 +1,17 @@
+.section {
+    background-color: var(--primary-dark);
+}
+
+.actionsPanel {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.listContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}

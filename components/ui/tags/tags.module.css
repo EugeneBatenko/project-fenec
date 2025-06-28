@@ -1,0 +1,39 @@
+.types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.type {
+    display: flex;
+    gap: 0.5rem;
+    width: fit-content;
+    border: 1px solid var(--color);
+    color: var(--color);
+    padding: 0 0.4rem;
+    /*margin: 0 0.5rem 0.5rem 0;*/
+}
+
+.type[data-project-type="commercial"] {
+    --color: var(--bs-teal);
+}
+
+.type[data-project-type="full-time"] {
+    --color: var(--bs-cyan);
+}
+
+.type[data-project-type="frontend"] {
+    --color: var(--bs-orange);
+}
+
+.type[data-project-type="backend"] {
+    --color: var(--bs-purple);
+}
+
+.type[data-project-type="full-stack"] {
+    background-image: linear-gradient(to right, var(--bs-orange), var(--bs-purple));
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, var(--bs-orange), var(--bs-purple)) 1;
+    background-clip: text;
+    color: transparent;
+}
