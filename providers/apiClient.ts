@@ -1,9 +1,13 @@
-const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? process.env.NEXT_PUBLIC_VERCEL_URL
+const baseUrl =
+    process.env.NODE_ENV !== "development"
+        ? process.env.NEXT_PUBLIC_API_BASE_URL || ""
+        : "http://localhost:3000";
+
 
 class ApiClient {
-    private readonly baseUrl: string | undefined;
+    private readonly baseUrl: string;
 
-  constructor(baseUrl: string | undefined) {
+    constructor(baseUrl: string) {
         this.baseUrl = baseUrl;
     }
 
