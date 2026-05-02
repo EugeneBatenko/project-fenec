@@ -1,18 +1,24 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
-import Select, { CSSObjectWithLabel, OptionProps } from "react-select";
+import { FC, useId } from "react";
+import Select from "react-select";
 import Creatable from "react-select/creatable";
+type OptionType = { value: string; label: string };
 
 type SelectProps = {
+  name?: string;
   multiple?: boolean;
   creatable?: boolean;
   options: { value: string; label: string }[];
+  value?: string | string[];
+  onChange?: (value: string | string[]) => void;
   onCreateOption?: (inputValue: string) => void;
 };
 
-const selectStyles = {
-  control: (base: CSSObjectWithLabel) => ({
+import type { StylesConfig } from "react-select";
+
+const selectStyles: StylesConfig<OptionType, boolean> = {
+  control: (base) => ({
     ...base,
     backgroundColor: "var(--primary-bg-dark)",
     borderColor: "transparent",
@@ -21,15 +27,15 @@ const selectStyles = {
       borderColor: "var(--primary-color)"
     }
   }),
-  input: (base: CSSObjectWithLabel) => ({
+  input: (base) => ({
     ...base,
     color: "var(--text-color)"
   }),
-  menu: (base: CSSObjectWithLabel) => ({
+  menu: (base) => ({
     ...base,
     backgroundColor: "var(--primary-dark)"
   }),
-  option: (base: CSSObjectWithLabel, state: OptionProps) => ({
+  option: (base, state) => ({
     ...base,
     backgroundColor: state.isFocused ? "var(--primary-color)" : "var(--primary-dark)",
     color: state.isFocused ? "var(--text-color-reverse)" : "var(--text-color)",
@@ -37,37 +43,91 @@ const selectStyles = {
       backgroundColor: "var(--primary-color)"
     }
   }),
-  singleValue: (base: CSSObjectWithLabel) => ({
+  singleValue: (base) => ({
     ...base,
     color: "var(--text-color)"
   }),
-  multiValue: (base: CSSObjectWithLabel) => ({
+  multiValue: (base) => ({
     ...base,
     backgroundColor: "var(--primary-color)"
   }),
-  multiValueLabel: (base: CSSObjectWithLabel) => ({
+  multiValueLabel: (base) => ({
     ...base,
     color: "var(--text-color-reverse)"
   })
 };
 
-export const FormSelect: FC<SelectProps> = ({ multiple, creatable, options, onCreateOption }) => {
-  // Generate a unique ID for the select element to avoid hydration error
-  const [selectId, setSelectId] = useState<string>();
-  useEffect(() => {
-    setSelectId(crypto.randomUUID());
-  }, []);
+export const FormSelect: FC<SelectProps> = ({ name, multiple, creatable, value, onChange, options, onCreateOption }) => {
+  const selectId = useId();
 
-  if (!selectId) return null;
+  const getValue = () => {
+    if (multiple) {
+      // value might be undefined, or an array
+      if (Array.isArray(value)) {
+        return options.filter((o) => value.includes(o.value));
+      }
+      return [];
+    } else {
+      // value might be undefined, or a single string
+      return options.find((o) => o.value === value) || null;
+    }
+  };
 
-  const Component = creatable ? Creatable : Select;
+
+  const isCreatable = !!creatable;
+  if (isCreatable) {
+    return (
+      <Creatable
+        name={name}
+        instanceId={'create' + selectId}
+        options={options}
+        isMulti={multiple}
+        value={getValue()}
+        onChange={(selected) => {
+          if (!onChange) return;
+          if (multiple) {
+            onChange(
+              Array.isArray(selected)
+                ? selected.map((opt) => (opt as OptionType).value)
+                : []
+            );
+          } else {
+            onChange(
+              selected
+                ? (selected as OptionType).value
+                : ""
+            );
+          }
+        }}
+        styles={selectStyles}
+        onCreateOption={onCreateOption}
+      />
+    );
+  }
   return (
-    <Component
-      instanceId={(creatable ? 'create' : 'select') + selectId}
+    <Select
+      name={name}
+      instanceId={'select' + selectId}
       options={options}
       isMulti={multiple}
+      value={getValue()}
+      onChange={(selected) => {
+        if (!onChange) return;
+        if (multiple) {
+          onChange(
+            Array.isArray(selected)
+              ? selected.map((opt) => (opt as OptionType).value)
+              : []
+          );
+        } else {
+          onChange(
+            selected
+              ? (selected as OptionType).value
+              : ""
+          );
+        }
+      }}
       styles={selectStyles}
-      onCreateOption={onCreateOption}
     />
   )
 };

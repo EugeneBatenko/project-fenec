@@ -15,7 +15,7 @@ export const ProjectsPanel: FC = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div className="alert alert-danger" role="alert"><p>Error: {error?.message}</p></div>;
-
+  console.log(data);
   return (
     <section className={`${styles.section} container py-4 mt-5`}>
       <h1 className="mb-4">Projects Panel</h1>
@@ -32,15 +32,16 @@ export const ProjectsPanel: FC = () => {
         <div className="grid-header fw-bold text-end"><span>Actions</span></div>
 
         {data?.map((project: ProjectItem) => (
-          <Fragment key={project.id}>
+          <Fragment key={project._id}>
             <div className="d-flex align-items-center"><span>{project.name}</span></div>
-            <div className="d-flex align-items-center"><span>{project.period}</span></div>
+            <div className="d-flex align-items-center"><span>{`${project.start_date} - ${project.end_date}`}</span></div>
             <div className="d-flex align-items-center">
-              <Tags tags={project.types}/>
+              <Tags tags={project.tags} />
             </div>
             <div className="d-flex align-items-center justify-content-end">
-              <DefaultLinkButton href={`/projects/${project.slug}`} className="btn btn-sm btn-outline-primary me-2"><MdEdit/></DefaultLinkButton>
-              <DefaultButton className="btn btn-sm btn-outline-danger"><MdDelete/></DefaultButton>
+              <DefaultLinkButton href={`/projects/${project.slug}`}
+                                 className="btn btn-sm btn-outline-primary me-2"><MdEdit /></DefaultLinkButton>
+              <DefaultButton className="btn btn-sm btn-outline-danger"><MdDelete /></DefaultButton>
             </div>
           </Fragment>
         ))}

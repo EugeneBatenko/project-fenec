@@ -12,7 +12,7 @@
     background-color: var(--primary-dark);
     color: var(--text-color);
 
-    &:global.success {
+    &:global(.success) {
         border-color: var(--bs-success);
         color: var(--bs-success);
         .circleAnimation {
@@ -20,7 +20,7 @@
         }
     }
 
-    &:global.danger {
+    &:global(.danger) {
         border-color: var(--bs-danger);
         color: var(--bs-danger);
         .circleAnimation {
@@ -28,7 +28,7 @@
         }
     }
 
-    &:global.warning {
+    &:global(.warning) {
         border-color: var(--bs-warning);
         color: var(--bs-warning);
         .circleAnimation {
@@ -36,7 +36,7 @@
         }
     }
 
-    &:global.info {
+    &:global(.info) {
         border-color: var(--bs-info);
         color: var(--bs-info);
         .circleAnimation {

@@ -82,7 +82,7 @@
         }
     }
 
-    &:global.active {
+    &:global(.active) {
         @media (width <= 991px) {
             transform: translateY(50%);
             &::after {

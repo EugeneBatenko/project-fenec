@@ -10,6 +10,9 @@ export const Header: FC = () => {
     const [isSticky, setIsSticky] = useState(false);
 
     useEffect(() => {
+        const handleScroll = () => {
+            setIsSticky(window.scrollY >= 300);
+        };
         const throttledScroll = throttle(handleScroll, 200);
         window.addEventListener('scroll', throttledScroll);
 
@@ -17,15 +20,6 @@ export const Header: FC = () => {
             window.removeEventListener('scroll', throttledScroll);
         };
     }, []);
-
-    // Sticky scroll
-    const handleScroll = () => {
-        if (window.scrollY >= 300) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
-    };
 
     return (
         <header className={`${styles.header} d-flex align-items-center ${isSticky ? styles.sticky : ''}`}>

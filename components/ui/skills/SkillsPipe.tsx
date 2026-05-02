@@ -9,9 +9,10 @@ import {
 import {BiLogoPostgresql} from "react-icons/bi";
 import {FaAws, FaGears, FaNodeJs, FaPython, FaDocker, FaGolang, FaRaspberryPi, FaFigma} from "react-icons/fa6";
 import {
-    SiTypescript, SiRedux, SiNextdotjs, SiNestjs, SiExpress, SiPug, SiAwslambda, SiVercel, SiGraphql, SiCplusplus,
+    SiTypescript, SiRedux, SiNextdotjs, SiNestjs, SiExpress, SiPug, SiVercel, SiGraphql, SiCplusplus,
     SiRubyonrails, SiGimp, SiPostman
 } from "react-icons/si";
+import {TbLambda} from "react-icons/tb";
 import {GrMysql} from "react-icons/gr";
 import {IoInfiniteSharp} from "react-icons/io5";
 import styles from "./skills.module.css";
@@ -45,7 +46,7 @@ const backendIcons: IconItem[] = [
     {component: FaDocker, size: 20, className: 'childSkill'},
     {component: DiRedis, size: 20, className: 'childSkill'},
     {component: FaAws, size: 20, className: 'childSkill'},
-    {component: SiAwslambda, size: 20, className: 'childSkill'}
+    {component: TbLambda, size: 20, className: 'childSkill'}
 ];
 
 const devOpsIcons: IconItem[] = [
@@ -78,7 +79,7 @@ interface SkillsPipeProps {
 }
 
 const SkillsPipe: FC<SkillsPipeProps> = ({skillSet, additionalClassName}) => {
-    const icons = (() => {
+    const icons = useMemo(() => {
         switch (skillSet) {
             case 'frontend':
                 return frontendIcons;
@@ -91,7 +92,7 @@ const SkillsPipe: FC<SkillsPipeProps> = ({skillSet, additionalClassName}) => {
             default:
                 return [];
         }
-    })();
+    }, [skillSet]);
 
     const [trail, api] = useTrail(icons.length, () => ({
         transform: "translateX(-20%)",
@@ -111,11 +112,11 @@ const SkillsPipe: FC<SkillsPipeProps> = ({skillSet, additionalClassName}) => {
         () => trail.map(((props, index) => {
             const IconComponent = icons[index].component;
             return (
-                <animated.span style={props} key={index + Math.random()} className={styles[icons[index].className]}>
+                <animated.span style={props} key={`${skillSet}-${index}`} className={styles[icons[index].className]}>
                     <IconComponent size={icons[index].size}/>
                 </animated.span>
             );
-        })), [trail, icons]
+        })), [trail, icons, skillSet]
     )
 
     return (

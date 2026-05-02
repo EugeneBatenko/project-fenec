@@ -11,37 +11,30 @@ export const FormButton: FC<FormButtonProps> = ({
     error = false,
     success = false,
 }) => {
-    const [internalSuccess, setInternalSuccess] = useState(success);
-    const [internalError, setInternalError] = useState(error);
+    const [hidden, setHidden] = useState(false);
 
     useEffect(() => {
-        setInternalSuccess(success);
-        setInternalError(error);
+        if (!success && !error) return;
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setHidden(false);
+        const timer = setTimeout(() => setHidden(true), 3000);
+        return () => clearTimeout(timer);
     }, [success, error]);
 
-    useEffect(() => {
-        let timer: NodeJS.Timeout;
-        if (internalSuccess || internalError) {
-            timer = setTimeout(() => {
-                setInternalSuccess(false);
-                setInternalError(false);
-            }, 3000);
-        }
-
-        return () => clearTimeout(timer);
-    }, [internalSuccess, internalError]);
+    const showSuccess = success && !hidden;
+    const showError = error && !hidden;
 
     const buttonContent = () => {
         if (loading) return "Loading...";
-        if (internalSuccess) return "Success!";
-        if (internalError) return "Error";
+        if (showSuccess) return "Success!";
+        if (showError) return "Error";
         return name;
     };
 
     return (
         <button type={type}
                 className={styles.formButton}
-                disabled={loading || internalSuccess}
+                disabled={loading || showSuccess}
         >
             {buttonContent()}
         </button>

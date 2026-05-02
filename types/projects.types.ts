@@ -1,22 +1,24 @@
+import { TagTypes } from "@/types/tags.types";
+
 export type ProjectItem = {
-    id: number;
+    _id: string;
     name: string;
     description: string;
     image: string;
-    period: string;
+    start_date: string;
+    end_date: string;
     slug: string;
-    types: string[];
-    tags: string[];
+    tags: TagTypes[];
 }
 
 export type ProjectPageType = {
-    id: number;
+    _id: string;
     name: string;
     description: string;
     image: string;
-    period: string;
+    start_date: string;
+    end_date: string;
     role: string;
     responsibilities: string;
-    types: string[];
-    tags: string[];
+    tags: TagTypes[];
 }

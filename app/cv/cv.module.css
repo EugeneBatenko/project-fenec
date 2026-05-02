@@ -59,7 +59,7 @@
         transform-origin: top left;
     }
 
-    &:global.show {
+    &:global(.show) {
         max-height: 100%;
         transition: max-height 0.4s ease-in;
 

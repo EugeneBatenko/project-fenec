@@ -7,35 +7,41 @@ class ApiClient {
         this.baseUrl = baseUrl;
     }
 
-    async request<T>(
-        endpoint: string,
-        method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH",
-        body?: unknown,
-        headers: Record<string, string> = {},
-        isBinary: boolean = false
-    ): Promise<T> {
-        try {
-            const response = await fetch(`${this.baseUrl}${endpoint}`, {
-                method,
-                headers: {
-                    "Content-Type": "application/json",
-                    "Cache-Control": "public, max-age=86400, immutable",
-                    ...headers,
-                },
-                body: body ? JSON.stringify(body) : undefined,
-            });
+  async request<T>(
+    endpoint: string,
+    method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH",
+    body?: unknown,
+    headers: Record<string, string> = {},
+    isBinary: boolean = false
+  ): Promise<T> {
+    try {
+      const isFormData = body instanceof FormData;
+      // Build headers so all values are always defined
+      const constructedHeaders: Record<string, string> = {
+        "Cache-Control": "public, max-age=86400, immutable",
+        ...headers,
+      };
+      if (isFormData && constructedHeaders["Content-Type"]) {
+        delete constructedHeaders["Content-Type"];
+      }
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+      const response = await fetch(`${this.baseUrl}${endpoint}`, {
+        method,
+        headers: constructedHeaders,
+        body: isFormData ? body : (body ? JSON.stringify(body) : undefined)
+      });
 
-          return isBinary ? ((await response.blob()) as T) : ((await response.json()) as T);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
 
-        } catch (error) {
-            console.error("API Request Error:", error);
-            throw error;
-        }
+      return isBinary ? ((await response.blob()) as T) : ((await response.json()) as T);
+
+    } catch (error) {
+      console.error("API Request Error:", error);
+      throw error;
     }
+  }
 
     get<T>(endpoint: string, headers?: Record<string, string>, isBinary: boolean = false) {
         return this.request<T>(endpoint, "GET", undefined, headers, isBinary);

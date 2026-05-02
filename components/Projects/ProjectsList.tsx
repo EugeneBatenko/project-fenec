@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import Image from "next/image";
 import {ProjectsLoading} from "@/components/Projects/Loading";
-import {ProjectItem} from "@/types";
+import {ProjectItem, TagTypes} from "@/types";
 import {useProjects} from "@/hooks/useProjects";
 import { Tags } from "@/ui/tags/Tags";
 
@@ -20,7 +20,7 @@ export const ProjectsList: FC = () => {
     return (
         <article className={styles.body}>
             {data?.map((project: ProjectItem) => (
-                <div key={project.id} className={styles.card}>
+                <div key={project._id} className={styles.card}>
                     <div className={styles.imageContainer}>
                         {project.image ? <Image
                                 src={`${process.env.BLOB_URL}/${project.image}`}
@@ -42,21 +42,15 @@ export const ProjectsList: FC = () => {
                     </div>
                     <div className={styles.content}>
                         <h3 className={`${styles.title} h3 mb-2`}>{project.name}</h3>
-                        <h6 className="h6 mb-2">Period: {project.period}</h6>
-                        {/*<div className={styles.types}>*/}
-                        {/*    {project.types.map((type: string) => (*/}
-                        {/*        <span key={type} className={styles.type} data-project-type={type}>{type}</span>*/}
-                        {/*    ))}*/}
-                        {/*</div>*/}
-                        <Tags tags={project.types} className={styles.types}/>
+                        <h6 className="h6 mb-2">Period: {project.start_date} - {project.end_date}</h6>
+                        <Tags tags={project.tags} className={styles.types}/>
 
                         <p className={styles.text}>{project.description}</p>
                         <Link href={`/portfolio/${project.slug}`} className={styles.button}>Read More &gt;&gt;</Link>
                     </div>
                     <div className={styles.tags}>
-                        {/*TODO Remove slice after backand will be added*/}
-                        {project.tags.slice(0, 3).map((tag: string) => (
-                            <span key={tag} className={styles.tag}>#{tag}</span>
+                        {project.tags.slice(0, 3).map((tag: TagTypes) => (
+                            <span key={tag.name} className={styles.tag}>#{tag.name}</span>
                         ))}
                     </div>
                 </div>

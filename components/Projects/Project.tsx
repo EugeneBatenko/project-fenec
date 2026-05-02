@@ -53,7 +53,7 @@ export const Project: FC<{ slug: string }> = (props) => {
                 <div className="row">
                     <div className="col">
                         <h2 className={`${styles.sectionTitles} h2`}>Description</h2>
-                        <h6>Period: {data.period}</h6>
+                        <h6>Period: {data.start_date} - {data.end_date}</h6>
                         <p>{data.description}</p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ export const Project: FC<{ slug: string }> = (props) => {
                         <h2 className={`${styles.sectionTitles} h2`}>Technology Stack</h2>
                         <div className={styles.tagsContainer}>
                             {data.tags.map((item, index) =>
-                                <span key={index} className={styles.techTags}>{item}</span>
+                                <span key={index} className={styles.techTags}>{item.name}</span>
                             )}
                         </div>
 
