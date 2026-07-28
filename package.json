@@ -22,7 +22,7 @@
     "bootstrap": "^5.3.8",
     "googleapis": "^171.4.0",
     "markdown-to-jsx": "^9.7.16",
-    "mongoose": "^9.6.1",
+    "mongoose": "^9.7.2",
     "next": "^16.2.4",
     "next-auth": "^4.24.14",
     "react": "^19.2.5",
